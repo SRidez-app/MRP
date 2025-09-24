@@ -1,0 +1,261 @@
+"use client";
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+interface Industry {
+  id: string;
+  title: string;
+  description: string;
+  image: string; // Changed from 'any' to 'string'
+  href: string;
+  badge: string;
+}
+
+const INDUSTRIES_DATA: Industry[] = [
+  {
+    id: 'trucking',
+    title: "Trucking & Transportation",
+    description: "Comprehensive fleet insurance with DOT compliance support, cargo protection, and specialized coverage for owner-operators and commercial fleets.",
+    image: "/images/Trucking2.png", // Updated to use public path
+    href: "/trucking-insurance",
+    badge: "Most Popular",
+
+   
+    
+  },
+  {
+    id: 'construction',
+    title: "Construction & Contracting", 
+    description: "Specialized protection for contractors, builders, and construction professionals with general liability, workers' comp, and project-specific coverage.",
+    image: "/images/construct.png", // Updated to use public path
+    href: "/construction-insurance",
+    badge: "Essential",
+
+    
+    
+  },
+  {
+    id: 'manufacturing',
+    title: "Manufacturing & Production",
+    description: "Product liability, equipment breakdown, and operational coverage for manufacturers across all industries from food processing to electronics.",
+    image: "/images/Manufact.png", // Updated to use public path
+    href: "/manufacturing-insurance",
+    badge: "Comprehensive",
+
+   
+  },
+  {
+    id: 'nonprofit',
+    title: "Nonprofit & Human Services",
+    description: "Tailored coverage for nonprofits, human service organizations, and community groups with D&O, professional liability, and volunteer protection.",
+    image: "/images/nonProf.png", // Updated to use public path
+    href: "/nonprofit-insurance",
+    badge: "Specialized",
+
+    
+  },
+  {
+    id: 'public-entity',
+    title: "Government & Public Entities",
+    description: "Comprehensive coverage for municipalities, public agencies, and government organizations with specialized liability and constitutional coverage.",
+    image: "/images/publicE1.png", // Updated to use public path
+    href: "/public-entity-insurance",
+    badge: "Government",
+
+   
+  }
+];
+
+const IndustryCard = React.memo(({ industry, index }: { industry: Industry; index: number }) => (
+  <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+    {/* Badge */}
+    <div className="absolute top-4 left-4 z-10">
+      <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        {industry.badge}
+      </span>
+    </div>
+
+    {/* Background Image */}
+    <div className="relative h-64 overflow-hidden">
+      <Image
+        src={industry.image}
+        alt={`${industry.title} background`}
+        fill
+        className="object-cover transition-transform duration-300 group-hover:scale-105"
+        priority={index < 2}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+    </div>
+
+    {/* Content */}
+    <div className="p-6">
+      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+        {industry.title}
+      </h3>
+      
+      <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+        {industry.description}
+      </p>
+
+
+     
+
+      {/* CTA */}
+      <a 
+        href={industry.href}
+        className="flex items-center justify-center w-full bg-gray-900 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-all duration-200 group-hover:bg-orange-600"
+      >
+        Learn More
+        <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+));
+
+const Overview: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+    return () => cancelAnimationFrame(timer);
+  }, []);
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* About Section */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+          {/* Left Column - Story */}
+          <div className={`space-y-6 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+              Your Trusted Commercial Insurance Partner
+            </h2>
+            
+            <p className="text-lg text-gray-600 leading-relaxed">
+              With over 25 years of combined experience, Moxie Risk Partners brings trusted insurance 
+              solutions to commercial businesses nationwide. Our team of industry specialists understands 
+              the unique challenges facing trucking companies, contractors, manufacturers, and nonprofits.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Our team of dedicated specialists works exclusively with commercial accounts, providing 
+              personalized service and expert guidance to protect what matters most to your business.
+            </p>
+
+            {/* Value Props */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+              {[
+                'Industry Expertise',
+                'Radical Transparency', 
+                'A-Rated Carriers',
+                'Fast Claims Response'
+              ].map((item, index) => (
+                <div key={index} className="flex items-center">
+                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="font-medium text-gray-800">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Mission */}
+            <div className="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 mt-8">
+              <div className="flex items-start">
+                <svg className="w-6 h-6 text-orange-500 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-2">Our Mission</h3>
+                  <p className="text-gray-700">
+                    To provide transparent, reliable commercial insurance solutions that move as fast as 
+                    your business grows, backed by industry expertise and unwavering support.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Stats */}
+          <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
+            <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-500">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+                The Numbers Speak for Themselves
+              </h3>
+              
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { label: 'Years Experience', value: '25+', desc: 'Combined team expertise' },
+                  { label: 'Premium Volume', value: '$50M+', desc: 'Annual premium managed' },
+                  { label: 'States Covered', value: '48', desc: 'Nationwide coverage' },
+                  { label: 'Claims Support', value: '24/7', desc: 'Always available' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-gray-50 hover:bg-orange-50 transition-colors">
+                    <div className="text-3xl font-bold text-orange-600 mb-2">{stat.value}</div>
+                    <div className="font-semibold text-gray-900 mb-1">{stat.label}</div>
+                    <div className="text-sm text-gray-600">{stat.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Industries Section */}
+        <div className="space-y-12">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive Coverage Across Critical Industries
+            </h2>
+            <p className="text-xl text-gray-600">
+              Deep expertise across trucking, construction, manufacturing, nonprofit, and public entities 
+              with industry-specific coverage, regulatory compliance support, and dedicated specialists.
+            </p>
+          </div>
+
+          {/* Industries Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {INDUSTRIES_DATA.map((industry, index) => (
+              <IndustryCard key={industry.id} industry={industry} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+        }
+
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default React.memo(Overview);
