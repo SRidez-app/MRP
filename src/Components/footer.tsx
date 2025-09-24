@@ -18,8 +18,14 @@ interface FooterSection {
 
 const Footer: React.FC = () => {
   const [openSections, setOpenSections] = useState<Set<string>>(new Set());
+  const [isMounted, setIsMounted] = useState(false);
   
   const currentYear = useMemo(() => new Date().getFullYear(), []);
+
+  // Handle client-side mounting
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const footerSections = useMemo<FooterSection[]>(() => [
     {
@@ -121,7 +127,7 @@ const Footer: React.FC = () => {
             {/* Logo and Company Name */}
             <div className="flex items-center space-x-4">
               <img 
-                src="/logo.png" 
+                src="/images/logoWhite.webp" 
                 alt="Moxie Risk Partners Logo" 
                 className="h-12 w-auto"
                 loading="lazy"
@@ -218,7 +224,7 @@ const Footer: React.FC = () => {
                   <div 
                     id={`footer-section-${section.id}`}
                     className={`space-y-2 ${
-                      openSections.has(section.id) || window.innerWidth >= 768 ? 'block' : 'hidden'
+                      openSections.has(section.id) || (isMounted && window.innerWidth >= 768) ? 'block' : 'hidden'
                     } md:block`}
                   >
                     {section.links.map((link) => (
@@ -245,34 +251,10 @@ const Footer: React.FC = () => {
 
         {/* CTA Section */}
         <div className="mt-12 pt-8 border-t border-gray-700">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-400 rounded-2xl p-6 md:p-8">
-            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-              <div className="text-center md:text-left">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                  Ready to Get Protected?
-                </h3>
-                <p className="text-white/90">
-                  Get a personalized quote from our commercial insurance specialists.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="/quote"
-                  className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center"
-                >
-                  Get Quote
-                </a>
-                <a
-                  href="tel:+18006694301"
-                  className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors text-center"
-                >
-                  Call Now
-                </a>
-              </div>
-            </div>
+       
           </div>
         </div>
-      </div>
+
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700">
