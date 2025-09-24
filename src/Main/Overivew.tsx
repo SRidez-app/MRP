@@ -179,12 +179,12 @@ const Overview: React.FC = () => {
 
             {/* Mission Statement */}
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-sm">
-              <blockquote className="text-gray-800 text-lg leading-relaxed italic">
-                "To provide specialized commercial insurance solutions that protect the businesses, 
-                organizations, and entities that build America. We combine deep industry knowledge 
-                with personalized service to deliver the coverage, compliance, and peace of mind 
-                our clients need to focus on what they do best."
-              </blockquote>
+        <blockquote className="text-gray-800 text-lg leading-relaxed italic">
+  &quot;To provide specialized commercial insurance solutions that protect the businesses, 
+  organizations, and entities that build America. We combine deep industry knowledge 
+  with personalized service to deliver the coverage, compliance, and peace of mind 
+  our clients need to focus on what they do best.&quot;
+</blockquote>
               {/* Mission Attribution */}
               <div className="mt-6 flex items-center">
                 <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 mr-4"></div>

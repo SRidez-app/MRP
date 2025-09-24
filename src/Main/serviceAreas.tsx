@@ -164,15 +164,15 @@ const ServiceAreas: React.FC = () => {
 
     const state = zipToState(zipCode);
     
-    if (state) {
-      setFoundState(state);
-      setError('');
-    } else {
-      setFoundState(null);
-      setError('Sorry, we don\'t currently provide coverage in this area. Contact us to discuss options.');
-    }
-    
-    setIsLoading(false);
+if (state) {
+  setFoundState(state);
+  setError('');
+} else {
+  setFoundState(null);
+  setError('Sorry, we don&apos;t currently provide coverage in this area. Contact us to discuss options.');
+}
+
+setIsLoading(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
