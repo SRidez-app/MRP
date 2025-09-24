@@ -115,6 +115,8 @@ const IndustryCard = React.memo(({ industry, index }: { industry: Industry; inde
   </div>
 ));
 
+IndustryCard.displayName = 'IndustryCard';
+
 const Overview: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
