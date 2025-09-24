@@ -163,13 +163,13 @@ const ServiceAreas: React.FC = () => {
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const state = zipToState(zipCode);
-    
+
 if (state) {
   setFoundState(state);
   setError('');
 } else {
   setFoundState(null);
-  setError('Sorry, we don&apos;t currently provide coverage in this area. Contact us to discuss options.');
+setError('Sorry, we don&apos;t currently provide coverage in this area. Contact us to discuss options.');
 }
 
 setIsLoading(false);

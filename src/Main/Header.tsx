@@ -34,6 +34,14 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Handle logo click to scroll to top
+  const handleLogoClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+    setIsMobileIndustriesOpen(false);
+  };
+
   const industries = [
     'Trucking & Transportation',
     'Construction', 
@@ -53,13 +61,20 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-18">
-          {/* Logo - BIGGER */}
+          {/* Logo - BIGGER & Touchable */}
           <div className="flex-shrink-0 flex items-center">
-            <img 
-              src="/logo.png" 
-              alt="Company Logo" 
-              className="h-14 w-auto sm:h-16"
-            />
+            <button
+              onClick={handleLogoClick}
+              className="focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-md transition-all duration-200 hover:opacity-80"
+              aria-label="Go to homepage"
+              suppressHydrationWarning={true}
+            >
+              <img 
+                src="/logo.png" 
+                alt="Company Logo" 
+                className="h-14 w-auto sm:h-16"
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation - CENTERED */}
@@ -124,10 +139,10 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Get Quote Button - RIGHT SIDE */}
+          {/* Get Quote Button - RIGHT SIDE (Changed to Orange) */}
           <div className="hidden md:flex">
             <button 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
               suppressHydrationWarning={true}
             >
               Get a Quote
@@ -200,10 +215,10 @@ const Header = () => {
                 </a>
               ))}
 
-              {/* Mobile Get Quote Button */}
+              {/* Mobile Get Quote Button (Changed to Orange) */}
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <button 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm"
                   onClick={() => setIsMobileMenuOpen(false)}
                   suppressHydrationWarning={true}
                 >
