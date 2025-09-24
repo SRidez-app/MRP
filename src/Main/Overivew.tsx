@@ -167,28 +167,32 @@ const Overview: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats */}
-          <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
-            <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-500">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-                The Numbers Speak for Themselves
-              </h3>
-              
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { label: 'Years Experience', value: '25+', desc: 'Combined team expertise' },
-                  { label: 'Premium Volume', value: '$50M+', desc: 'Annual premium managed' },
-                  { label: 'States Covered', value: '48', desc: 'Nationwide coverage' },
-                  { label: 'Claims Support', value: '24/7', desc: 'Always available' }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center p-4 rounded-xl bg-gray-50 hover:bg-orange-50 transition-colors">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">{stat.value}</div>
-                    <div className="font-semibold text-gray-900 mb-1">{stat.label}</div>
-                    <div className="text-sm text-gray-600">{stat.desc}</div>
-                  </div>
-                ))}
+          {/* Right Column - Mission Section */}
+          <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
+            {/* Mission Badge */}
+            <div className="inline-flex items-center px-4 py-2 bg-orange-50 border border-orange-200 rounded-full">
+              <svg className="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+              <span className="text-orange-600 font-medium text-sm">Our Mission</span>
+            </div>
+
+            {/* Mission Statement */}
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <blockquote className="text-gray-800 text-lg leading-relaxed italic">
+                "To provide specialized commercial insurance solutions that protect the businesses, 
+                organizations, and entities that build America. We combine deep industry knowledge 
+                with personalized service to deliver the coverage, compliance, and peace of mind 
+                our clients need to focus on what they do best."
+              </blockquote>
+              {/* Mission Attribution */}
+              <div className="mt-6 flex items-center">
+                <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 mr-4"></div>
+                <span className="text-orange-600 font-semibold">Moxie Risk Partners</span>
               </div>
             </div>
+
+           
           </div>
         </div>
 

@@ -2,6 +2,8 @@
 // 1. Line 16: Removed unused 'isVisible' variable (was causing TypeScript warning)
 // 2. Line 682: Fixed unescaped apostrophe in "you'll" -> "you&apos;ll" (was causing build error)
 // 3. Line 224: Replaced <img> with Next.js <Image> component for better performance
+// 4. Added mobile background image and desktop fallback
+// 5. Hidden quote form on mobile devices
 
 "use client";
 
@@ -204,30 +206,48 @@ const Hero = () => {
 
   return (
     <>
-      {/* Background Video */}
+      {/* Background Video/Image */}
       <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full object-cover"
-            style={{ 
-              filter: 'brightness(0.4)',
-              transform: 'scale(1.1)' // Slight zoom to avoid black borders
-            }}
-          >
-            <source src="/hero5.mp4" type="video/mp4" />
-            {/* Fallback image - Fixed: Changed <img> to Next.js <Image> */}
+          {/* Desktop: Video with fallback image */}
+          <div className="hidden md:block">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-full h-full object-cover"
+              style={{ 
+                filter: 'brightness(0.4)',
+                transform: 'scale(1.1)' // Slight zoom to avoid black borders
+              }}
+            >
+              <source src="/hero5.mp4" type="video/mp4" />
+              {/* Desktop fallback image */}
+              <Image 
+                src="/images/hero.webp" 
+                alt="Moxie Risk Partners Hero Background" 
+                fill
+                className="object-cover"
+                priority
+              />
+            </video>
+          </div>
+          
+          {/* Mobile: Static image only */}
+          <div className="md:hidden">
             <Image 
-              src="/hero-desktop.jpg" 
-              alt="" 
+              src="/images/hero.webp" 
+              alt="Moxie Risk Partners Hero Background" 
               fill
               className="object-cover"
+              style={{ 
+                filter: 'brightness(0.4)'
+              }}
               priority
             />
-          </video>
+          </div>
+          
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
         </div>
@@ -292,8 +312,8 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Right Side: Enhanced Quote Form */}
-              <div className="lg:max-w-md xl:max-w-lg">
+              {/* Right Side: Enhanced Quote Form - Hidden on Mobile */}
+              <div className="hidden lg:block lg:max-w-md xl:max-w-lg">
                 <div className="rounded-2xl p-8 shadow-2xl" style={{
                   background: 'linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(45, 45, 50, 0.92) 100%)',
                   backdropFilter: 'blur(20px)',
@@ -583,7 +603,7 @@ const Hero = () => {
         </div>
       )}
 
-      <style jsx>{`
+     <style jsx>{`
         @keyframes confettiRealistic {
           0% {
             transform: translateY(-50px) rotate(0deg) scale(1);

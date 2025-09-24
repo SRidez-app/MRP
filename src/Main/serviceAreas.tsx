@@ -1,478 +1,368 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
-interface Region {
-  id: string;
+interface State {
+  code: string;
   name: string;
-  states: string[];
-  coordinates: { x: number; y: number };
+  region: string;
 }
 
-interface ContactPopupProps {
-  region: Region | null;
-  state?: string | null;
-  onClose: () => void;
-}
-
-// CORRECTED REGIONS based on your specifications
-const REGIONS: Region[] = [
-  {
-    id: 'northeast',
-    name: 'Northeast',
-    states: ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA'],
-    coordinates: { x: 85, y: 25 }
-  },
-  {
-    id: 'southeast',
-    name: 'Southeast', 
-    states: ['FL', 'GA', 'SC', 'NC', 'VA', 'WV', 'KY', 'TN', 'AL', 'MS', 'AR', 'LA'],
-    coordinates: { x: 75, y: 55 }
-  },
-  {
-    id: 'midwest',
-    name: 'Midwest',
-    states: ['OH', 'IN', 'IL', 'MI', 'WI', 'MN', 'IA', 'MO', 'ND', 'SD', 'NE', 'KS'],
-    coordinates: { x: 58, y: 35 }
-  },
-  {
-    id: 'west',
-    name: 'West',
-    states: ['CO', 'WY', 'MT', 'ID', 'UT', 'NV', 'WA', 'OR'],
-    coordinates: { x: 30, y: 35 }
-  }
+// All supported states (no CA, AK, HI)
+const SUPPORTED_STATES: State[] = [
+  { code: 'AL', name: 'Alabama', region: 'Southeast' },
+  { code: 'AZ', name: 'Arizona', region: 'Southwest' },
+  { code: 'AR', name: 'Arkansas', region: 'Southeast' },
+  { code: 'CO', name: 'Colorado', region: 'West' },
+  { code: 'CT', name: 'Connecticut', region: 'Northeast' },
+  { code: 'DE', name: 'Delaware', region: 'Northeast' },
+  { code: 'FL', name: 'Florida', region: 'Southeast' },
+  { code: 'GA', name: 'Georgia', region: 'Southeast' },
+  { code: 'ID', name: 'Idaho', region: 'West' },
+  { code: 'IL', name: 'Illinois', region: 'Midwest' },
+  { code: 'IN', name: 'Indiana', region: 'Midwest' },
+  { code: 'IA', name: 'Iowa', region: 'Midwest' },
+  { code: 'KS', name: 'Kansas', region: 'Midwest' },
+  { code: 'KY', name: 'Kentucky', region: 'Southeast' },
+  { code: 'LA', name: 'Louisiana', region: 'Southeast' },
+  { code: 'ME', name: 'Maine', region: 'Northeast' },
+  { code: 'MD', name: 'Maryland', region: 'Northeast' },
+  { code: 'MA', name: 'Massachusetts', region: 'Northeast' },
+  { code: 'MI', name: 'Michigan', region: 'Midwest' },
+  { code: 'MN', name: 'Minnesota', region: 'Midwest' },
+  { code: 'MS', name: 'Mississippi', region: 'Southeast' },
+  { code: 'MO', name: 'Missouri', region: 'Midwest' },
+  { code: 'MT', name: 'Montana', region: 'West' },
+  { code: 'NE', name: 'Nebraska', region: 'Midwest' },
+  { code: 'NV', name: 'Nevada', region: 'West' },
+  { code: 'NH', name: 'New Hampshire', region: 'Northeast' },
+  { code: 'NJ', name: 'New Jersey', region: 'Northeast' },
+  { code: 'NM', name: 'New Mexico', region: 'Southwest' },
+  { code: 'NY', name: 'New York', region: 'Northeast' },
+  { code: 'NC', name: 'North Carolina', region: 'Southeast' },
+  { code: 'ND', name: 'North Dakota', region: 'Midwest' },
+  { code: 'OH', name: 'Ohio', region: 'Midwest' },
+  { code: 'OK', name: 'Oklahoma', region: 'Southwest' },
+  { code: 'OR', name: 'Oregon', region: 'West' },
+  { code: 'PA', name: 'Pennsylvania', region: 'Northeast' },
+  { code: 'RI', name: 'Rhode Island', region: 'Northeast' },
+  { code: 'SC', name: 'South Carolina', region: 'Southeast' },
+  { code: 'SD', name: 'South Dakota', region: 'Midwest' },
+  { code: 'TN', name: 'Tennessee', region: 'Southeast' },
+  { code: 'TX', name: 'Texas', region: 'Southwest' },
+  { code: 'UT', name: 'Utah', region: 'West' },
+  { code: 'VT', name: 'Vermont', region: 'Northeast' },
+  { code: 'VA', name: 'Virginia', region: 'Southeast' },
+  { code: 'WA', name: 'Washington', region: 'West' },
+  { code: 'WV', name: 'West Virginia', region: 'Southeast' },
+  { code: 'WI', name: 'Wisconsin', region: 'Midwest' },
+  { code: 'WY', name: 'Wyoming', region: 'West' }
 ];
 
-// CORRECTED State coordinates and names
-const STATE_COORDINATES: { [key: string]: { x: number; y: number; name: string } } = {
-  // Northeast
-  'ME': { x: 92, y: 12, name: 'Maine' },
-  'NH': { x: 88, y: 18, name: 'New Hampshire' },
-  'VT': { x: 85, y: 18, name: 'Vermont' },
-  'MA': { x: 90, y: 23, name: 'Massachusetts' },
-  'RI': { x: 91, y: 26, name: 'Rhode Island' },
-  'CT': { x: 88, y: 28, name: 'Connecticut' },
-  'NY': { x: 82, y: 22, name: 'New York' },
-  'NJ': { x: 87, y: 32, name: 'New Jersey' },
-  'PA': { x: 83, y: 30, name: 'Pennsylvania' },
-  
-  // Southeast
-  'FL': { x: 82, y: 75, name: 'Florida' },
-  'GA': { x: 78, y: 60, name: 'Georgia' },
-  'SC': { x: 80, y: 54, name: 'South Carolina' },
-  'NC': { x: 82, y: 48, name: 'North Carolina' },
-  'VA': { x: 82, y: 40, name: 'Virginia' },
-  'WV': { x: 78, y: 36, name: 'West Virginia' },
-  'KY': { x: 76, y: 42, name: 'Kentucky' },
-  'TN': { x: 74, y: 48, name: 'Tennessee' },
-  'AL': { x: 73, y: 60, name: 'Alabama' },
-  'MS': { x: 68, y: 58, name: 'Mississippi' },
-  'AR': { x: 66, y: 55, name: 'Arkansas' },
-  'LA': { x: 66, y: 66, name: 'Louisiana' },
-  
-  // Midwest
-  'OH': { x: 78, y: 35, name: 'Ohio' },
-  'IN': { x: 73, y: 38, name: 'Indiana' },
-  'IL': { x: 68, y: 42, name: 'Illinois' },
-  'MI': { x: 76, y: 28, name: 'Michigan' },
-  'WI': { x: 69, y: 25, name: 'Wisconsin' },
-  'MN': { x: 64, y: 22, name: 'Minnesota' },
-  'IA': { x: 63, y: 38, name: 'Iowa' },
-  'MO': { x: 66, y: 45, name: 'Missouri' },
-  'ND': { x: 56, y: 18, name: 'North Dakota' },
-  'SD': { x: 56, y: 28, name: 'South Dakota' },
-  'NE': { x: 58, y: 38, name: 'Nebraska' },
-  'KS': { x: 58, y: 50, name: 'Kansas' },
-  
-  // West
-  'CO': { x: 50, y: 42, name: 'Colorado' },
-  'WY': { x: 49, y: 32, name: 'Wyoming' },
-  'MT': { x: 48, y: 20, name: 'Montana' },
-  'ID': { x: 40, y: 25, name: 'Idaho' },
-  'UT': { x: 43, y: 45, name: 'Utah' },
-  'NV': { x: 36, y: 42, name: 'Nevada' },
-  'WA': { x: 33, y: 10, name: 'Washington' },
-  'OR': { x: 32, y: 22, name: 'Oregon' },
-  
-};
-
-const ContactPopup: React.FC<ContactPopupProps> = ({ region, state, onClose }) => {
-  const displayName = state ? STATE_COORDINATES[state]?.name : region?.name;
-  const isRegion = !!region && !state;
-
-  return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative animate-fade-in-up">
-        <button 
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl transition-colors"
-        >
-          ×
-        </button>
-        
-        <div className="text-center">
-          <div className="mx-auto w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-            <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            {displayName} Coverage Available
-          </h3>
-          
-          <p className="text-gray-600 mb-6">
-            {isRegion 
-              ? `We provide comprehensive commercial insurance across all ${region.states.length} states in the ${region.name} region.`
-              : `We provide full commercial insurance coverage in ${displayName}.`
-            }
-          </p>
-          
-          <div className="space-y-3">
-            <button 
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
-              onClick={() => {
-                console.log(`Contact rep for ${displayName}`);
-                onClose();
-              }}
-            >
-              Contact Regional Rep
-            </button>
-            
-            <button 
-              className="w-full border-2 border-gray-300 hover:border-orange-500 text-gray-700 hover:text-orange-600 py-3 px-6 rounded-lg font-semibold transition-colors"
-              onClick={() => {
-                console.log(`Get quote for ${displayName}`);
-                onClose();
-              }}
-            >
-              Get Quick Quote
-            </button>
-          </div>
-          
-          {isRegion && (
-            <div className="mt-6 text-left">
-              <p className="text-sm text-gray-700 font-medium mb-2">States in {region.name}:</p>
-              <div className="flex flex-wrap gap-2">
-                {region.states.map((stateCode) => (
-                  <span 
-                    key={stateCode}
-                    className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
-                  >
-                    {STATE_COORDINATES[stateCode]?.name || stateCode}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+// Group states by region
+const REGIONS = {
+  'Northeast': SUPPORTED_STATES.filter(s => s.region === 'Northeast'),
+  'Southeast': SUPPORTED_STATES.filter(s => s.region === 'Southeast'),
+  'Midwest': SUPPORTED_STATES.filter(s => s.region === 'Midwest'),
+  'West': SUPPORTED_STATES.filter(s => s.region === 'West'),
+  'Southwest': SUPPORTED_STATES.filter(s => s.region === 'Southwest')
 };
 
 const ServiceAreas: React.FC = () => {
-  const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
-  const [showContactPopup, setShowContactPopup] = useState(false);
-  const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
-  const [selectedState, setSelectedState] = useState<string | null>(null);
+  const [zipCode, setZipCode] = useState('');
+  const [foundState, setFoundState] = useState<State | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [searchPerformed, setSearchPerformed] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState<string>('all');
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const timer = requestAnimationFrame(() => {
-      setIsVisible(true);
-    });
-    return () => cancelAnimationFrame(timer);
+    setIsVisible(true);
+    setIsMounted(true);
   }, []);
 
-  const handleRegionHover = (regionId: string | null) => {
-    setHoveredRegion(regionId);
+  // Simple zip code to state lookup (simplified - in production you'd use a real API)
+  const zipToState = (zip: string): State | null => {
+    const zipNum = parseInt(zip);
+    
+    // Simplified zip code ranges (this would be more comprehensive in production)
+    const zipRanges: { [key: string]: [number, number][] } = {
+      'AL': [[35000, 36999]],
+      'AZ': [[85000, 86999]],
+      'AR': [[71600, 72999]],
+      'CO': [[80000, 81999]],
+      'CT': [[6000, 6999]],
+      'DE': [[19700, 19999]],
+      'FL': [[32000, 34999]],
+      'GA': [[30000, 31999], [39800, 39999]],
+      'ID': [[83200, 83999]],
+      'IL': [[60000, 62999]],
+      'IN': [[46000, 47999]],
+      'IA': [[50000, 52999]],
+      'KS': [[66000, 67999]],
+      'KY': [[40000, 42999]],
+      'LA': [[70000, 71599]],
+      'ME': [[3900, 4999]],
+      'MD': [[20600, 21999]],
+      'MA': [[1000, 2799]],
+      'MI': [[48000, 49999]],
+      'MN': [[55000, 56799]],
+      'MS': [[38600, 39799]],
+      'MO': [[63000, 65999]],
+      'MT': [[59000, 59999]],
+      'NE': [[68000, 69999]],
+      'NV': [[89000, 89999]],
+      'NH': [[3000, 3899]],
+      'NJ': [[7000, 8999]],
+      'NM': [[87000, 88999]],
+      'NY': [[10000, 14999]],
+      'NC': [[27000, 28999]],
+      'ND': [[58000, 58999]],
+      'OH': [[43000, 45999]],
+      'OK': [[73000, 74999]],
+      'OR': [[97000, 97999]],
+      'PA': [[15000, 19699]],
+      'RI': [[2800, 2999]],
+      'SC': [[29000, 29999]],
+      'SD': [[57000, 57999]],
+      'TN': [[37000, 38599]],
+      'TX': [[75000, 79999], [73301, 73399], [77000, 77999]],
+      'UT': [[84000, 84999]],
+      'VT': [[5000, 5999]],
+      'VA': [[20100, 20199], [22000, 24699]],
+      'WA': [[98000, 99499]],
+      'WV': [[24700, 26999]],
+      'WI': [[53000, 54999]],
+      'WY': [[82000, 83199]]
+    };
+
+    for (const [stateCode, ranges] of Object.entries(zipRanges)) {
+      for (const [min, max] of ranges) {
+        if (zipNum >= min && zipNum <= max) {
+          return SUPPORTED_STATES.find(s => s.code === stateCode) || null;
+        }
+      }
+    }
+    
+    return null;
   };
 
-  const handleRegionClick = (regionId: string) => {
-    const region = REGIONS.find(r => r.id === regionId);
-    if (region) {
-      setSelectedRegion(region);
-      setSelectedState(null);
-      setShowContactPopup(true);
+  const handleZipSearch = async () => {
+    if (!zipCode || zipCode.length !== 5) {
+      setError('Please enter a valid 5-digit zip code');
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+    setSearchPerformed(true);
+
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    const state = zipToState(zipCode);
+    
+    if (state) {
+      setFoundState(state);
+      setError('');
+    } else {
+      setFoundState(null);
+      setError('Sorry, we don\'t currently provide coverage in this area. Contact us to discuss options.');
+    }
+    
+    setIsLoading(false);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleZipSearch();
     }
   };
 
-  const closeContactPopup = () => {
-    setShowContactPopup(false);
-    setSelectedRegion(null);
-    setSelectedState(null);
-  };
-
-  // Calculate total states (should be 45: 48 total minus CA, AK, plus HI = 46, but excluding TX, OK, AZ, NM based on your regions = 42 + HI + 2 missing = need to verify)
-  const totalStates = REGIONS.reduce((total, region) => total + region.states.length, 0);
+  const filteredStates = selectedRegion === 'all' 
+    ? SUPPORTED_STATES 
+    : SUPPORTED_STATES.filter(state => state.region === selectedRegion);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Coverage Across {totalStates} States
+        <div className={`text-center max-w-4xl mx-auto mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Find the Coverage You Need
           </h2>
-          <p className="text-xl text-gray-600">
-            Serving {totalStates} states with specialized regional expertise and local support. 
-            Hover over location pins to see coverage details and contact options.
+          <p className="text-xl text-gray-600 mb-8">
+            Enter your zip code to discover available commercial insurance options in your area
           </p>
-        </div>
-
-        {/* Interactive Map Section */}
-        <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-500">
-            
-            {/* Map Container - Added overflow visible and extra padding for popups */}
-            <div className="relative w-full max-w-4xl mx-auto overflow-visible" style={{ paddingTop: '120px' }}>
-              {/* Map Image - Wrapped in container with negative margin to offset padding */}
-              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden" style={{ marginTop: '-120px' }}>
-                <Image
-                  src="/images/map.png"
-                  alt="United States Coverage Map"
-                  fill
-                  className="object-cover"
-                  priority
+          
+          {/* Zip Code Search */}
+          <div className="max-w-md mx-auto">
+            <div className="flex gap-3">
+              <div className="flex-1">
+                <input
+                  type="text"
+                  placeholder="Enter your zip code"
+                  value={zipCode}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, '').slice(0, 5);
+                    setZipCode(value);
+                    setError('');
+                    // Clear search results when input is cleared
+                    if (value === '') {
+                      setSearchPerformed(false);
+                      setFoundState(null);
+                    }
+                  }}
+                  onKeyPress={handleKeyPress}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-lg text-gray-900 placeholder-gray-500"
+                  maxLength={5}
+                  suppressHydrationWarning
                 />
-                
-                {/* Region Hover Areas */}
-                {REGIONS.map((region) => (
-                  <div
-                    key={region.id}
-                    className="absolute cursor-pointer"
-                    style={{
-                      left: `${region.coordinates.x - 8}%`,
-                      top: `${region.coordinates.y - 8}%`,
-                      width: '16%',
-                      height: '16%',
-                    }}
-                    onMouseEnter={() => handleRegionHover(region.id)}
-                    onMouseLeave={() => handleRegionHover(null)}
-                    onClick={() => handleRegionClick(region.id)}
-                  >
-                    {/* Invisible hover area */}
-                    <div className="w-full h-full" />
-                    
-                    {/* Region highlight overlay */}
-                    {hoveredRegion === region.id && (
-                      <div 
-                        className="absolute inset-0 bg-orange-500/20 border-2 border-orange-500 rounded-lg animate-pulse"
-                        style={{
-                          boxShadow: '0 0 20px rgba(255, 107, 53, 0.4)'
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-
-                {/* Regional Location Pins and Labels */}
-                {REGIONS.map((region) => (
-                  <div
-                    key={`pin-${region.id}`}
-                    className="absolute"
-                    style={{
-                      left: `${region.coordinates.x}%`,
-                      top: `${region.coordinates.y}%`,
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                  >
-                    {/* Location Pin */}
-                    <div
-                      className="cursor-pointer group relative z-10"
-                      onMouseEnter={() => handleRegionHover(region.id)}
-                      onMouseLeave={() => handleRegionHover(null)}
-                      onClick={() => handleRegionClick(region.id)}
-                    >
-                      {/* Pin Icon */}
-                      <div className={`flex items-center justify-center transition-all duration-200 ${
-                        hoveredRegion === region.id ? 'scale-110' : ''
-                      }`}>
-                        <svg 
-                          className={`w-8 h-8 transition-colors duration-200 ${
-                            hoveredRegion === region.id ? 'text-orange-600' : 'text-orange-500'
-                          }`} 
-                          fill="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                      </div>
-
-                      {/* Hover Popup with States and Actions */}
-                      {hoveredRegion === region.id && (
-                        <div className={`absolute bottom-full mb-3 w-64 bg-white rounded-lg shadow-xl border border-gray-200 p-4 z-50 ${
-                          region.id === 'northeast' 
-                            ? 'right-0' 
-                            : region.id === 'west'
-                            ? 'left-0'
-                            : 'left-1/2 transform -translate-x-1/2'
-                        }`}>
-                          {/* Arrow */}
-                          <div className={`absolute top-full border-8 border-transparent border-t-white ${
-                            region.id === 'northeast' 
-                              ? 'right-4' 
-                              : region.id === 'west'
-                              ? 'left-4'
-                              : 'left-1/2 transform -translate-x-1/2'
-                          }`} />
-                          <div className={`absolute top-full mt-px border-7 border-transparent border-t-gray-200 ${
-                            region.id === 'northeast' 
-                              ? 'right-4' 
-                              : region.id === 'west'
-                              ? 'left-4'
-                              : 'left-1/2 transform -translate-x-1/2'
-                          }`} />
-                          
-                          {/* Content */}
-                          <div className="text-center">
-                            <h4 className="font-bold text-lg text-gray-900 mb-2">{region.name} Region</h4>
-                            <p className="text-sm text-gray-600 mb-3">
-                              Coverage across {region.states.length} states
-                            </p>
-                            
-                            {/* States Grid */}
-                            <div className="flex flex-wrap gap-1 mb-4 justify-center">
-                              {region.states.map((stateCode) => (
-                                <span 
-                                  key={stateCode}
-                                  className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
-                                >
-                                  {STATE_COORDINATES[stateCode]?.name || stateCode}
-                                </span>
-                              ))}
-                            </div>
-                            
-                            {/* Action Buttons */}
-                            <div className="space-y-2">
-                              <button 
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg text-sm font-semibold transition-colors"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  console.log(`Contact rep for ${region.name}`);
-                                  handleRegionClick(region.id);
-                                }}
-                              >
-                                Contact Regional Rep
-                              </button>
-                              
-                              <button 
-                                className="w-full border border-gray-300 hover:border-orange-500 text-gray-700 hover:text-orange-600 py-2 px-4 rounded-lg text-sm font-semibold transition-colors"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  console.log(`Get quote for ${region.name}`);
-                                  handleRegionClick(region.id);
-                                }}
-                              >
-                                Get Quick Quote
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Region Label */}
-                    <div
-                      className="mt-12 pointer-events-none"
-                    >
-                      <div 
-                        className={`px-3 py-1 rounded-full text-sm font-semibold transition-all duration-200 ${
-                          hoveredRegion === region.id
-                            ? 'bg-orange-500 text-white shadow-lg scale-110'
-                            : 'bg-white/90 text-gray-700 shadow-md'
-                        }`}
-                      >
-                        {region.name}
-                      </div>
+              </div>
+              <button
+                onClick={handleZipSearch}
+                disabled={isLoading || zipCode.length !== 5}
+                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors"
+                suppressHydrationWarning
+              >
+                {isLoading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  'Search'
+                )}
+              </button>
+            </div>
+            
+            {/* Results */}
+            {searchPerformed && (
+              <div className="mt-6 p-6 bg-white rounded-xl shadow-lg border-l-4 border-orange-500">
+                {foundState ? (
+                  <div className="text-center">
+                    <div className="text-green-600 text-2xl mb-2">✓</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      Great news! We serve {foundState.name}
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      Full commercial insurance coverage available in the {foundState.region} region
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Get Quote Now
+                      </button>
+                      <button className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-6 py-2 rounded-lg font-semibold transition-colors">
+                        Contact Local Rep
+                      </button>
                     </div>
                   </div>
-                ))}
+                ) : error && (
+                  <div className="text-center">
+                    <div className="text-amber-600 text-2xl mb-2">⚠</div>
+                    <p className="text-gray-700 mb-4">{error}</p>
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                      Contact Us Anyway
+                    </button>
+                  </div>
+                )}
               </div>
-
-              {/* Instructions */}
-              <div className="mt-6 text-center space-y-2">
-                <p className="text-gray-600">
-                  <span className="font-semibold">Hover</span> over location pins to see coverage details and contact options
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-semibold">Click</span> any region card below to get started
-                </p>
-              </div>
-            </div>
-
-            {/* Coverage Statistics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-gray-200">
-              {[
-                { label: 'States Covered', value: totalStates.toString(), desc: 'Nationwide presence' },
-                { label: 'Regional Offices', value: '4', desc: 'Strategic locations' },
-                { label: 'Local Reps', value: '25+', desc: 'Expert specialists' },
-                { label: 'Response Time', value: '<2hrs', desc: 'Average callback' }
-              ].map((stat, index) => (
-                <div key={index} className="text-center p-4 rounded-xl bg-gray-50 hover:bg-orange-50 transition-colors">
-                  <div className="text-3xl font-bold text-orange-600 mb-2">{stat.value}</div>
-                  <div className="font-semibold text-gray-900 mb-1">{stat.label}</div>
-                  <div className="text-sm text-gray-600">{stat.desc}</div>
-                </div>
-              ))}
-            </div>
+            )}
           </div>
         </div>
 
-        {/* Regional Expertise Cards */}
-        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
-          {REGIONS.map((region) => (
-            <div 
-              key={region.id}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-              onMouseEnter={() => handleRegionHover(region.id)}
-              onMouseLeave={() => handleRegionHover(null)}
-              onClick={() => handleRegionClick(region.id)}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-900">{region.name}</h3>
-                <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-              </div>
-              
-              <p className="text-gray-600 mb-4">
-                Specialized coverage across {region.states.length} states with dedicated regional expertise.
+        {/* States Grid Section */}
+        <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-500">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Commercial Insurance Available Nationwide
+              </h3>
+              <p className="text-gray-600 mb-6">
+                We proudly serve businesses across {SUPPORTED_STATES.length} states with specialized regional expertise
               </p>
               
-              <div className="flex flex-wrap gap-1 mb-4">
-                {region.states.slice(0, 4).map((state) => (
-                  <span key={state} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                    {STATE_COORDINATES[state]?.name || state}
-                  </span>
+              {/* Region Filter */}
+              <div className="flex flex-wrap justify-center gap-2 mb-8">
+                <button
+                  onClick={() => setSelectedRegion('all')}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedRegion === 'all'
+                      ? 'bg-orange-500 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                  suppressHydrationWarning
+                >
+                  All States ({SUPPORTED_STATES.length})
+                </button>
+                {Object.entries(REGIONS).map(([region, states]) => (
+                  <button
+                    key={region}
+                    onClick={() => setSelectedRegion(region)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                      selectedRegion === region
+                        ? 'bg-orange-500 text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                    suppressHydrationWarning
+                  >
+                    {region} ({states.length})
+                  </button>
                 ))}
-                {region.states.length > 4 && (
-                  <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded text-xs font-medium">
-                    +{region.states.length - 4} more
-                  </span>
-                )}
               </div>
-              
+            </div>
+
+            {/* States Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+              {filteredStates.map((state, index) => (
+                <div
+                  key={state.code}
+                  className="group bg-gray-50 hover:bg-orange-50 border hover:border-orange-200 rounded-lg p-3 text-center transition-all duration-200 cursor-pointer transform hover:-translate-y-1 hover:shadow-md"
+                  style={{ animationDelay: `${index * 20}ms` }}
+                >
+                  <div className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                    {state.code}
+                  </div>
+                  <div className="text-xs text-gray-600 group-hover:text-orange-500 transition-colors mt-1">
+                    {state.name}
+                  </div>
+                  <div className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
+                    {state.region}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+         
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className={`text-center mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">
+              Don't see your state? Let's talk anyway.
+            </h3>
+            <p className="text-lg mb-6 text-orange-100">
+              Our coverage is expanding rapidly. Contact us to discuss your commercial insurance needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="w-full text-orange-600 hover:text-orange-700 font-semibold text-sm"
+                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors"
                 suppressHydrationWarning
               >
-                Contact Regional Team 
+                Call (800) 669-4301
+              </button>
+              <button 
+                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-3 rounded-lg font-bold transition-colors"
+                suppressHydrationWarning
+              >
+                Email Us Today
               </button>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-
-      {/* Contact Popup */}
-      {showContactPopup && (
-        <ContactPopup
-          region={selectedRegion}
-          state={selectedState}
-          onClose={closeContactPopup}
-        />
-      )}
 
       <style jsx>{`
         @keyframes fade-in-up {
@@ -496,6 +386,13 @@ const ServiceAreas: React.FC = () => {
 
         .delay-400 {
           animation-delay: 0.4s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+          }
         }
       `}</style>
     </section>
