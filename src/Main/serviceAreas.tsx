@@ -471,9 +471,12 @@ const ServiceAreas: React.FC = () => {
                 )}
               </div>
               
-              <button className="w-full text-orange-600 hover:text-orange-700 font-semibold text-sm">
-                Contact Regional Team →
-              </button>
+         <button 
+  className="w-full text-orange-600 hover:text-orange-700 font-semibold text-sm"
+  suppressHydrationWarning
+>
+  Contact Regional Team 
+</button>
             </div>
           ))}
         </div>

@@ -249,7 +249,7 @@ const Hero = () => {
                 </h2>
                 
                 {/* Updated Description (removed "instant") */}
-            <p className="text-lg md:text-xl text-white leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
+<p className="text-lg md:text-xl text-white leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
   Specialized commercial insurance for trucking, construction, manufacturing, nonprofit, and public entities with DOT compliance support and 24/7 claims advocacy. 
   <strong style={{ color: '#ffaa85' }}> Fast quotes and expedited service</strong> - we protect what builds America.
 </p>
