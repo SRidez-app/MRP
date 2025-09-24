@@ -1,6 +1,12 @@
+// Key fixes applied:
+// 1. Line 16: Removed unused 'isVisible' variable (was causing TypeScript warning)
+// 2. Line 682: Fixed unescaped apostrophe in "you'll" -> "you&apos;ll" (was causing build error)
+// 3. Line 224: Replaced <img> with Next.js <Image> component for better performance
+
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 interface FormData {
   firstName: string;
@@ -13,7 +19,7 @@ interface FormData {
 }
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  // Removed unused isVisible variable
   const [isCoverageDropdownOpen, setIsCoverageDropdownOpen] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -28,13 +34,6 @@ const Hero = () => {
     email: '',
     dotNumber: ''
   });
-
-  useEffect(() => {
-    const timer = requestAnimationFrame(() => {
-      setIsVisible(true);
-    });
-    return () => cancelAnimationFrame(timer);
-  }, []);
 
   // Industry options
   const industryOptions = [
@@ -220,11 +219,13 @@ const Hero = () => {
             }}
           >
             <source src="/hero5.mp4" type="video/mp4" />
-            {/* Fallback image */}
-            <img 
+            {/* Fallback image - Fixed: Changed <img> to Next.js <Image> */}
+            <Image 
               src="/hero-desktop.jpg" 
               alt="" 
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
             />
           </video>
           {/* Dark overlay for better text readability */}
@@ -248,7 +249,7 @@ const Hero = () => {
                   Moxie Risk Partners
                 </h2>
                 
-                {/* Updated Description (removed "instant") */}
+                {/* Updated Description (removed "instant") - Fixed apostrophe */}
 <p className="text-lg md:text-xl text-white leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
   Specialized commercial insurance for trucking, construction, manufacturing, nonprofit, and public entities with DOT compliance support and 24/7 claims advocacy. 
   <strong style={{ color: '#ffaa85' }}> Fast quotes and expedited service</strong> - we protect what builds America.
@@ -679,7 +680,7 @@ const Hero = () => {
               </div>
               
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Quote Request Submitted!</h3>
-              <p className="text-gray-600 mb-6">We'll contact you shortly with your personalized quote.</p>
+              <p className="text-gray-600 mb-6">We&apos;ll contact you shortly with your personalized quote.</p>
               
               <div className="text-left">
                 <p className="text-sm text-gray-700 mb-3 font-medium">

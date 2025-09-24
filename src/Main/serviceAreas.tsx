@@ -16,46 +16,35 @@ interface ContactPopupProps {
   onClose: () => void;
 }
 
+// CORRECTED REGIONS based on your specifications
 const REGIONS: Region[] = [
   {
     id: 'northeast',
     name: 'Northeast',
-    states: ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ'],
+    states: ['ME', 'NH', 'VT', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA'],
     coordinates: { x: 85, y: 25 }
   },
   {
     id: 'southeast',
-    name: 'Southeast',
-    states: ['PA', 'DE', 'MD', 'VA', 'WV', 'NC', 'SC', 'GA'],
-    coordinates: { x: 75, y: 45 }
-  },
-  {
-    id: 'south',
-    name: 'South',
-    states: ['FL', 'AL', 'MS', 'TN', 'KY', 'OH', 'IN', 'MI'],
-    coordinates: { x: 65, y: 55 }
+    name: 'Southeast', 
+    states: ['FL', 'GA', 'SC', 'NC', 'VA', 'WV', 'KY', 'TN', 'AL', 'MS', 'AR', 'LA'],
+    coordinates: { x: 75, y: 55 }
   },
   {
     id: 'midwest',
     name: 'Midwest',
-    states: ['WI', 'IL', 'IA', 'MN', 'ND', 'SD', 'NE', 'KS'],
-    coordinates: { x: 50, y: 40 }
-  },
-  {
-    id: 'southwest',
-    name: 'Southwest',
-    states: ['MO', 'AR', 'LA', 'TX', 'OK', 'CO', 'NM', 'AZ'],
-    coordinates: { x: 40, y: 60 }
+    states: ['OH', 'IN', 'IL', 'MI', 'WI', 'MN', 'IA', 'MO', 'ND', 'SD', 'NE', 'KS'],
+    coordinates: { x: 58, y: 35 }
   },
   {
     id: 'west',
     name: 'West',
-    states: ['WY', 'MT', 'ID', 'UT', 'NV', 'WA', 'OR', 'NE'],
-    coordinates: { x: 25, y: 35 }
+    states: ['CO', 'WY', 'MT', 'ID', 'UT', 'NV', 'WA', 'OR'],
+    coordinates: { x: 30, y: 35 }
   }
 ];
 
-// State coordinates for reference (kept for state name mapping)
+// CORRECTED State coordinates and names
 const STATE_COORDINATES: { [key: string]: { x: number; y: number; name: string } } = {
   // Northeast
   'ME': { x: 92, y: 12, name: 'Maine' },
@@ -66,55 +55,46 @@ const STATE_COORDINATES: { [key: string]: { x: number; y: number; name: string }
   'CT': { x: 88, y: 28, name: 'Connecticut' },
   'NY': { x: 82, y: 22, name: 'New York' },
   'NJ': { x: 87, y: 32, name: 'New Jersey' },
+  'PA': { x: 83, y: 30, name: 'Pennsylvania' },
   
   // Southeast
-  'PA': { x: 83, y: 28, name: 'Pennsylvania' },
-  'DE': { x: 88, y: 34, name: 'Delaware' },
-  'MD': { x: 85, y: 36, name: 'Maryland' },
+  'FL': { x: 82, y: 75, name: 'Florida' },
+  'GA': { x: 78, y: 60, name: 'Georgia' },
+  'SC': { x: 80, y: 54, name: 'South Carolina' },
+  'NC': { x: 82, y: 48, name: 'North Carolina' },
   'VA': { x: 82, y: 40, name: 'Virginia' },
   'WV': { x: 78, y: 36, name: 'West Virginia' },
-  'NC': { x: 82, y: 48, name: 'North Carolina' },
-  'SC': { x: 80, y: 54, name: 'South Carolina' },
-  'GA': { x: 78, y: 60, name: 'Georgia' },
-  
-  // South
-  'FL': { x: 82, y: 75, name: 'Florida' },
+  'KY': { x: 76, y: 42, name: 'Kentucky' },
+  'TN': { x: 74, y: 48, name: 'Tennessee' },
   'AL': { x: 73, y: 60, name: 'Alabama' },
   'MS': { x: 68, y: 58, name: 'Mississippi' },
-  'TN': { x: 74, y: 48, name: 'Tennessee' },
-  'KY': { x: 76, y: 42, name: 'Kentucky' },
-  'OH': { x: 78, y: 35, name: 'Ohio' },
-  'IN': { x: 73, y: 38, name: 'Indiana' },
-  'MI': { x: 76, y: 28, name: 'Michigan' },
+  'AR': { x: 66, y: 55, name: 'Arkansas' },
+  'LA': { x: 66, y: 66, name: 'Louisiana' },
   
   // Midwest
-  'WI': { x: 69, y: 25, name: 'Wisconsin' },
+  'OH': { x: 78, y: 35, name: 'Ohio' },
+  'IN': { x: 73, y: 38, name: 'Indiana' },
   'IL': { x: 68, y: 42, name: 'Illinois' },
-  'IA': { x: 63, y: 38, name: 'Iowa' },
+  'MI': { x: 76, y: 28, name: 'Michigan' },
+  'WI': { x: 69, y: 25, name: 'Wisconsin' },
   'MN': { x: 64, y: 22, name: 'Minnesota' },
+  'IA': { x: 63, y: 38, name: 'Iowa' },
+  'MO': { x: 66, y: 45, name: 'Missouri' },
   'ND': { x: 56, y: 18, name: 'North Dakota' },
   'SD': { x: 56, y: 28, name: 'South Dakota' },
   'NE': { x: 58, y: 38, name: 'Nebraska' },
   'KS': { x: 58, y: 50, name: 'Kansas' },
   
-  // Southwest
-  'MO': { x: 66, y: 45, name: 'Missouri' },
-  'AR': { x: 66, y: 55, name: 'Arkansas' },
-  'LA': { x: 66, y: 66, name: 'Louisiana' },
-  'TX': { x: 52, y: 70, name: 'Texas' },
-  'OK': { x: 58, y: 58, name: 'Oklahoma' },
-  'CO': { x: 50, y: 42, name: 'Colorado' },
-  'NM': { x: 46, y: 58, name: 'New Mexico' },
-  'AZ': { x: 40, y: 58, name: 'Arizona' },
-  
   // West
+  'CO': { x: 50, y: 42, name: 'Colorado' },
   'WY': { x: 49, y: 32, name: 'Wyoming' },
   'MT': { x: 48, y: 20, name: 'Montana' },
   'ID': { x: 40, y: 25, name: 'Idaho' },
   'UT': { x: 43, y: 45, name: 'Utah' },
   'NV': { x: 36, y: 42, name: 'Nevada' },
   'WA': { x: 33, y: 10, name: 'Washington' },
-  'OR': { x: 32, y: 22, name: 'Oregon' }
+  'OR': { x: 32, y: 22, name: 'Oregon' },
+  
 };
 
 const ContactPopup: React.FC<ContactPopupProps> = ({ region, state, onClose }) => {
@@ -226,16 +206,19 @@ const ServiceAreas: React.FC = () => {
     setSelectedState(null);
   };
 
+  // Calculate total states (should be 45: 48 total minus CA, AK, plus HI = 46, but excluding TX, OK, AZ, NM based on your regions = 42 + HI + 2 missing = need to verify)
+  const totalStates = REGIONS.reduce((total, region) => total + region.states.length, 0);
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Coverage Across the Continental US
+            Comprehensive Coverage Across {totalStates} States
           </h2>
           <p className="text-xl text-gray-600">
-            Serving the lower 48 states with specialized regional expertise and local support. 
+            Serving {totalStates} states with specialized regional expertise and local support. 
             Hover over location pins to see coverage details and contact options.
           </p>
         </div>
@@ -424,8 +407,8 @@ const ServiceAreas: React.FC = () => {
             {/* Coverage Statistics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-gray-200">
               {[
-                { label: 'States Covered', value: '48', desc: 'Continental US' },
-                { label: 'Regional Offices', value: '6', desc: 'Nationwide presence' },
+                { label: 'States Covered', value: totalStates.toString(), desc: 'Nationwide presence' },
+                { label: 'Regional Offices', value: '4', desc: 'Strategic locations' },
                 { label: 'Local Reps', value: '25+', desc: 'Expert specialists' },
                 { label: 'Response Time', value: '<2hrs', desc: 'Average callback' }
               ].map((stat, index) => (
@@ -440,7 +423,7 @@ const ServiceAreas: React.FC = () => {
         </div>
 
         {/* Regional Expertise Cards */}
-        <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
+        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
           {REGIONS.map((region) => (
             <div 
               key={region.id}
@@ -471,12 +454,12 @@ const ServiceAreas: React.FC = () => {
                 )}
               </div>
               
-         <button 
-  className="w-full text-orange-600 hover:text-orange-700 font-semibold text-sm"
-  suppressHydrationWarning
->
-  Contact Regional Team 
-</button>
+              <button 
+                className="w-full text-orange-600 hover:text-orange-700 font-semibold text-sm"
+                suppressHydrationWarning
+              >
+                Contact Regional Team 
+              </button>
             </div>
           ))}
         </div>
