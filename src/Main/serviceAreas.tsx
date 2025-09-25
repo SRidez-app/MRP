@@ -406,11 +406,11 @@ const ServiceAreas: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile-optimized Modal */}
+      {/* Responsive Modal - Works for both Mobile and Desktop */}
       {isModalOpen && selectedState && (
         <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-2 sm:p-4">
           <div className="bg-white rounded-2xl max-w-4xl w-full mx-2 sm:mx-4 overflow-hidden shadow-2xl transform transition-all animate-modal-appear max-h-[90vh] overflow-y-auto">
-            {/* Mobile-friendly Close Button */}
+            {/* Close Button */}
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 transition-all shadow-lg"
@@ -420,9 +420,9 @@ const ServiceAreas: React.FC = () => {
               </svg>
             </button>
 
-            {/* Mobile-optimized Layout */}
-            <div className="flex flex-col">
-              {/* Mobile: Image on top, smaller height */}
+            {/* Responsive Layout: Vertical on mobile, Horizontal on desktop */}
+            <div className="flex flex-col md:flex-row">
+              {/* Image Section */}
               <div className="h-48 sm:h-64 md:w-2/5 md:h-auto relative">
                 <img 
                   src={popupImages[imageIndex]}
@@ -439,8 +439,8 @@ const ServiceAreas: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
               </div>
 
-              {/* Mobile-optimized Content */}
-              <div className="p-4 sm:p-6 md:p-10 flex flex-col justify-center">
+              {/* Content Section */}
+              <div className="p-4 sm:p-6 md:w-3/5 md:p-10 flex flex-col justify-center">
                 {/* Header */}
                 <div className="mb-4 sm:mb-6">
                   <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 bg-orange-100 text-orange-700 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3">
@@ -460,7 +460,7 @@ const ServiceAreas: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Mobile-optimized Benefits */}
+                {/* Benefits */}
                 <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   <div className="flex items-start">
                     <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-2 sm:mr-3 flex-shrink-0">
@@ -499,15 +499,15 @@ const ServiceAreas: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Mobile-optimized CTA Buttons */}
-                <div className="flex flex-col gap-3">
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     Get Quote Now
                   </button>
-                  <button className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center text-sm sm:text-base">
+                  <button className="flex-1 border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center text-sm sm:text-base">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
