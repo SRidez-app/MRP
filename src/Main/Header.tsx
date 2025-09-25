@@ -34,9 +34,19 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle logo click to scroll to top
+  // Handle logo click to scroll to hero section
   const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      // Scroll to hero section
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Navigate to home page
+      window.location.href = '/';
+    }
     // Close mobile menu if open
     setIsMobileMenuOpen(false);
     setIsMobileIndustriesOpen(false);
@@ -65,7 +75,6 @@ const Header = () => {
           <div className="flex-shrink-0 flex items-center">
             <button
               onClick={handleLogoClick}
-            
               aria-label="Go to homepage"
               suppressHydrationWarning={true}
             >

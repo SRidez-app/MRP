@@ -1,10 +1,3 @@
-// Key fixes applied:
-// 1. Line 16: Removed unused 'isVisible' variable (was causing TypeScript warning)
-// 2. Line 682: Fixed unescaped apostrophe in "you'll" -> "you&apos;ll" (was causing build error)
-// 3. Line 224: Replaced <img> with Next.js <Image> component for better performance
-// 4. Added mobile background image and desktop fallback
-// 5. Hidden quote form on mobile devices
-// 6. Fixed video background positioning for laptop screens
 
 "use client";
 
@@ -208,7 +201,7 @@ const Hero = () => {
   return (
     <>
       {/* Background Video/Image */}
-      <section className="relative min-h-screen overflow-hidden">
+     <section id="hero-section" className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
           {/* Desktop: Video with fallback image */}
           <div className="hidden md:block w-full h-full relative">
