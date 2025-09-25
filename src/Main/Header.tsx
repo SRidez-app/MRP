@@ -43,29 +43,29 @@ const Header = () => {
   };
 
   const industries = [
-    'Trucking & Transportation',
-    'Construction', 
-    'Manufacturing',
-    'Public Entity',
-    'Non-Profit Human Service'
+    { name: 'Trucking & Transportation', href: '/trucking-transportation' },
+    { name: 'Construction', href: '/construction' }, 
+    { name: 'Manufacturing', href: '/manufacturing' },
+    { name: 'Public Entity', href: '/publicE' },
+    { name: 'Non-Profit Human Service', href: '/nonProfit' }
   ];
 
   const navItems = [
-    "Workers' Comp",
-    'Claims',
-    'Contact',
-    'About'
+    { name: "Workers' Comp", href: '/workersComp' },
+    { name: 'Claims', href: '/claims' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/about' }
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18">
+        <div className="flex justify-between items-center h-20">
           {/* Logo - BIGGER & Touchable */}
           <div className="flex-shrink-0 flex items-center">
             <button
               onClick={handleLogoClick}
-              className="focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-md transition-all duration-200 hover:opacity-80"
+            
               aria-label="Go to homepage"
               suppressHydrationWarning={true}
             >
@@ -91,7 +91,7 @@ const Header = () => {
               >
                 <button
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-                  className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-md font-medium transition-colors duration-200"
                   aria-expanded={isIndustriesOpen}
                   suppressHydrationWarning={true}
                 >
@@ -115,11 +115,11 @@ const Header = () => {
                     {industries.map((industry, index) => (
                       <a
                         key={index}
-                        href="#"
+                        href={industry.href}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
                         onClick={() => setIsIndustriesOpen(false)}
                       >
-                        {industry}
+                        {industry.name}
                       </a>
                     ))}
                   </div>
@@ -130,10 +130,10 @@ const Header = () => {
               {navItems.map((item, index) => (
                 <a
                   key={index}
-                  href="#"
-                  className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  href={item.href}
+                  className="text-gray-700 hover:text-gray-900 px-3 py-2 text-md font-medium transition-colors duration-200"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </div>
@@ -141,12 +141,12 @@ const Header = () => {
 
           {/* Get Quote Button - RIGHT SIDE (Changed to Orange) */}
           <div className="hidden md:flex">
-            <button 
+            <a 
+              href="/quote"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
-              suppressHydrationWarning={true}
             >
               Get a Quote
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -189,14 +189,14 @@ const Header = () => {
                     {industries.map((industry, index) => (
                       <a
                         key={index}
-                        href="#"
+                        href={industry.href}
                         className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 text-sm rounded-md transition-colors duration-150"
                         onClick={() => {
                           setIsMobileMenuOpen(false);
                           setIsMobileIndustriesOpen(false);
                         }}
                       >
-                        {industry}
+                        {industry.name}
                       </a>
                     ))}
                   </div>
@@ -207,23 +207,23 @@ const Header = () => {
               {navItems.map((item, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={item.href}
                   className="block text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 text-base font-medium rounded-md transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
 
               {/* Mobile Get Quote Button (Changed to Orange) */}
               <div className="pt-4 border-t border-gray-200 mt-4">
-                <button 
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm"
+                <a 
+                  href="/quote"
+                  className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  suppressHydrationWarning={true}
                 >
                   Get a Quote
-                </button>
+                </a>
               </div>
             </div>
           </div>

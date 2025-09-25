@@ -4,6 +4,7 @@
 // 3. Line 224: Replaced <img> with Next.js <Image> component for better performance
 // 4. Added mobile background image and desktop fallback
 // 5. Hidden quote form on mobile devices
+// 6. Fixed video background positioning for laptop screens
 
 "use client";
 
@@ -208,18 +209,21 @@ const Hero = () => {
     <>
       {/* Background Video/Image */}
       <section className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
           {/* Desktop: Video with fallback image */}
-          <div className="hidden md:block">
+          <div className="hidden md:block w-full h-full relative">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
               style={{ 
                 filter: 'brightness(0.4)',
-                transform: 'scale(1.1)' // Slight zoom to avoid black borders
+                minWidth: '100%',
+                minHeight: '100%',
+                width: 'auto',
+                height: 'auto'
               }}
             >
               <source src="/hero5.mp4" type="video/mp4" />
@@ -260,10 +264,10 @@ const Hero = () => {
               {/* Left Side: Hero Content */}
               <div className="space-y-8">
                 {/* Flipped: Tagline First (Bigger) */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight" style={{ color: '#ffaa85', textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight" style={{ color: '#ffffffff', textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
                   Commercial insurance that moves as fast as you do.
                 </h1>
-                
+                {/* #ffaa85 */}
                 {/* Company Name Second (Smaller, Orange) */}
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold" style={{ color: '#ff6b35', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' }}>
                   Moxie Risk Partners
