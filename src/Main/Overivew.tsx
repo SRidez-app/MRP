@@ -18,52 +18,40 @@ const INDUSTRIES_DATA: Industry[] = [
     title: "Trucking & Transportation",
     description: "Comprehensive fleet insurance with DOT compliance support, cargo protection, and specialized coverage for owner-operators and commercial fleets.",
     image: "/images/Trucking2.png", // Updated to use public path
-    href: "/trucking-insurance",
+    href: "/trucking-transportation", // Match your app directory structure
     badge: "Most Popular",
-
-   
-    
   },
   {
     id: 'construction',
     title: "Construction & Contracting", 
     description: "Specialized protection for contractors, builders, and construction professionals with general liability, workers' comp, and project-specific coverage.",
     image: "/images/construct.png", // Updated to use public path
-    href: "/construction-insurance",
+    href: "/construction", // Match your app directory structure
     badge: "Essential",
-
-    
-    
   },
   {
     id: 'manufacturing',
     title: "Manufacturing & Production",
     description: "Product liability, equipment breakdown, and operational coverage for manufacturers across all industries from food processing to electronics.",
     image: "/images/Manufact.png", // Updated to use public path
-    href: "/manufacturing-insurance",
+    href: "/manufacturing", // Match your app directory structure
     badge: "Comprehensive",
-
-   
   },
   {
     id: 'nonprofit',
     title: "Nonprofit & Human Services",
     description: "Tailored coverage for nonprofits, human service organizations, and community groups with D&O, professional liability, and volunteer protection.",
     image: "/images/nonProf.png", // Updated to use public path
-    href: "/nonprofit-insurance",
+    href: "/nonProfit", // Match your app directory structure
     badge: "Specialized",
-
-    
   },
   {
     id: 'public-entity',
     title: "Government & Public Entities",
     description: "Comprehensive coverage for municipalities, public agencies, and government organizations with specialized liability and constitutional coverage.",
     image: "/images/publicE1.png", // Updated to use public path
-    href: "/public-entity-insurance",
+    href: "/publicE", // Match your app directory structure
     badge: "Government",
-
-   
   }
 ];
 
@@ -97,9 +85,6 @@ const IndustryCard = React.memo(({ industry, index }: { industry: Industry; inde
       <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
         {industry.description}
       </p>
-
-
-     
 
       {/* CTA */}
       <a 

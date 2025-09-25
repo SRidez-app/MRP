@@ -210,21 +210,21 @@ const ServiceAreas: React.FC = () => {
     : SUPPORTED_STATES.filter(state => state.region === selectedRegion);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
+    <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <div className={`text-center max-w-4xl mx-auto mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        {/* Header - Mobile optimized */}
+        <div className={`text-center max-w-4xl mx-auto mb-12 sm:mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
             Find the Coverage You Need
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 px-2">
             Enter your zip code to discover available commercial insurance options in your area
           </p>
           
-          {/* Zip Code Search */}
-          <div className="max-w-md mx-auto">
-            <div className="flex gap-3">
+          {/* Mobile-friendly Zip Code Search */}
+          <div className="max-w-md mx-auto px-2">
+            <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1">
                 <input
                   type="text"
@@ -240,7 +240,7 @@ const ServiceAreas: React.FC = () => {
                     }
                   }}
                   onKeyPress={handleKeyPress}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-lg text-gray-900 placeholder-gray-500"
+                  className="w-full px-4 py-4 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-lg text-gray-900 placeholder-gray-500"
                   maxLength={5}
                   suppressHydrationWarning
                 />
@@ -248,34 +248,34 @@ const ServiceAreas: React.FC = () => {
               <button
                 onClick={handleZipSearch}
                 disabled={isLoading || zipCode.length !== 5}
-                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors"
+                className="w-full sm:w-auto px-6 py-4 sm:py-3 bg-orange-500 hover:bg-orange-600 disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors text-lg"
                 suppressHydrationWarning
               >
                 {isLoading ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
                 ) : (
                   'Search'
                 )}
               </button>
             </div>
             
-            {/* Results */}
+            {/* Mobile-optimized Results */}
             {searchPerformed && (
-              <div className="mt-6 p-6 bg-white rounded-xl shadow-lg border-l-4 border-orange-500">
+              <div className="mt-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-orange-500">
                 {foundState ? (
                   <div className="text-center">
                     <div className="text-green-600 text-2xl mb-2">✓</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                       Great news! We serve {foundState.name}
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-sm sm:text-base text-gray-600 mb-4">
                       Full commercial insurance coverage available in the {foundState.region} region
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                      <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                    <div className="flex flex-col gap-3 justify-center">
+                      <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
                         Get Quote Now
                       </button>
-                      <button className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-6 py-2 rounded-lg font-semibold transition-colors">
+                      <button className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
                         Contact Local Rep
                       </button>
                     </div>
@@ -283,8 +283,8 @@ const ServiceAreas: React.FC = () => {
                 ) : error && (
                   <div className="text-center">
                     <div className="text-amber-600 text-2xl mb-2">⚠</div>
-                    <p className="text-gray-700 mb-4">{error}</p>
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                    <p className="text-sm sm:text-base text-gray-700 mb-4">{error}</p>
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
                       Contact Us Anyway
                     </button>
                   </div>
@@ -294,63 +294,83 @@ const ServiceAreas: React.FC = () => {
           </div>
         </div>
 
-        {/* States Grid Section */}
+        {/* States Grid Section - Mobile optimized */}
         <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-500">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border-t-4 border-orange-500">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Commercial Insurance Available Nationwide
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 px-2">
                 We proudly serve businesses across {SUPPORTED_STATES.length} states with specialized regional expertise
               </p>
               
-              {/* Region Filter */}
-              <div className="flex flex-wrap justify-center gap-2 mb-8">
-                <button
-                  onClick={() => setSelectedRegion('all')}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    selectedRegion === 'all'
-                      ? 'bg-orange-500 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                  suppressHydrationWarning
-                >
-                  All States ({SUPPORTED_STATES.length})
-                </button>
-                {Object.entries(REGIONS).map(([region, states]) => (
+              {/* Mobile-friendly Region Filter */}
+              <div className="mb-6 sm:mb-8">
+                {/* Mobile: Dropdown select */}
+                <div className="sm:hidden">
+                  <select
+                    value={selectedRegion}
+                    onChange={(e) => setSelectedRegion(e.target.value)}
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white"
+                    suppressHydrationWarning
+                  >
+                    <option value="all">All States ({SUPPORTED_STATES.length})</option>
+                    {Object.entries(REGIONS).map(([region, states]) => (
+                      <option key={region} value={region}>
+                        {region} ({states.length})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                
+                {/* Desktop: Button tabs (unchanged) */}
+                <div className="hidden sm:flex flex-wrap justify-center gap-2">
                   <button
-                    key={region}
-                    onClick={() => setSelectedRegion(region)}
+                    onClick={() => setSelectedRegion('all')}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                      selectedRegion === region
+                      selectedRegion === 'all'
                         ? 'bg-orange-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                     suppressHydrationWarning
                   >
-                    {region} ({states.length})
+                    All States ({SUPPORTED_STATES.length})
                   </button>
-                ))}
+                  {Object.entries(REGIONS).map(([region, states]) => (
+                    <button
+                      key={region}
+                      onClick={() => setSelectedRegion(region)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                        selectedRegion === region
+                          ? 'bg-orange-500 text-white'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                      suppressHydrationWarning
+                    >
+                      {region} ({states.length})
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* States Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+            {/* Mobile-optimized States Grid */}
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 sm:gap-3">
               {filteredStates.map((state, index) => (
                 <div
                   key={state.code}
                   onClick={() => handleStateClick(state)}
-                  className="group bg-gray-50 hover:bg-orange-50 border hover:border-orange-200 rounded-lg p-3 text-center transition-all duration-200 cursor-pointer transform hover:-translate-y-1 hover:shadow-md"
+                  className="group bg-gray-50 hover:bg-orange-50 border hover:border-orange-200 rounded-lg p-2 sm:p-3 text-center transition-all duration-200 cursor-pointer transform hover:-translate-y-1 hover:shadow-md"
                   style={{ animationDelay: `${index * 20}ms` }}
                 >
-                  <div className="text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
+                  <div className="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-orange-600 transition-colors">
                     {state.code}
                   </div>
-                  <div className="text-xs text-gray-600 group-hover:text-orange-500 transition-colors mt-1">
+                  <div className="text-xs text-gray-600 group-hover:text-orange-500 transition-colors mt-1 leading-tight">
                     {state.name}
                   </div>
-                  <div className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors">
+                  <div className="text-xs text-gray-400 group-hover:text-orange-400 transition-colors hidden sm:block">
                     {state.region}
                   </div>
                 </div>
@@ -359,24 +379,24 @@ const ServiceAreas: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className={`text-center mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+        {/* Mobile-optimized CTA Section */}
+        <div className={`text-center mt-12 sm:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
               Don't see your state? Let's talk anyway.
             </h3>
-            <p className="text-lg mb-6 text-orange-100">
+            <p className="text-base sm:text-lg mb-4 sm:mb-6 text-orange-100 px-2">
               Our coverage is expanding rapidly. Contact us to discuss your commercial insurance needs.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center">
               <button 
-                className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors"
+                className="bg-white text-orange-600 hover:bg-gray-100 px-6 sm:px-8 py-3 rounded-lg font-bold transition-colors text-sm sm:text-base"
                 suppressHydrationWarning
               >
                 Call (800) 669-4301
               </button>
               <button 
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-3 rounded-lg font-bold transition-colors"
+                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-6 sm:px-8 py-3 rounded-lg font-bold transition-colors text-sm sm:text-base"
                 suppressHydrationWarning
               >
                 Email Us Today
@@ -386,109 +406,109 @@ const ServiceAreas: React.FC = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Mobile-optimized Modal */}
       {isModalOpen && selectedState && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full mx-4 overflow-hidden shadow-2xl transform transition-all animate-modal-appear">
-            {/* Close Button */}
+        <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full mx-2 sm:mx-4 overflow-hidden shadow-2xl transform transition-all animate-modal-appear max-h-[90vh] overflow-y-auto">
+            {/* Mobile-friendly Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 transition-all shadow-lg"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 transition-all shadow-lg"
             >
               <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            {/* Horizontal Layout */}
-            <div className="flex flex-col md:flex-row">
-              {/* Left Side - Image */}
-              <div className="md:w-2/5 h-64 md:h-auto relative">
+            {/* Mobile-optimized Layout */}
+            <div className="flex flex-col">
+              {/* Mobile: Image on top, smaller height */}
+              <div className="h-48 sm:h-64 md:w-2/5 md:h-auto relative">
                 <img 
                   src={popupImages[imageIndex]}
                   alt={`Commercial insurance in ${selectedState.name}`}
                   className="w-full h-full object-cover"
                 />
                 {/* State Badge Overlay */}
-                <div className="absolute top-4 left-4">
-                  <div className="bg-orange-500 text-white px-4 py-2 rounded-full shadow-lg">
-                    <span className="font-bold text-lg">{selectedState.code}</span>
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                  <div className="bg-orange-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg">
+                    <span className="font-bold text-sm sm:text-lg">{selectedState.code}</span>
                   </div>
                 </div>
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
               </div>
 
-              {/* Right Side - Content */}
-              <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+              {/* Mobile-optimized Content */}
+              <div className="p-4 sm:p-6 md:p-10 flex flex-col justify-center">
                 {/* Header */}
-                <div className="mb-6">
-                  <div className="inline-flex items-center px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-3">
-                    <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mb-4 sm:mb-6">
+                  <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 bg-orange-100 text-orange-700 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     {selectedState.region} Region
                   </div>
                   
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
                     Get Started in {selectedState.name}
                   </h3>
                   
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
                     Professional commercial insurance coverage with specialized expertise for businesses in {selectedState.name}.
                   </p>
                 </div>
 
-                {/* Benefits */}
-                <div className="space-y-3 mb-8">
+                {/* Mobile-optimized Benefits */}
+                <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   <div className="flex items-start">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
-                      <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-2 sm:mr-3 flex-shrink-0">
+                      <svg className="w-2 h-2 sm:w-3 sm:h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-800">Comprehensive Coverage</span>
-                      <p className="text-gray-600 text-sm">Full commercial insurance solutions tailored to your industry</p>
+                      <span className="font-semibold text-gray-800 text-sm sm:text-base">Comprehensive Coverage</span>
+                      <p className="text-gray-600 text-xs sm:text-sm">Full commercial insurance solutions tailored to your industry</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
-                      <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-2 sm:mr-3 flex-shrink-0">
+                      <svg className="w-2 h-2 sm:w-3 sm:h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-800">Local {selectedState.region} Expertise</span>
-                      <p className="text-gray-600 text-sm">Regional specialists who understand your market</p>
+                      <span className="font-semibold text-gray-800 text-sm sm:text-base">Local {selectedState.region} Expertise</span>
+                      <p className="text-gray-600 text-xs sm:text-sm">Regional specialists who understand your market</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-3">
-                      <svg className="w-3 h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-green-100 rounded-full flex items-center justify-center mt-0.5 mr-2 sm:mr-3 flex-shrink-0">
+                      <svg className="w-2 h-2 sm:w-3 sm:h-3 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <span className="font-semibold text-gray-800">Fast Quote Response</span>
-                      <p className="text-gray-600 text-sm">Quick turnaround on quotes and policy questions</p>
+                      <span className="font-semibold text-gray-800 text-sm sm:text-base">Fast Quote Response</span>
+                      <p className="text-gray-600 text-xs sm:text-sm">Quick turnaround on quotes and policy questions</p>
                     </div>
                   </div>
                 </div>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Mobile-optimized CTA Buttons */}
+                <div className="flex flex-col gap-3">
+                  <button className="bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     Get Quote Now
                   </button>
-                  <button className="flex-1 border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-6 rounded-lg font-bold transition-colors flex items-center justify-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center text-sm sm:text-base">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                     Call Expert

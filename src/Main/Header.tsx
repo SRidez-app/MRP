@@ -100,7 +100,7 @@ const Header = () => {
               >
                 <button
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-                  className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-md font-medium transition-colors duration-200"
+                  className="flex items-center text-gray-700 hover:text-orange-500 px-2 py-2 text-lg font-medium transition-colors duration-200"
                   aria-expanded={isIndustriesOpen}
                   suppressHydrationWarning={true}
                 >
@@ -140,7 +140,7 @@ const Header = () => {
                 <a
                   key={index}
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 px-3 py-2 text-md font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-orange-500 px-3 py-2 text-lg font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -181,7 +181,7 @@ const Header = () => {
               <div>
                 <button
                   onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
-                  className="flex items-center justify-between w-full text-left text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 text-base font-medium rounded-md transition-colors duration-200"
+                  className="flex items-center justify-between w-full text-left text-gray-700 hover:text-orange-500 hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                   suppressHydrationWarning={true}
                 >
                   Industries
@@ -217,7 +217,7 @@ const Header = () => {
                 <a
                   key={index}
                   href={item.href}
-                  className="block text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 text-base font-medium rounded-md transition-colors duration-200"
+                  className="block text-gray-700 hover:text-orange-500 hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}

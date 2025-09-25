@@ -211,7 +211,7 @@ const TruckingTransportationPage = () => {
               Select your specific cargo type below to explore tailored coverage options and industry-specific endorsements.
             </p>
             {/* Underline bar */}
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
           </div>
 
           {/* Cargo Type Buttons */}
