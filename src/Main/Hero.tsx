@@ -1,8 +1,9 @@
-
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import SuccessModal from '@/Components/successModal';
 
 interface FormData {
   firstName: string;
@@ -18,8 +19,9 @@ const Hero = () => {
   // Removed unused isVisible variable
   const [isCoverageDropdownOpen, setIsCoverageDropdownOpen] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [triggerConfetti, setTriggerConfetti] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
@@ -108,6 +110,15 @@ const Hero = () => {
 
   const coverageOptions = getCoverageOptions(formData.industry);
 
+  // Navigation handlers
+  const handleGetQuote = () => {
+    router.push('/quote-form');
+  };
+
+  const handleCallExpert = () => {
+    window.location.href = 'tel:+18006694301';
+  };
+
   // Form handlers
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({
@@ -137,12 +148,9 @@ const Hero = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     
-    // Show industry-specific confetti effect
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 2500);
-    
-    // Show success popup
+    // Show success popup with confetti
     setShowSuccessPopup(true);
+    setTriggerConfetti(true);
     
     // Reset form
     setFormData({
@@ -156,22 +164,9 @@ const Hero = () => {
     });
   };
 
-  // Get industry-specific celebration icon
-  const getIndustryIcon = (industry: string) => {
-    switch(industry) {
-      case 'trucking': return '🚛';
-      case 'construction': return '🏗️';
-      case 'manufacturing': return '⚙️';
-      case 'nonprofit': return '🤝';
-      case 'public-entity': return '🏛️';
-      default: return '✨';
-    }
-  };
-
-  const celebrationIcon = getIndustryIcon(formData.industry);
-
   const closeSuccessPopup = () => {
     setShowSuccessPopup(false);
+    setTriggerConfetti(false);
   };
 
   // Close dropdown when clicking outside
@@ -275,12 +270,14 @@ const Hero = () => {
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
+                    onClick={handleGetQuote}
                     className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     suppressHydrationWarning
                   >
                     Get Quote Now
                   </button>
                   <button 
+                    onClick={handleCallExpert}
                     className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-md text-lg font-medium transition-colors duration-200"
                     suppressHydrationWarning
                   >
@@ -508,226 +505,12 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Enhanced Realistic Confetti Effect */}
-      {showConfetti && (
-        <div 
-          className="fixed inset-0 pointer-events-none z-[60] overflow-hidden"
-          style={{
-            animation: 'fadeIn 0.5s ease-out'
-          }}
-        >
-          {/* Traditional colorful confetti pieces */}
-          {[...Array(40)].map((_, i) => {
-            const colors = ['#ff6b35', '#ffaa85', '#4ade80', '#3b82f6', '#8b5cf6', '#f59e0b', '#ef4444'];
-            const shapes = ['rect', 'circle', 'triangle'];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const shape = shapes[Math.floor(Math.random() * shapes.length)];
-            
-            return (
-              <div
-                key={`confetti-${i}`}
-                className="absolute"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  width: shape === 'circle' ? '8px' : '12px',
-                  height: shape === 'circle' ? '8px' : shape === 'triangle' ? '10px' : '6px',
-                  backgroundColor: shape !== 'triangle' ? color : 'transparent',
-                  borderRadius: shape === 'circle' ? '50%' : '1px',
-                  borderLeft: shape === 'triangle' ? '6px solid transparent' : 'none',
-                  borderRight: shape === 'triangle' ? '6px solid transparent' : 'none',
-                  borderBottom: shape === 'triangle' ? `10px solid ${color}` : 'none',
-                  animationDelay: `${Math.random() * 1}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`,
-                  animation: `confettiRealistic ${2 + Math.random() * 2}s ease-out ${Math.random() * 1}s forwards`
-                }}
-              />
-            );
-          })}
-          
-          {/* Industry-specific icons (fewer, as accents) */}
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={`industry-${i}`}
-              className="absolute text-xl"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 1.5}s`,
-                animationDuration: `${1.5 + Math.random() * 1}s`,
-                animation: `gentleFloat ${1.5 + Math.random() * 1}s ease-out ${Math.random() * 1.5}s forwards`
-              }}
-            >
-              {celebrationIcon}
-            </div>
-          ))}
-
-          {/* Streamers */}
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={`streamer-${i}`}
-              className="absolute"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: '3px',
-                height: '30px',
-                backgroundColor: '#ff6b35',
-                borderRadius: '2px',
-                animationDelay: `${Math.random() * 0.5}s`,
-                animationDuration: `${2.5 + Math.random() * 1}s`,
-                animation: `streamerFall ${2.5 + Math.random() * 1}s ease-out ${Math.random() * 0.5}s forwards`
-              }}
-            />
-          ))}
-
-          {/* Success stars */}
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={`star-${i}`}
-              className="absolute text-yellow-400 text-lg"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1.5 + Math.random() * 1}s`,
-                animation: `starTwinkle ${1.5 + Math.random() * 1}s ease-out ${Math.random() * 2}s forwards`
-              }}
-            >
-              ★
-            </div>
-          ))}
-        </div>
-      )}
-
-     <style jsx>{`
-        @keyframes confettiRealistic {
-          0% {
-            transform: translateY(-50px) rotate(0deg) scale(1);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(100vh) rotate(720deg) scale(0.8);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes streamerFall {
-          0% {
-            transform: translateY(-30px) rotate(0deg) scaleY(0.5);
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-            transform: translateY(10px) rotate(180deg) scaleY(1);
-          }
-          100% {
-            transform: translateY(100vh) rotate(540deg) scaleY(1.2);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes starTwinkle {
-          0% {
-            transform: scale(0) rotate(0deg);
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.2) rotate(180deg);
-          }
-          100% {
-            transform: scale(0.8) rotate(360deg);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes gentleFloat {
-          0% {
-            transform: translateY(20px) scale(0.8);
-            opacity: 0;
-          }
-          20% {
-            opacity: 1;
-          }
-          80% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-40px) scale(1.1);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-          }
-        }
-      `}</style>
-
-      {/* Enhanced Success Popup */}
-      {showSuccessPopup && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative">
-            <button 
-              onClick={closeSuccessPopup}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
-            >
-              ×
-            </button>
-            
-            <div className="text-center">
-              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Quote Request Submitted!</h3>
-              <p className="text-gray-600 mb-6">We&apos;ll contact you shortly with your personalized quote.</p>
-              
-              <div className="text-left">
-                <p className="text-sm text-gray-700 mb-3 font-medium">
-                  Quick Resources:
-                </p>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  <a href="/trucking-insurance" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Trucking Insurance
-                  </a>
-                  <a href="/construction" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Construction
-                  </a>
-                  <a href="/nonprofit" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Nonprofit
-                  </a>
-                  <a href="/manufacturing" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Manufacturing
-                  </a>
-                  <a href="/workers-comp" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Workers Comp
-                  </a>
-                  <a href="/claims" className="text-orange-600 hover:text-orange-700 hover:underline">
-                    Claims Support
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Success Modal with Confetti */}
+      <SuccessModal 
+        isOpen={showSuccessPopup}
+        onClose={closeSuccessPopup}
+        showConfetti={triggerConfetti}
+      />
     </>
   );
 };

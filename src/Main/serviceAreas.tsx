@@ -379,7 +379,7 @@ const ServiceAreas: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile-optimized CTA Section */}
+       {/* Mobile-optimized CTA Section */}
         <div className={`text-center mt-12 sm:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
           <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 sm:p-8 text-white">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
@@ -389,18 +389,18 @@ const ServiceAreas: React.FC = () => {
               Our coverage is expanding rapidly. Contact us to discuss your commercial insurance needs.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center">
-              <button 
+              <a 
+                 href="tel:+18003265581"
                 className="bg-white text-orange-600 hover:bg-gray-100 px-6 sm:px-8 py-3 rounded-lg font-bold transition-colors text-sm sm:text-base"
-                suppressHydrationWarning
               >
-                Call (800) 669-4301
-              </button>
-              <button 
-                className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-6 sm:px-8 py-3 rounded-lg font-bold transition-colors text-sm sm:text-base"
-                suppressHydrationWarning
-              >
-                Email Us Today
-              </button>
+                Call (800) 326-5581
+              </a>
+            <a 
+  href="/contact-us"
+  className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-6 sm:px-8 py-3 rounded-lg font-bold transition-colors text-sm sm:text-base"
+>
+  Contact Us Today
+</a>
             </div>
           </div>
         </div>

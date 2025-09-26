@@ -28,48 +28,48 @@ const Footer: React.FC = () => {
   }, []);
 
   const footerSections = useMemo<FooterSection[]>(() => [
-    {
-      id: 'industries',
-      title: 'Industries',
-      links: [
-        { href: '/trucking-insurance', label: 'Trucking & Transportation', ariaLabel: 'Trucking industry insurance solutions' },
-        { href: '/industries/construction', label: 'Construction', ariaLabel: 'Construction industry insurance' },
-        { href: '/industries/manufacturing', label: 'Manufacturing', ariaLabel: 'Manufacturing industry coverage' },
-        { href: '/industries/public-entity', label: 'Public Entity', ariaLabel: 'Public entity insurance solutions' },
-        { href: '/industries/nonprofit', label: 'Non-Profit Human Service', ariaLabel: 'Non-profit organization insurance' },
-      ]
-    },
-    {
-      id: 'coverage',
-      title: 'Coverage',
-      links: [
-        { href: '/workers-comp', label: 'Workers\' Compensation', ariaLabel: 'Workers compensation insurance' },
-        { href: '/general-liability', label: 'General Liability', ariaLabel: 'General liability insurance coverage' },
-        { href: '/commercial-auto', label: 'Commercial Auto', ariaLabel: 'Commercial auto insurance solutions' },
-        { href: '/cyber-liability', label: 'Cyber Liability', ariaLabel: 'Cyber liability protection' },
-        { href: '/commercial-property', label: 'Commercial Property', ariaLabel: 'Commercial property insurance' },
-      ]
-    },
-    {
-      id: 'support',
-      title: 'Support',
-      links: [
-        { href: '/claims', label: 'File a Claim', ariaLabel: 'File an insurance claim' },
-        { href: '/claims#support', label: '24/7 Claims Support', ariaLabel: '24/7 claims assistance' },
-        { href: 'tel:+18006694301', label: 'Emergency Claims Line', ariaLabel: 'Call emergency claims line', isExternal: true },
-        { href: '/faq', label: 'FAQ', ariaLabel: 'Frequently asked questions' },
-        { href: '/resources', label: 'Resources', ariaLabel: 'Insurance resources and guides' },
-      ]
-    },
+{
+  id: 'industries',
+  title: 'Industries',
+  links: [
+    { href: '/trucking-transportation', label: 'Trucking & Transportation', ariaLabel: 'Trucking industry insurance solutions' },
+    { href: '/construction', label: 'Construction', ariaLabel: 'Construction industry insurance' },
+    { href: '/manufacturing-insurance', label: 'Manufacturing', ariaLabel: 'Manufacturing industry coverage' },
+    { href: '/public-entity', label: 'Public Entity', ariaLabel: 'Public entity insurance solutions' },
+    { href: '/non-profit', label: 'Non-Profit Human Service', ariaLabel: 'Non-profit organization insurance' },
+  ]
+},
+    // {
+    //   id: 'coverage',
+    //   title: 'Coverage',
+    //   links: [
+    //     { href: '/workers-comp', label: 'Workers\' Compensation', ariaLabel: 'Workers compensation insurance' },
+    //     { href: '/general-liability', label: 'General Liability', ariaLabel: 'General liability insurance coverage' },
+    //     { href: '/commercial-auto', label: 'Commercial Auto', ariaLabel: 'Commercial auto insurance solutions' },
+    //     { href: '/cyber-liability', label: 'Cyber Liability', ariaLabel: 'Cyber liability protection' },
+    //     { href: '/commercial-property', label: 'Commercial Property', ariaLabel: 'Commercial property insurance' },
+    //   ]
+    // },
+{
+  id: 'support',
+  title: 'Support',
+  links: [
+    { href: '/file-claims', label: 'File a Claim', ariaLabel: 'File an insurance claim' },
+    { href: '/file-claims#support', label: '24/7 Claims Support', ariaLabel: '24/7 claims assistance' },
+    { href: 'tel:+18006694301', label: 'Emergency Claims Line', ariaLabel: 'Call emergency claims line', isExternal: true },
+    { href: '/contact#faq', label: 'FAQ', ariaLabel: 'Frequently asked questions' },
+    { href: '/contact#resources', label: 'Resources', ariaLabel: 'Insurance resources and guides' },
+  ]
+},
     {
       id: 'company',
       title: 'Company',
       links: [
-        { href: '/about', label: 'About Us', ariaLabel: 'Learn about Moxie Risk Partners' },
-        { href: '/about#mission', label: 'Our Mission', ariaLabel: 'Our company mission and values' },
-        { href: '/about#team', label: 'Our Team', ariaLabel: 'Meet our insurance experts' },
-        { href: '/careers', label: 'Careers', ariaLabel: 'Career opportunities' },
-        { href: '/news', label: 'News & Updates', ariaLabel: 'Company news and industry updates' },
+        { href: '/about-us', label: 'About Us', ariaLabel: 'Learn about Moxie Risk Partners' },
+        { href: '/about-us#mission', label: 'Our Mission', ariaLabel: 'Our company mission and values' },
+        { href: '/about-us#team', label: 'Our Team', ariaLabel: 'Meet our insurance experts' },
+        // { href: '/careers', label: 'Careers', ariaLabel: 'Career opportunities' },
+        // { href: '/news', label: 'News & Updates', ariaLabel: 'Company news and industry updates' },
       ]
     }
   ], []);
@@ -183,9 +183,9 @@ const Footer: React.FC = () => {
 
           {/* Navigation Sections */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center md:justify-items-start md:ml-12">
               {footerSections.map((section) => (
-                <div key={section.id} className="space-y-4">
+                <div key={section.id} className="space-y-4 text-center md:text-left">
                   
                   {/* Desktop Section Title */}
                   <h4 className="hidden md:block text-lg font-semibold text-white border-b border-orange-500 pb-2">
@@ -236,8 +236,7 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
-
+   </div>
         {/* CTA Section */}
         <div className="mt-12 pt-8 border-t border-gray-600">
        

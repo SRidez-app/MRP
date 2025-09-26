@@ -274,7 +274,7 @@ const AboutPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
               We've built our reputation on delivering results for businesses just like yours.
             </p>
-            <div className="w-96 h-2 bg-gray-900 rounded-full mx-auto"></div>
+            <div className="w-96 h-1 bg-orange-600 rounded-full mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

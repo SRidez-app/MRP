@@ -1,12 +1,11 @@
 import Header from "@/Main/Header";
-import ClaimsPage from "@/Pages/claims";
 import Footer from "@/Components/footer";
-
+import ClaimsPage from "@/Pages/claims";
 export default function Claims() {
   return (
     <>
       <Header />
-      <ClaimsPage/>
+     <ClaimsPage/>
       <Footer />
     </>
   );

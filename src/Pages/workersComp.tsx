@@ -108,7 +108,7 @@ const WorkersCompPage = () => {
       title: 'Trucking',
       description: 'Specialized coverage for commercial drivers and transportation employees with road-specific injury protection.',
       badge: 'Transport Focused',
-      features: ['Driver Injury Coverage', 'Loading/Unloading Protection', 'Mechanic Injury Coverage', 'DOT Compliance Support'],
+       features: ['Driver Injury Coverage', 'Loading/Unloading Protection', 'Mechanic Injury Coverage', 'Fleet Safety Programs'],
       icon: Truck
     },
     {

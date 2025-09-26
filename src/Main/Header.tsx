@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import Link from 'next/link'; 
 
 const Header = () => {
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
@@ -54,17 +55,17 @@ const Header = () => {
 
   const industries = [
     { name: 'Trucking & Transportation', href: '/trucking-transportation' },
-    { name: 'Construction', href: '/construction' }, 
-    { name: 'Manufacturing', href: '/manufacturing' },
-    { name: 'Public Entity', href: '/publicE' },
-    { name: 'Non-Profit Human Service', href: '/nonProfit' }
+    { name: 'Construction', href: '/construction-insurance' }, 
+    { name: 'Manufacturing', href: '/manufacturing-insurance' },
+    { name: 'Public Entity', href: '/public-entity' },
+    { name: 'Non-Profit Human Service', href: '/non-profit' }
   ];
 
   const navItems = [
-    { name: "Workers' Comp", href: '/workersComp' },
-    { name: 'Claims', href: '/claims' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'About', href: '/about' }
+   { name: "Workers' Comp", href: '/workers-comp' },
+    { name: 'Claims', href: '/file-claims' },
+    { name: 'Contact', href: '/contact-us' },
+    { name: 'About', href: '/about-us' }
   ];
 
   return (
@@ -122,14 +123,14 @@ const Header = () => {
                     }}
                   >
                     {industries.map((industry, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={industry.href}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-150"
                         onClick={() => setIsIndustriesOpen(false)}
                       >
                         {industry.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -137,25 +138,25 @@ const Header = () => {
 
               {/* Navigation Items */}
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
                   href={item.href}
                   className="text-gray-700 hover:text-orange-500 px-3 py-2 text-lg font-medium transition-colors duration-200"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </nav>
 
           {/* Get Quote Button - RIGHT SIDE (Changed to Orange) */}
           <div className="hidden md:flex">
-            <a 
-              href="/quote"
+            <Link 
+              href="/quote-form"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -196,7 +197,7 @@ const Header = () => {
                 {isMobileIndustriesOpen && (
                   <div className="mt-1 space-y-1 pl-4">
                     {industries.map((industry, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={industry.href}
                         className="block text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 text-sm rounded-md transition-colors duration-150"
@@ -206,7 +207,7 @@ const Header = () => {
                         }}
                       >
                         {industry.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -214,25 +215,25 @@ const Header = () => {
 
               {/* Mobile Navigation Items */}
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
                   href={item.href}
                   className="block text-gray-700 hover:text-orange-500 hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
 
               {/* Mobile Get Quote Button (Changed to Orange) */}
               <div className="pt-4 border-t border-gray-200 mt-4">
-                <a 
+                <Link 
                   href="/quote"
                   className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get a Quote
-                </a>
+                </Link>
               </div>
             </div>
           </div>
