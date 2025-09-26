@@ -247,7 +247,7 @@ const Header = () => {
               {/* Mobile Get Quote Button (Changed to Orange) */}
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <Link 
-                  href="/quote"
+                  href="/quote-form"
                   className="block w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
