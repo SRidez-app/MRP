@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 interface State {
@@ -260,37 +260,38 @@ const ServiceAreas: React.FC = () => {
             </div>
             
             {/* Mobile-optimized Results */}
-            {searchPerformed && (
-              <div className="mt-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-orange-500">
-                {foundState ? (
-                  <div className="text-center">
-                    <div className="text-green-600 text-2xl mb-2">✓</div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-                      Great news! We serve {foundState.name}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 mb-4">
-                      Full commercial insurance coverage available in the {foundState.region} region
-                    </p>
-                    <div className="flex flex-col gap-3 justify-center">
-                      <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
-                        Get Quote Now
-                      </button>
-                      <button className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
-                        Contact Local Rep
-                      </button>
-                    </div>
-                  </div>
-                ) : error && (
-                  <div className="text-center">
-                    <div className="text-amber-600 text-2xl mb-2">⚠</div>
-                    <p className="text-sm sm:text-base text-gray-700 mb-4">{error}</p>
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
-                      Contact Us Anyway
-                    </button>
-                  </div>
-                )}
-              </div>
-            )}
+      {/* Mobile-optimized Results */}
+{searchPerformed && (
+  <div className="mt-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-orange-500">
+    {foundState ? (
+      <div className="text-center">
+        <div className="text-green-600 text-2xl mb-2">✓</div>
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+          Great news! We serve {foundState.name}
+        </h3>
+        <p className="text-sm sm:text-base text-gray-600 mb-4">
+          Full commercial insurance coverage available in the {foundState.region} region
+        </p>
+        <div className="flex flex-col gap-3 justify-center">
+          <Link href="/quote-form" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+            Get Quote Now
+          </Link>
+          <a href="tel:+18003265581" className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+            Contact Local Rep
+          </a>
+        </div>
+      </div>
+    ) : error && (
+      <div className="text-center">
+        <div className="text-amber-600 text-2xl mb-2">⚠</div>
+        <p className="text-sm sm:text-base text-gray-700 mb-4">{error}</p>
+        <a href="tel:+18003265581" className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+          Contact Us Anyway
+        </a>
+      </div>
+    )}
+  </div>
+)}
           </div>
         </div>
 
@@ -501,18 +502,18 @@ const ServiceAreas: React.FC = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Get Quote Now
-                  </button>
-                  <button className="flex-1 border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center text-sm sm:text-base">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Call Expert
-                  </button>
+              <Link href="/quote-form" className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
+  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </svg>
+  Get Quote Now
+</Link>
+            <a href="tel:+18003265581" className="flex-1 border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center text-sm sm:text-base">
+  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+  </svg>
+  Call Expert
+</a>
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
     { href: '/file-claims#support', label: '24/7 Claims Support', ariaLabel: '24/7 claims assistance' },
     { href: 'tel:+18006694301', label: 'Emergency Claims Line', ariaLabel: 'Call emergency claims line', isExternal: true },
     { href: '/faq-page', label: 'FAQ', ariaLabel: 'Frequently asked questions' },
-    { href: '/contact#resources', label: 'Resources', ariaLabel: 'Insurance resources and guides' },
+    // { href: '/contact#resources', label: 'Resources', ariaLabel: 'Insurance resources and guides' },
   ]
 },
     {
