@@ -60,7 +60,7 @@ const QuotePage: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -70,8 +70,14 @@ const QuotePage: React.FC = () => {
     
     setIsSubmitting(false);
     setCurrentStep(4); // Show thank you step
+    
+    // Scroll to top smoothly when success page is shown
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
+  
   const isStepValid = (step: number): boolean => {
     switch (step) {
       case 1:

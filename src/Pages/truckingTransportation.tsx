@@ -182,7 +182,10 @@ const TruckingTransportationPage = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group">
+                  <button 
+                    className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+                    suppressHydrationWarning={true}
+                  >
                     Get Your Quote
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>
@@ -210,8 +213,6 @@ const TruckingTransportationPage = () => {
               Each trailer type and freight category has unique risks and requirements. 
               Select your specific cargo type below to explore tailored coverage options and industry-specific endorsements.
             </p>
-            {/* Underline bar */}
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
           </div>
 
           {/* Cargo Type Buttons */}
@@ -225,6 +226,7 @@ const TruckingTransportationPage = () => {
                     ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
                     : 'border-gray-200 bg-white hover:border-orange-300'
                 }`}
+                suppressHydrationWarning={true}
               >
                 <div className="text-center">
                   <div className="mb-4 mx-auto w-20 h-16 flex items-center justify-center">
@@ -382,8 +384,8 @@ const TruckingTransportationPage = () => {
                                 <Mail className="w-6 h-6 text-white" />
                               </div>
                               <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                              <a href="mailto:quotes@mrpinsurance.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
-                                quotes@mrpinsurance.com
+                              <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                                quotes@moxieriskpartnerscom
                               </a>
                               <p className="text-xs text-gray-500 mt-1">Quick Response</p>
                             </div>
@@ -424,6 +426,7 @@ const TruckingTransportationPage = () => {
                     placeholder="Your Company Name"
                     value={formData.companyName}
                     onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+                    suppressHydrationWarning={true}
                   />
                 </div>
 
@@ -439,6 +442,7 @@ const TruckingTransportationPage = () => {
                     placeholder="Your Full Name"
                     value={formData.contactName}
                     onChange={(e) => setFormData({...formData, contactName: e.target.value})}
+                    suppressHydrationWarning={true}
                   />
                 </div>
 
@@ -455,6 +459,7 @@ const TruckingTransportationPage = () => {
                       placeholder="email@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      suppressHydrationWarning={true}
                     />
                   </div>
 
@@ -469,6 +474,7 @@ const TruckingTransportationPage = () => {
                       placeholder="(555) 123-4567"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      suppressHydrationWarning={true}
                     />
                   </div>
                 </div>
@@ -486,6 +492,7 @@ const TruckingTransportationPage = () => {
                       placeholder="DOT Number"
                       value={formData.dotNumber}
                       onChange={(e) => setFormData({...formData, dotNumber: e.target.value})}
+                      suppressHydrationWarning={true}
                     />
                   </div>
 
@@ -498,6 +505,7 @@ const TruckingTransportationPage = () => {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900"
                       value={formData.fleetSize}
                       onChange={(e) => setFormData({...formData, fleetSize: e.target.value})}
+                      suppressHydrationWarning={true}
                     >
                       <option value="" className="text-gray-500">Select Size</option>
                       <option value="1" className="text-gray-900">1 Vehicle</option>
@@ -512,6 +520,7 @@ const TruckingTransportationPage = () => {
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mt-6"
+                  suppressHydrationWarning={true}
                 >
                   Get My Quote Now
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

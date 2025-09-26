@@ -282,8 +282,8 @@ const ManufacturingPage = () => {
                     <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </button>
                   
-                  <a href="tel:+18006694301" className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center">
-                    Call (800) 669-4301
+                  <a href="tel:+18003265581" className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center">
+                    Call (800) 326-5581
                   </a>
                 </div>
               </div>
@@ -306,7 +306,7 @@ const ManufacturingPage = () => {
               solutions tailored to your specific manufacturing operations and industry requirements.
             </p>
             {/* Underline bar */}
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-2 bg-gray-900 rounded-full"></div> */}
           </div>
 
           {/* Coverage Type Buttons */}
@@ -448,7 +448,7 @@ const ManufacturingPage = () => {
               Strategic business advisory services that differentiate us from traditional insurance agents. 
               We're your comprehensive risk management partner, not just your insurance provider.
             </p>
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-2 bg-gray-900 rounded-full"></div> */}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -485,7 +485,7 @@ const ManufacturingPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Specialized insurance solutions for every manufacturing sector and production type
             </p>
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-2 bg-gray-900 rounded-full"></div> */}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -580,8 +580,8 @@ const ManufacturingPage = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+18006694301" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
-                    (800) 669-4301
+                  <a href="tel:+18003265581" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                    (800) 326-5581
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
@@ -592,8 +592,8 @@ const ManufacturingPage = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@mrpinsurance.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
-                    quotes@mrpinsurance.com
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                    quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>
                 </div>

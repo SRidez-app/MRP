@@ -227,6 +227,7 @@ const ContactPage = () => {
                       ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
                       : 'border-gray-200 bg-white hover:border-orange-300'
                   }`}
+                  suppressHydrationWarning={true}
                 >
                   <div className="text-center">
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
@@ -287,7 +288,7 @@ const ContactPage = () => {
                 <strong>Report a claim 24/7:</strong> {selectedClaim.footerText}
               </p>
               <a 
-                href="/claims" 
+                href="/file-claims" 
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Get Claims Support
@@ -341,6 +342,7 @@ const ContactPage = () => {
                   placeholder="Your First Name"
                   value={formData.firstName}
                   onChange={handleInputChange}
+                  suppressHydrationWarning={true}
                 />
               </div>
 
@@ -356,6 +358,7 @@ const ContactPage = () => {
                   placeholder="Your Last Name"
                   value={formData.lastName}
                   onChange={handleInputChange}
+                  suppressHydrationWarning={true}
                 />
               </div>
             </div>
@@ -374,6 +377,7 @@ const ContactPage = () => {
                   placeholder="email@company.com"
                   value={formData.email}
                   onChange={handleInputChange}
+                  suppressHydrationWarning={true}
                 />
               </div>
 
@@ -389,6 +393,7 @@ const ContactPage = () => {
                   placeholder="(555) 123-4567"
                   value={formData.phone}
                   onChange={handleInputChange}
+                  suppressHydrationWarning={true}
                 />
               </div>
             </div>
@@ -405,6 +410,7 @@ const ContactPage = () => {
                 placeholder="Your Company Name"
                 value={formData.company}
                 onChange={handleInputChange}
+                suppressHydrationWarning={true}
               />
             </div>
 
@@ -419,6 +425,7 @@ const ContactPage = () => {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900"
                 value={formData.hearAbout}
                 onChange={handleInputChange}
+                suppressHydrationWarning={true}
               >
                 <option value="">Select an option...</option>
                 <option value="google">Google Search</option>
@@ -444,6 +451,7 @@ const ContactPage = () => {
                 placeholder="Please describe your operation, number of vehicles, types of coverage needed, current insurance challenges, etc."
                 value={formData.insuranceNeeds}
                 onChange={handleInputChange}
+                suppressHydrationWarning={true}
               />
             </div>
 
@@ -452,6 +460,7 @@ const ContactPage = () => {
               type="button"
               onClick={handleFormSubmit}
               className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mb-4"
+              suppressHydrationWarning={true}
             >
               GET MY FREE QUOTE
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

@@ -349,7 +349,7 @@ const ConstructionPage = () => {
               Select your specific coverage type below to explore tailored protection options and industry-specific endorsements.
             </p>
             {/* Underline bar */}
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-1 bg-gray-900 rounded-full"></div> */}
           </div>
 
           {/* Coverage Type Buttons */}
@@ -490,7 +490,7 @@ const ConstructionPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Specialized insurance solutions for every construction specialty
             </p>
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-1 bg-gray-900 rounded-full"></div> */}
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -595,8 +595,8 @@ const ConstructionPage = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@mrpinsurance.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
-                    quotes@mrpinsurance.com
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                    quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>
                 </div>

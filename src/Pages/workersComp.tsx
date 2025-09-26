@@ -285,7 +285,7 @@ const WorkersCompPage = () => {
               Specialized workers' compensation solutions tailored to your industry's unique risks and requirements
             </p>
             {/* Underline bar */}
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-2 bg-gray-900 rounded-full"></div> */}
           </div>
 
           {/* Industry Type Buttons */}
@@ -391,7 +391,7 @@ const WorkersCompPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Comprehensive protection for workplace injuries and occupational illnesses
             </p>
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -426,7 +426,7 @@ const WorkersCompPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Quick and easy claim filing process with 24/7 expert support
             </p>
-            <div className="w-96 h-2 bg-gray-900 rounded-full"></div>
+
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -591,8 +591,8 @@ const WorkersCompPage = () => {
                                   <Mail className="w-6 h-6 text-white" />
                                 </div>
                                 <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                                <a href="mailto:quotes@mrpinsurance.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
-                                  quotes@mrpinsurance.com
+                                <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                                  quotes@moxieriskpartners.com
                                 </a>
                                 <p className="text-xs text-gray-500 mt-1">Quick Response</p>
                               </div>

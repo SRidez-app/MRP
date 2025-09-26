@@ -241,8 +241,8 @@ const ClaimsPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Comprehensive claims support for all commercial business types with specialized expertise for your industry
             </p>
-            {/* Underline bar */}
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
+            {/* Underline bar
+            <div className="w-96 h-1 bg-gray-900 rounded-full"></div> */}
           </div>
 
           {/* Claims Resources Grid */}
@@ -296,7 +296,7 @@ const ClaimsPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Streamlined support from report to resolution with continuous advocacy throughout your claim
             </p>
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-1 bg-gray-900 rounded-full"></div> */}
           </div>
 
           {/* Process Steps */}
@@ -386,7 +386,7 @@ const ClaimsPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mb-6">
               Round-the-clock expert assistance for all your commercial insurance claims
             </p>
-            <div className="w-96 h-1 bg-gray-900 rounded-full"></div>
+            {/* <div className="w-96 h-1 bg-gray-900 rounded-full"></div> */}
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">

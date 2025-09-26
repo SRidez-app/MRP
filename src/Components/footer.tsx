@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
     { href: '/file-claims', label: 'File a Claim', ariaLabel: 'File an insurance claim' },
     { href: '/file-claims#support', label: '24/7 Claims Support', ariaLabel: '24/7 claims assistance' },
     { href: 'tel:+18006694301', label: 'Emergency Claims Line', ariaLabel: 'Call emergency claims line', isExternal: true },
-    { href: '/contact#faq', label: 'FAQ', ariaLabel: 'Frequently asked questions' },
+    { href: '/faq-page', label: 'FAQ', ariaLabel: 'Frequently asked questions' },
     { href: '/contact#resources', label: 'Resources', ariaLabel: 'Insurance resources and guides' },
   ]
 },
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="bg-black text-white">
+     <footer className="bg-black text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
 
           {/* Navigation Sections */}
           <div className="lg:col-span-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center md:justify-items-start md:ml-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center md:justify-items-start md:ml-12">
               {footerSections.map((section) => (
                 <div key={section.id} className="space-y-4 text-center md:text-left">
                   

@@ -26,7 +26,7 @@ const INDUSTRIES_DATA: Industry[] = [
     title: "Construction & Contracting", 
     description: "Specialized protection for contractors, builders, and construction professionals with general liability, workers' comp, and project-specific coverage.",
     image: "/images/construct.png", // Updated to use public path
-    href: "/construction", // Match your app directory structure
+    href: "/construction-insurance", // Match your app directory structure
     badge: "Essential",
   },
   {
@@ -34,7 +34,7 @@ const INDUSTRIES_DATA: Industry[] = [
     title: "Manufacturing & Production",
     description: "Product liability, equipment breakdown, and operational coverage for manufacturers across all industries from food processing to electronics.",
     image: "/images/Manufact.png", // Updated to use public path
-    href: "/manufacturing", // Match your app directory structure
+    href: "/manufacturing-insurance", // Match your app directory structure
     badge: "Comprehensive",
   },
   {
@@ -42,7 +42,7 @@ const INDUSTRIES_DATA: Industry[] = [
     title: "Nonprofit & Human Services",
     description: "Tailored coverage for nonprofits, human service organizations, and community groups with D&O, professional liability, and volunteer protection.",
     image: "/images/nonProf.png", // Updated to use public path
-    href: "/nonProfit", // Match your app directory structure
+    href: "/non-profit", // Match your app directory structure
     badge: "Specialized",
   },
   {
@@ -50,7 +50,7 @@ const INDUSTRIES_DATA: Industry[] = [
     title: "Government & Public Entities",
     description: "Comprehensive coverage for municipalities, public agencies, and government organizations with specialized liability and constitutional coverage.",
     image: "/images/publicE1.png", // Updated to use public path
-    href: "/publicE", // Match your app directory structure
+    href: "/public-entity", // Match your app directory structure
     badge: "Government",
   }
 ];

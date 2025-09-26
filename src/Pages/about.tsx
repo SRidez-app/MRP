@@ -140,7 +140,7 @@ const AboutPage = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Our Story
             </h2>
-            <div className="w-36 h-1 bg-orange-600 rounded-full"></div>
+            {/* <div className="w-36 h-1 bg-orange-600 rounded-full"></div> */}
           </div>
 
           <div className="space-y-12">
@@ -230,7 +230,7 @@ const AboutPage = () => {
               These aren't just words on a wall - they're the principles that guide every interaction, 
               every quote, and every decision we make.
             </p>
-            <div className="w-96 h-1 bg-orange-600 rounded-full"></div>
+            {/* <div className="w-96 h-1 bg-orange-600 rounded-full"></div> */}
           </div>
 
           <div className="space-y-8">
@@ -274,7 +274,7 @@ const AboutPage = () => {
             <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-6">
               We've built our reputation on delivering results for businesses just like yours.
             </p>
-            <div className="w-96 h-1 bg-orange-600 rounded-full mx-auto"></div>
+            {/* <div className="w-96 h-1 bg-orange-600 rounded-full mx-auto"></div> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -313,7 +313,7 @@ const AboutPage = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/contact" 
+                href="/quote-form" 
                 className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
               >
                 Get Your Quote

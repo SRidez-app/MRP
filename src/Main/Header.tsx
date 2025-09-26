@@ -9,6 +9,23 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Clear any existing timeout
+  const clearDropdownTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  };
+
+  // Set dropdown to close after delay
+  const setDropdownTimeout = () => {
+    clearDropdownTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setIsIndustriesOpen(false);
+    }, 500); // Increased from 150ms to 500ms
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -19,7 +36,10 @@ const Header = () => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      clearDropdownTimeout(); // Clean up timeout on unmount
+    };
   }, []);
 
   // Close mobile menu when window resizes to desktop
@@ -90,14 +110,15 @@ const Header = () => {
           {/* Desktop Navigation - CENTERED */}
           <nav className="hidden md:flex items-center justify-center flex-1 mx-8">
             <div className="flex items-center space-x-8">
-              {/* Industries Dropdown with HOVER */}
+              {/* Industries Dropdown with IMPROVED HOVER */}
               <div 
                 className="relative" 
                 ref={dropdownRef}
-                onMouseEnter={() => setIsIndustriesOpen(true)}
-                onMouseLeave={() => {
-                  setTimeout(() => setIsIndustriesOpen(false), 150);
+                onMouseEnter={() => {
+                  clearDropdownTimeout();
+                  setIsIndustriesOpen(true);
                 }}
+                onMouseLeave={setDropdownTimeout}
               >
                 <button
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
@@ -113,14 +134,12 @@ const Header = () => {
                   />
                 </button>
 
-                {/* Dropdown Menu with HOVER */}
+                {/* Dropdown Menu with IMPROVED HOVER */}
                 {isIndustriesOpen && (
                   <div 
                     className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-10"
-                    onMouseEnter={() => setIsIndustriesOpen(true)}
-                    onMouseLeave={() => {
-                      setTimeout(() => setIsIndustriesOpen(false), 150);
-                    }}
+                    onMouseEnter={clearDropdownTimeout}
+                    onMouseLeave={setDropdownTimeout}
                   >
                     {industries.map((industry, index) => (
                       <Link
