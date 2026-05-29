@@ -139,14 +139,14 @@ const AboutPage = () => {
             {/* Hero Stats */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-[clamp(2rem,4vw,4rem)]">
               <div className="text-center">
-                <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text mb-2">
+                <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-transparent bg-gradient-to-r from-[#D4B06B] to-[#CC9F54] bg-clip-text mb-2">
                   26+
                 </div>
                 <div className="text-white/90 font-semibold text-[clamp(0.875rem,1.2vw,1rem)]">Years Experience</div>
               </div>
               
               <div className="text-center">
-                <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text mb-2">
+                <div className="text-[clamp(2rem,4vw,3rem)] font-bold text-transparent bg-gradient-to-r from-[#D4B06B] to-[#CC9F54] bg-clip-text mb-2">
                   100%
                 </div>
                 <div className="text-white/90 font-semibold text-[clamp(0.875rem,1.2vw,1rem)]">Transparent</div>
@@ -169,7 +169,7 @@ const AboutPage = () => {
           <div className="space-y-[clamp(2rem,4vw,3rem)]">
             {/* Story Intro */}
             <div className="text-center">
-              <p className="text-[clamp(1.25rem,2vw,1.875rem)] text-orange-600 leading-relaxed max-w-[min(80rem,90vw)] mx-auto font-medium">
+              <p className="text-[clamp(1.25rem,2vw,1.875rem)] text-[#CC9F54] leading-relaxed max-w-[min(80rem,90vw)] mx-auto font-medium">
                 The trucking and logistics industry moves America, but finding reliable insurance shouldn't slow you down.
               </p>
             </div>
@@ -263,7 +263,7 @@ const AboutPage = () => {
                   
                   {/* Number Badge */}
                   <div className="flex-shrink-0">
-                    <div className="w-[clamp(3rem,4vw,4rem)] h-[clamp(3rem,4vw,4rem)] bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
+                    <div className="w-[clamp(3rem,4vw,4rem)] h-[clamp(3rem,4vw,4rem)] bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center">
                       <span className="text-white font-bold text-[clamp(1rem,1.5vw,1.25rem)]">{value.number}</span>
                     </div>
                   </div>
@@ -296,7 +296,7 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-3 gap-[clamp(1.5rem,3vw,2rem)]">
             {highlights.map((highlight, index) => (
               <div key={index} className="text-center p-[clamp(1.5rem,3vw,2rem)] bg-white rounded-2xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <div className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text mb-4">
+                <div className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text mb-4">
                   {highlight.stat}
                 </div>
                 <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-gray-900 mb-4">
@@ -317,7 +317,7 @@ const AboutPage = () => {
           <div className="space-y-[clamp(1.5rem,3vw,2rem)]">
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-gray-900 leading-tight">
               Ready to Experience the 
-              <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                 Moxie Difference?
               </span>
             </h2>
@@ -330,7 +330,7 @@ const AboutPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/quote-form" 
-                className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.75rem,1.5vw,1rem)] rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+                className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.75rem,1.5vw,1rem)] rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
               >
                 Get Your Quote
                

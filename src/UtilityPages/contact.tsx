@@ -253,19 +253,19 @@ const renderThankYou = () => (
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white">
+        <div className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] rounded-2xl p-8 text-white">
           <h3 className="text-2xl font-bold mb-4">Need immediate assistance?</h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:+15155817187" 
-              className="bg-white text-orange-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center cursor-pointer"
+              className="bg-white text-[#CC9F54] hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center cursor-pointer"
             >
               <Phone className="w-5 h-5 mr-2" />
               Call (515) 581-7187
             </a>
             <a 
               href="mailto:info@moxieriskpartners.com"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center cursor-pointer"
+              className="border-2 border-white text-white hover:bg-white hover:text-[#CC9F54] px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center cursor-pointer"
             >
               <Mail className="w-5 h-5 mr-2" />
               Email Us
@@ -307,7 +307,7 @@ if (showThankYou) {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Contact
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Our Team
                     </span>
                   </h1>
@@ -349,8 +349,8 @@ if (showThankYou) {
                 </div>
 
                 {/* Help Text */}
-                <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-                  <p className="text-orange-800 font-semibold text-center">
+                <div className="bg-[#FBF5EB] p-4 rounded-lg border border-[#E5CFA5]">
+                  <p className="text-[#8A6528] font-semibold text-center">
                     24/7 Help available! Get in touch with our dedicated team now.
                   </p>
                 </div>
@@ -383,8 +383,8 @@ if (showThankYou) {
                   onClick={() => handleClaimTypeChange(claimType.id)}
                   className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedClaimType === claimType.id
-                      ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-orange-300'
+                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
                   }`}
                   suppressHydrationWarning={true}
                 >
@@ -392,12 +392,12 @@ if (showThankYou) {
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
                       <IconComponent 
                         className={`w-12 h-12 transition-all duration-300 ${
-                          selectedClaimType === claimType.id ? 'text-orange-600' : 'text-gray-600'
+                          selectedClaimType === claimType.id ? 'text-[#CC9F54]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedClaimType === claimType.id ? 'text-orange-600' : 'text-gray-800'
+                      selectedClaimType === claimType.id ? 'text-[#CC9F54]' : 'text-gray-800'
                     }`}>
                       {claimType.title.replace(' Claims', '')}
                     </h3>
@@ -405,7 +405,7 @@ if (showThankYou) {
                   
                   {/* Selected Indicator */}
                   {selectedClaimType === claimType.id && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -418,7 +418,7 @@ if (showThankYou) {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 lg:p-12">
             
             {/* Claim Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-orange-100">
+            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-[#F0E2C8]">
               <div className="mb-4 lg:mb-0">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                   {selectedClaim.title}
@@ -434,8 +434,8 @@ if (showThankYou) {
             {/* Services Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {selectedClaim.services.map((service, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                <div key={index} className="flex items-start space-x-3 p-4 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
+                  <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                   <span className="text-gray-800 font-medium">{service}</span>
                 </div>
               ))}
@@ -448,7 +448,7 @@ if (showThankYou) {
               </p>
               <a 
                 href="/file-claims" 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Get Claims Support
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -485,7 +485,7 @@ if (showThankYou) {
             </div>
           )}
 
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-gray-200 shadow-lg">
+          <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl p-8 border border-gray-200 shadow-lg">
             
             {/* Name Row */}
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -497,7 +497,7 @@ if (showThankYou) {
                   type="text"
                   name="firstName"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
                   placeholder="Your First Name"
                   value={formData.firstName}
                   onChange={handleInputChange}
@@ -513,7 +513,7 @@ if (showThankYou) {
                   type="text"
                   name="lastName"
                   required
-className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
                   placeholder="Your Last Name"
                   value={formData.lastName}
                   onChange={handleInputChange}
@@ -533,7 +533,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
       type="email"
       name="email"
       required
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
       placeholder="email@company.com"
       value={formData.email}
       onChange={handleInputChange}
@@ -549,7 +549,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
       type="tel"
       name="phone"
       required
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
       placeholder="(555) 123-4567"
       value={formData.phone}
       onChange={handleInputChange}
@@ -566,7 +566,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
               <input
                 type="text"
                 name="company"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
                 placeholder="Your Company Name"
                 value={formData.company}
                 onChange={handleInputChange}
@@ -582,7 +582,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
               <select
                 name="hearAbout"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
                 value={formData.hearAbout}
                 onChange={handleInputChange}
                 suppressHydrationWarning={true}
@@ -607,7 +607,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
                 name="insuranceNeeds"
                 required
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 resize-vertical bg-white"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 resize-vertical bg-white"
                 placeholder="Please describe your operation, number of vehicles, types of coverage needed, current insurance challenges, etc."
                 value={formData.insuranceNeeds}
                 onChange={handleInputChange}
@@ -620,7 +620,7 @@ className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus
   type="button"
   onClick={handleFormSubmit}
   disabled={isSubmitting}
-  className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mb-4 cursor-pointer disabled:cursor-not-allowed disabled:transform-none"
+  className="w-full bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] disabled:from-gray-400 disabled:to-gray-500 text-white py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mb-4 cursor-pointer disabled:cursor-not-allowed disabled:transform-none"
   suppressHydrationWarning={true}
 >
   {isSubmitting ? (

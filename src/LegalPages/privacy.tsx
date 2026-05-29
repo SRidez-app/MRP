@@ -163,7 +163,7 @@ const PrivacyPage = () => {
           {/* Section 1: Information We Collect */}
           <div id="information-collected" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Database className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -184,7 +184,7 @@ const PrivacyPage = () => {
                     "Any other information you choose to provide through forms or communications"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -202,7 +202,7 @@ const PrivacyPage = () => {
                     "Location information (general geographic area)"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -214,7 +214,7 @@ const PrivacyPage = () => {
           {/* Section 2: How We Use Your Information */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -234,7 +234,7 @@ const PrivacyPage = () => {
                     <ul className="space-y-2">
                       {category.items.map((item, idx) => (
                         <li key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-orange-600 mt-1 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-1 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{item}</span>
                         </li>
                       ))}
@@ -248,7 +248,7 @@ const PrivacyPage = () => {
           {/* Section 3: How We Share Your Information */}
           <div id="information-sharing" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -281,7 +281,7 @@ const PrivacyPage = () => {
                     { title: "Protection:", desc: "To protect our rights, property, or safety, or that of others" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <AlertTriangle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <AlertTriangle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-gray-900">{item.title}</span>
                         <span className="text-gray-700"> {item.desc}</span>
@@ -308,7 +308,7 @@ const PrivacyPage = () => {
           {/* Section 4: Cookies and Tracking Technologies */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -331,7 +331,7 @@ const PrivacyPage = () => {
                     { title: "Preference Cookies:", desc: "Remember your settings and preferences" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-gray-900">{item.title}</span>
                         <span className="text-gray-700"> {item.desc}</span>
@@ -354,7 +354,7 @@ const PrivacyPage = () => {
           {/* Section 5: Data Security */}
           <div id="data-security" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -382,7 +382,7 @@ const PrivacyPage = () => {
                     "Incident response and breach notification procedures"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-2">
-                      <Shield className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <Shield className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -401,7 +401,7 @@ const PrivacyPage = () => {
           {/* Section 6: Your Privacy Rights */}
           <div id="your-rights" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <UserCheck className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -419,7 +419,7 @@ const PrivacyPage = () => {
                   const IconComponent = right.icon;
                   return (
                     <div key={index} className="text-center p-6 bg-white rounded-xl border border-gray-200">
-                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center mx-auto mb-4">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="text-lg font-bold text-gray-900 mb-2">{right.title}</h4>
@@ -441,7 +441,7 @@ const PrivacyPage = () => {
           {/* Section 7: Data Retention */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -465,7 +465,7 @@ const PrivacyPage = () => {
                     { title: "Website Analytics:", desc: "Typically 2-3 years" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <Clock className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <Clock className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-gray-900">{item.title}</span>
                         <span className="text-gray-700"> {item.desc}</span>
@@ -480,7 +480,7 @@ const PrivacyPage = () => {
           {/* Section 8: Children's Privacy */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -500,7 +500,7 @@ const PrivacyPage = () => {
           {/* Section 9: Policy Updates */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <AlertTriangle className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -524,7 +524,7 @@ const PrivacyPage = () => {
           {/* Section 10: Contact Information */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -549,9 +549,9 @@ const PrivacyPage = () => {
           </div>
 
           {/* Privacy Acknowledgment */}
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 lg:p-12 border border-orange-200 shadow-lg">
+          <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl p-8 lg:p-12 border border-[#E5CFA5] shadow-lg">
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto">
                 <Lock className="w-8 h-8 text-white" />
               </div>
               
@@ -571,7 +571,7 @@ const PrivacyPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="/contact-us" 
-                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+                  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
                 >
                   Contact Privacy Officer
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

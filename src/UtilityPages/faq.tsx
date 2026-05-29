@@ -410,7 +410,7 @@ const FAQPage = () => {
           <div className={`text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Frequently Asked
-              <span className="block text-transparent bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-[#D4B06B] to-[#CC9F54] bg-clip-text">
                 Questions
               </span>
             </h1>
@@ -445,20 +445,20 @@ const FAQPage = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`group p-4 rounded-xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedCategory === category.id
-                      ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-orange-300'
+                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
                   }`}
                 >
                   <div className="text-center">
                     <div className="mb-3 mx-auto w-12 h-12 flex items-center justify-center">
                       <IconComponent 
                         className={`w-8 h-8 transition-all duration-300 ${
-                          selectedCategory === category.id ? 'text-orange-600' : 'text-gray-600'
+                          selectedCategory === category.id ? 'text-[#CC9F54]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedCategory === category.id ? 'text-orange-600' : 'text-gray-800'
+                      selectedCategory === category.id ? 'text-[#CC9F54]' : 'text-gray-800'
                     }`}>
                       {category.name}
                     </h3>
@@ -466,7 +466,7 @@ const FAQPage = () => {
                   
                   {/* Selected Indicator */}
                   {selectedCategory === category.id && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#CC9F54] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-3 h-3 text-white" />
                     </div>
                   )}
@@ -502,7 +502,7 @@ const FAQPage = () => {
                     <div className="flex-shrink-0 mt-1">
                       <div className={`w-2 h-2 rounded-full ${
                         faq.category === 'claims' ? 'bg-blue-500' :
-                        faq.category === 'construction' ? 'bg-orange-500' :
+                        faq.category === 'construction' ? 'bg-[#FBF5EB]0' :
                         faq.category === 'manufacturing' ? 'bg-purple-500' :
                         faq.category === 'workers-comp' ? 'bg-green-500' :
                         faq.category === 'nonprofit' ? 'bg-pink-500' :
@@ -539,9 +539,9 @@ const FAQPage = () => {
       {/* Contact CTA Section */}
     <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 lg:p-12 border border-orange-200 shadow-lg">
+          <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl p-8 lg:p-12 border border-[#E5CFA5] shadow-lg">
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto">
                 <HelpCircle className="w-8 h-8 text-white" />
               </div>
               
@@ -586,7 +586,7 @@ const FAQPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 {/* <a 
                   href="/contact" 
-                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+                  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
                 >
                   Get Personal Help
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

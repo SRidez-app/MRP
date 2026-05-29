@@ -189,7 +189,7 @@ const ClaimsPage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
              
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Claims Support
                     </span>
                   </h1>
@@ -213,7 +213,7 @@ const ClaimsPage = () => {
                     'A+ AM Best Rated'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -227,7 +227,7 @@ const ClaimsPage = () => {
   </a>
   
   {/* ADD THIS - Trucking Claims Form Button */}
-  <a href="/file-claim" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center">
+  <a href="/file-claim" className="bg-[#CC9F54] hover:bg-[#B8893D] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center">
     <FileText className="mr-2 w-5 h-5" />
     File Trucking Claim
   </a>
@@ -271,7 +271,7 @@ const ClaimsPage = () => {
                       <IconComponent className="w-8 h-8" />
                       <h3 className="text-xl font-bold">{resource.title}</h3>
                     </div>
-                    <span className="inline-block bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="inline-block bg-[#CC9F54] text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {resource.availability}
                     </span>
                   </div>
@@ -285,7 +285,7 @@ const ClaimsPage = () => {
                     <ul className="space-y-2">
                       {resource.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-orange-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#CC9F54] flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{feature}</span>
                         </li>
                       ))}
@@ -318,20 +318,20 @@ const ClaimsPage = () => {
           <div className="grid md:grid-cols-5 gap-6 mb-8">
             {processSteps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-lg">{step.step}</span>
                 </div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h4>
-                <div className="text-orange-600 font-medium text-sm mb-2">{step.time}</div>
+                <div className="text-[#CC9F54] font-medium text-sm mb-2">{step.time}</div>
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             ))}
           </div>
 
           {/* Important Disclaimer */}
-          <div className="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg">
+          <div className="bg-[#FBF5EB] border-l-4 border-[#CC9F54] p-6 rounded-r-lg">
             <div className="flex items-start space-x-3">
-              <AlertCircle className="w-6 h-6 text-orange-600 mt-0.5 flex-shrink-0" />
+              <AlertCircle className="w-6 h-6 text-[#CC9F54] mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">Important: Claim Resolution Times</h4>
                 <p className="text-gray-700 leading-relaxed">
@@ -339,7 +339,7 @@ const ClaimsPage = () => {
                   While we provide immediate support and continuous advocacy, larger liability claims may take months or years to fully resolve. 
                   <strong> We offer ongoing monitoring and support as often as you need - weekly, monthly, or as your situation requires. </strong> 
                   <span className="inline-block mt-2">
-                    <a href="tel:+15155817187" className="text-orange-600 hover:text-orange-700 font-semibold underline">
+                    <a href="tel:+15155817187" className="text-[#CC9F54] hover:text-[#B8893D] font-semibold underline">
                        Call our experts now to discuss your specific claim timeline →
                     </a>
                   </span>
@@ -412,7 +412,7 @@ const ClaimsPage = () => {
               <div className="space-y-6">
                 {supportSteps.map((step, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold">{step.number}</span>
                     </div>
                     <div>
@@ -488,7 +488,7 @@ const ClaimsPage = () => {
     <div className="text-center">
       <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
         Need to File a
-        <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+        <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
           Claim?
         </span>
       </h2>
@@ -504,7 +504,7 @@ const ClaimsPage = () => {
           Report Claim: (515) 581-7187
         </a>
         
-        <a href="/file-claim" className="w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+        <a href="/file-claim" className="w-full sm:w-auto bg-[#CC9F54] hover:bg-[#B8893D] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center whitespace-nowrap">
           <FileText className="mr-2 w-5 h-5" />
           Trucking Claim Form
         </a>

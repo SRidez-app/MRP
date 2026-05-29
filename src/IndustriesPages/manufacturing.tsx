@@ -278,7 +278,7 @@ const ManufacturingPage = () => {
                 <div>
                   <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 leading-tight mb-[clamp(1rem,2.5vw,1.5rem)]">
                     Manufacturing
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Insurance Solutions
                     </span>
                   </h1>
@@ -297,7 +297,7 @@ const ManufacturingPage = () => {
                     'Equipment Protection'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -307,7 +307,7 @@ const ManufacturingPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
       <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -347,8 +347,8 @@ const ManufacturingPage = () => {
                   onClick={() => handleTypeSelection(coverage.typeCode)}
                   className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedType === coverage.typeCode
-                      ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-orange-300'
+                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
                   }`}
                   suppressHydrationWarning={true}
                 >
@@ -356,12 +356,12 @@ const ManufacturingPage = () => {
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
                       <IconComponent 
                         className={`w-12 h-12 transition-all duration-300 ${
-                          selectedType === coverage.typeCode ? 'text-orange-600' : 'text-gray-600'
+                          selectedType === coverage.typeCode ? 'text-[#CC9F54]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedType === coverage.typeCode ? 'text-orange-600' : 'text-gray-800'
+                      selectedType === coverage.typeCode ? 'text-[#CC9F54]' : 'text-gray-800'
                     }`}>
                       {coverage.type}
                     </h3>
@@ -369,7 +369,7 @@ const ManufacturingPage = () => {
                   
                   {/* Selected Indicator */}
                   {selectedType === coverage.typeCode && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -382,12 +382,12 @@ const ManufacturingPage = () => {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 lg:p-12">
             
             {/* Coverage Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start mb-[clamp(1.5rem,3vw,2rem)] pb-6 border-b-2 border-orange-100">
+            <div className="flex flex-col lg:flex-row justify-between items-start mb-[clamp(1.5rem,3vw,2rem)] pb-6 border-b-2 border-[#F0E2C8]">
               <div className="mb-4 lg:mb-0">
                 <h3 className="text-[clamp(1.75rem,3vw,2.25rem)] lg:text-4xl font-bold text-gray-900 mb-2">
                   {selectedCoverage.title}
                 </h3>
-                <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full font-bold text-sm">
+                <div className="inline-block bg-[#CC9F54] text-white px-4 py-2 rounded-full font-bold text-sm">
                   Coverage: {selectedCoverage.coverageAmount}
                 </div>
               </div>
@@ -403,13 +403,13 @@ const ManufacturingPage = () => {
               
               {/* Common Applications */}
               <div className="space-y-[clamp(0.75rem,2vw,1rem)]">
-                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Common Applications
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.commonApplications.map((application, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{application}</span>
                     </div>
                   ))}
@@ -418,13 +418,13 @@ const ManufacturingPage = () => {
 
               {/* Risks Covered */}
               <div className="space-y-[clamp(0.75rem,2vw,1rem)]">
-                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Risks Covered
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.risksCovered.map((risk, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{risk}</span>
                     </div>
                   ))}
@@ -433,13 +433,13 @@ const ManufacturingPage = () => {
 
               {/* Who Needs It */}
               <div className="space-y-[clamp(0.75rem,2vw,1rem)]">
-                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Who Needs This Coverage
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.whoNeedsIt.map((who, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{who}</span>
                     </div>
                   ))}
@@ -448,13 +448,13 @@ const ManufacturingPage = () => {
 
               {/* Special Features */}
               <div className="space-y-[clamp(0.75rem,2vw,1rem)]">
-                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Special Features
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.specialFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-2 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                      <Star className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0 fill-current" />
+                    <div key={index} className="flex items-start space-x-2 p-3 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
+                      <Star className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0 fill-current" />
                       <span className="text-gray-800 text-sm font-medium">{feature}</span>
                     </div>
                   ))}
@@ -485,7 +485,7 @@ const ManufacturingPage = () => {
               return (
                 <div key={service.title} className="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                   <div className="mb-[clamp(1rem,2.5vw,1.5rem)]">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mb-4">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-[clamp(1.1rem,1.8vw,1.25rem)] font-bold text-gray-900 mb-3">
@@ -518,13 +518,13 @@ const ManufacturingPage = () => {
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-[clamp(1.5rem,3vw,2rem)]">
             {industryCategories.map((category) => (
               <div key={category.title} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-[clamp(1.1rem,1.8vw,1.25rem)] font-bold text-gray-900 mb-4 pb-2 border-b-2 border-orange-200">
+                <h3 className="text-[clamp(1.1rem,1.8vw,1.25rem)] font-bold text-gray-900 mb-4 pb-2 border-b-2 border-[#E5CFA5]">
                   {category.title}
                 </h3>
                 <ul className="space-y-2">
                   {category.industries.map((industry) => (
                     <li key={industry} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{industry}</span>
                     </li>
                   ))}
@@ -586,7 +586,7 @@ const ManufacturingPage = () => {
               <div>
                 <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 mb-[clamp(1rem,2.5vw,1.5rem)] leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Manufacturing Business?
                   </span>
                 </h2>

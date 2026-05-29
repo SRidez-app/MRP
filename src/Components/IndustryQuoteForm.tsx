@@ -137,7 +137,7 @@ Source: ${industry} Page`
   };
 
   const renderField = (field: FormField) => {
-    const commonClasses = "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder:text-gray-500 bg-white";
+    const commonClasses = "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-900 placeholder:text-gray-500 bg-white";
 
     switch (field.type) {
       case 'select':
@@ -202,7 +202,7 @@ Source: ${industry} Page`
 
   return (
     <>
-      <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 shadow-xl">
+      <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl p-8 shadow-xl">
         <div className="text-center mb-8">
           <h3 className="text-3xl font-bold text-gray-900 mb-2">{title}</h3>
           <p className="text-gray-600">{subtitle}</p>
@@ -232,7 +232,7 @@ Source: ${industry} Page`
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white py-4 px-6 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] disabled:from-gray-400 disabled:to-gray-500 text-white py-4 px-6 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center gap-2">

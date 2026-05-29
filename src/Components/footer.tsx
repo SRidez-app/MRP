@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
               />
               <div>
                 <h3 className="text-xl font-bold text-white">Moxie Risk Partners</h3>
-                <p className="text-orange-300 text-sm font-medium">Insurance that moves as fast as you do.</p>
+                <p className="text-[#D9BC82] text-sm font-medium">Insurance that moves as fast as you do.</p>
               </div>
             </div>
 
@@ -147,20 +147,20 @@ const Footer: React.FC = () => {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-[#D4B06B] flex-shrink-0" />
                 <a 
                   href="tel:+15155817187" 
-                  className="text-gray-200 hover:text-orange-400 transition-colors"
+                  className="text-gray-200 hover:text-[#D4B06B] transition-colors"
                   aria-label="Call us at (515) 581-7187"
                 >
                   (515) 581-7187
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-[#D4B06B] flex-shrink-0" />
                 <a 
                   href="mailto:info@moxieriskpartners.com" 
-                  className="text-gray-200 hover:text-orange-400 transition-colors"
+                  className="text-gray-200 hover:text-[#D4B06B] transition-colors"
                   aria-label="Email us at info@moxieriskpartners.com"
                 >
                   info@moxieriskpartners.com
@@ -175,7 +175,7 @@ const Footer: React.FC = () => {
                 <span>A-Rated Carriers</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
-                <div className="w-3 h-3 bg-orange-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-[#D4B06B] rounded-full"></div>
                 <span>24/7 Support</span>
               </div>
             </div>
@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
                 <div key={section.id} className="space-y-4 text-left md:text-left">
                   
                   {/* Desktop Section Title */}
-                  <h4 className="hidden md:block text-lg font-semibold text-white border-b border-orange-500 pb-2">
+                  <h4 className="hidden md:block text-lg font-semibold text-white border-b border-[#CC9F54] pb-2">
                     {section.title}
                   </h4>
 
@@ -220,7 +220,7 @@ const Footer: React.FC = () => {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="block text-gray-200 hover:text-orange-400 transition-colors py-1 text-sm"
+                        className="block text-gray-200 hover:text-[#D4B06B] transition-colors py-1 text-sm"
                         aria-label={link.ariaLabel || link.label}
                         onClick={handleLinkClick}
                         {...(link.isExternal && {
@@ -258,14 +258,14 @@ const Footer: React.FC = () => {
             <div className="flex flex-wrap justify-center md:justify-end items-center space-x-6 text-sm">
               <a 
                 href="/privacy-policy" 
-                className="text-gray-300 hover:text-orange-400 transition-colors"
+                className="text-gray-300 hover:text-[#D4B06B] transition-colors"
                 onClick={handleLinkClick}
               >
                 Privacy Policy
               </a>
               <a 
                 href="/terms-service" 
-                className="text-gray-300 hover:text-orange-400 transition-colors"
+                className="text-gray-300 hover:text-[#D4B06B] transition-colors"
                 onClick={handleLinkClick}
               >
                 Terms & Conditions

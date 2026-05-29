@@ -148,7 +148,7 @@ const TermsPage = () => {
           {/* Section 1: Acceptance of Terms */}
           <div id="acceptance" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -171,7 +171,7 @@ const TermsPage = () => {
           {/* Section 2: License to Use */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -207,7 +207,7 @@ const TermsPage = () => {
           {/* Section 3: Insurance Services */}
           <div id="insurance-services" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -234,7 +234,7 @@ const TermsPage = () => {
                     "Final policy terms and conditions"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-2">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
@@ -253,7 +253,7 @@ const TermsPage = () => {
           {/* Section 4: User Responsibilities */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -273,7 +273,7 @@ const TermsPage = () => {
                     <ul className="space-y-2">
                       {category.items.map((item, idx) => (
                         <li key={idx} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-orange-600 mt-1 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-1 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{item}</span>
                         </li>
                       ))}
@@ -292,7 +292,7 @@ const TermsPage = () => {
           {/* Section 5: Privacy and Data Protection */}
           <div id="privacy-data" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lock className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -319,7 +319,7 @@ const TermsPage = () => {
           {/* Section 6: Insurance Disclaimers */}
           <div id="disclaimers" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <AlertTriangle className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -352,7 +352,7 @@ const TermsPage = () => {
                     { title: "Binding Coverage:", desc: "Coverage is not bound until confirmed by the insurance carrier" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <AlertTriangle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <AlertTriangle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-gray-900">{item.title}</span>
                         <span className="text-gray-700"> {item.desc}</span>
@@ -367,7 +367,7 @@ const TermsPage = () => {
           {/* Section 7: Limitation of Liability */}
           <div id="liability" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scale className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -390,7 +390,7 @@ const TermsPage = () => {
                   const IconComponent = item.icon;
                   return (
                     <div key={index} className="text-center p-6 bg-gray-50 rounded-xl border border-gray-200">
-                      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center mx-auto mb-4">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <h4 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h4>
@@ -405,7 +405,7 @@ const TermsPage = () => {
           {/* Section 8: Governing Law */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Gavel className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -423,7 +423,7 @@ const TermsPage = () => {
           {/* Section 9: Termination */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <AlertTriangle className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -448,7 +448,7 @@ const TermsPage = () => {
           {/* Section 10: SMS Terms of Service */}
           <div id="sms-terms" className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -475,7 +475,7 @@ const TermsPage = () => {
                     { title: "Costs:", desc: "Message and data rates may apply depending on your carrier plan" }
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <div>
                         <span className="font-bold text-gray-900">{item.title}</span>
                         <span className="text-gray-700"> {item.desc}</span>
@@ -510,7 +510,7 @@ const TermsPage = () => {
           {/* Section 11: Contact Information */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -534,9 +534,9 @@ const TermsPage = () => {
           </div>
 
           {/* Agreement Confirmation */}
-          <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 lg:p-12 border border-orange-200 shadow-lg">
+          <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl p-8 lg:p-12 border border-[#E5CFA5] shadow-lg">
             <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               
@@ -556,7 +556,7 @@ const TermsPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="/contact-us" 
-                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+                  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
                 >
                   Contact Our Legal Team
                   <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
