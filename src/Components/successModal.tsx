@@ -53,7 +53,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
                   style={{
                     left: `${Math.random() * 100}%`,
                     animationDelay: `${Math.random() * 0.5}s`,
-                    backgroundColor: ['#ff6b35', '#ffaa85', '#4ade80', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6', '#fbbf24'][Math.floor(Math.random() * 8)]
+                    backgroundColor: ['#B8893D', '#D4B06B', '#4ade80', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6', '#fbbf24'][Math.floor(Math.random() * 8)]
                   }}
                 />
               ))}
@@ -66,7 +66,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
                   style={{
                     left: `${Math.random() * 100}%`,
                     animationDelay: `${Math.random() * 0.8}s`,
-                    backgroundColor: ['#ff6b35', '#ffaa85'][Math.floor(Math.random() * 2)]
+                    backgroundColor: ['#B8893D', '#D4B06B'][Math.floor(Math.random() * 2)]
                   }}
                 />
               ))}
@@ -151,22 +151,22 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
                 Quick Resources:
               </p>
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <a href="/trucking-insurance" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/trucking-insurance" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Trucking Insurance
                 </a>
-                <a href="/construction" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/construction" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Construction
                 </a>
-                <a href="/nonprofit" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/nonprofit" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Nonprofit
                 </a>
-                <a href="/manufacturing" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/manufacturing" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Manufacturing
                 </a>
-                <a href="/workers-comp" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/workers-comp" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Workers Comp
                 </a>
-                <a href="/claims" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <a href="/claims" className="text-[#B8893D] hover:text-[#A87A32] hover:underline">
                   Claims Support
                 </a>
               </div>

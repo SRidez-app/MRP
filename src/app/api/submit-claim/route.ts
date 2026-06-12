@@ -222,11 +222,11 @@ export async function POST(request: NextRequest) {
       <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="background: linear-gradient(135deg, #1F2937 0%, #374151 100%); color: white; padding: 30px; border-radius: 10px 10px 0 0;">
           <h1 style="margin: 0; font-size: 24px;">New Trucking Incident Report</h1>
-          <p style="margin: 10px 0 0; opacity: 0.9;">Claim #: <strong style="color: #F97316;">${claimNumber}</strong></p>
+          <p style="margin: 10px 0 0; opacity: 0.9;">Claim #: <strong style="color: #B8893D;">${claimNumber}</strong></p>
         </div>
         
         <div style="background: #f9fafb; padding: 30px; border: 1px solid #e5e7eb; border-top: none;">
-          <h2 style="color: #1F2937; font-size: 18px; margin-top: 0; border-bottom: 2px solid #F97316; padding-bottom: 10px;">
+          <h2 style="color: #1F2937; font-size: 18px; margin-top: 0; border-bottom: 2px solid #B8893D; padding-bottom: 10px;">
             Quick Summary
           </h2>
           
@@ -295,7 +295,7 @@ export async function POST(request: NextRequest) {
           </div>
           ` : ''}
 
-          <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #F97316;">
+          <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; border-left: 4px solid #B8893D;">
             <h3 style="margin: 0 0 10px; color: #1F2937; font-size: 14px;">Claims Contact</h3>
             <p style="margin: 0; font-weight: bold;">${formData.claimsContactName || 'Not provided'}</p>
             <p style="margin: 5px 0 0; color: #6B7280; font-size: 14px;">
@@ -354,7 +354,7 @@ export async function POST(request: NextRequest) {
             
             <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 20px 0;">
               <p style="margin: 0; color: #6B7280; font-size: 14px;">Your Claim Reference Number:</p>
-              <p style="margin: 5px 0 0; font-size: 24px; font-weight: bold; color: #F97316;">${claimNumber}</p>
+              <p style="margin: 5px 0 0; font-size: 24px; font-weight: bold; color: #B8893D;">${claimNumber}</p>
             </div>
 
             <div style="background: white; padding: 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 20px 0;">
@@ -382,8 +382,8 @@ export async function POST(request: NextRequest) {
             <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
               <p style="margin: 0; font-weight: bold;">Need Immediate Assistance?</p>
               <p style="margin: 10px 0 0;">
-                📞 <a href="tel:5155817187" style="color: #F97316;">(515) 581-7187</a><br>
-                ✉️ <a href="mailto:claims@moxieriskpartners.com" style="color: #F97316;">claims@moxieriskpartners.com</a>
+                📞 <a href="tel:5155817187" style="color: #B8893D;">(515) 581-7187</a><br>
+                ✉️ <a href="mailto:claims@moxieriskpartners.com" style="color: #B8893D;">claims@moxieriskpartners.com</a>
               </p>
             </div>
           </div>

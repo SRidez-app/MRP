@@ -335,7 +335,7 @@ Source: Homepage Hero Form`
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight" style={{ color: '#ffffffff', textShadow: '2px 2px 8px rgba(0, 0, 0, 0.8)' }}>
                   Commercial insurance that moves as fast as you do.
                 </h1>
-                {/* #ffaa85 */}
+                {/* #D4B06B */}
                 {/* Company Name Second (Smaller, Orange) */}
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold" style={{ color: '#B8893D', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' }}>
                   Moxie Risk Partners

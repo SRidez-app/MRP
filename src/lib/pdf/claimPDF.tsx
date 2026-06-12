@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 header: {
   marginBottom: 20,
   borderBottomWidth: 3,
-  borderBottomColor: '#F97316',
+  borderBottomColor: '#B8893D',
   paddingBottom: 15,
   flexDirection: 'row',        
   justifyContent: 'space-between',
@@ -61,7 +61,7 @@ logo: {
   claimNumber: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#F97316',
+    color: '#B8893D',
   },
   claimDate: {
     fontSize: 10,
@@ -122,7 +122,7 @@ logo: {
     marginBottom: 10,
     paddingLeft: 10,
     borderLeftWidth: 2,
-    borderLeftColor: '#F97316',
+    borderLeftColor: '#B8893D',
   },
   subSectionTitle: {
     fontSize: 10,
