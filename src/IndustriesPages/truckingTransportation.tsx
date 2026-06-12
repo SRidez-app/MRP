@@ -110,7 +110,7 @@ const TruckingTransportationPage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Trucking & Transportation
-                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                       Insurance Solutions
                     </span>
                   </h1>
@@ -128,7 +128,7 @@ const TruckingTransportationPage = () => {
                     '24/7 Claims Service'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -137,7 +137,7 @@ const TruckingTransportationPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
 <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -188,7 +188,7 @@ const TruckingTransportationPage = () => {
                         <h3 className="text-2xl font-bold text-gray-900 mb-1">
                           {type.title}
                         </h3>
-                        <p className="text-sm font-semibold text-[#CC9F54]">
+                        <p className="text-sm font-semibold text-[#B8893D]">
                           {type.subtitle}
                         </p>
                       </div>
@@ -201,7 +201,7 @@ const TruckingTransportationPage = () => {
 <div className="flex gap-3 mt-6">
   <a 
     href={type.href}
-    className="flex-1 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-3 rounded-lg font-semibold text-center transition-all duration-300"
+    className="flex-1 bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-3 rounded-lg font-semibold text-center transition-all duration-300"
   >
     Learn More
   </a>
@@ -260,7 +260,7 @@ const TruckingTransportationPage = () => {
               const IconComponent = item.icon;
               return (
                 <div key={item.title} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-xl flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>

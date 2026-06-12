@@ -337,21 +337,21 @@ Source: Homepage Hero Form`
                 </h1>
                 {/* #ffaa85 */}
                 {/* Company Name Second (Smaller, Orange) */}
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold" style={{ color: '#CC9F54', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' }}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold" style={{ color: '#B8893D', textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' }}>
                   Moxie Risk Partners
                 </h2>
                 
                 {/* Updated Description (removed "instant") - Fixed apostrophe */}
 <p className="text-lg md:text-xl text-white leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>
   Specialized commercial insurance for trucking, construction, manufacturing, nonprofit, and public entities with DOT compliance support and 24/7 claims advocacy. 
-  <strong style={{ color: '#D9BC82' }}> Fast quotes and expedited service</strong> - we protect what builds America.
+  <strong style={{ color: '#B8893D' }}> Fast quotes and expedited service</strong> - we protect what builds America.
 </p>
                 
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button 
                     onClick={handleGetQuote}
-                    className="bg-[#CC9F54] hover:bg-[#B8893D] text-white px-8 py-4 rounded-md text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="bg-[#B8893D] hover:bg-[#A87A32] text-white px-8 py-4 rounded-md text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     suppressHydrationWarning
                   >
                     Get Quote Now
@@ -372,15 +372,15 @@ Source: Homepage Hero Form`
                   border: '1px solid rgba(255, 255, 255, 0.15)'
                 }}>
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#D9BC82', textShadow: '0 0 8px rgba(204, 159, 84, 0.4)' }}>24/7</div>
+                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#B8893D', textShadow: '0 0 8px rgba(184, 137, 61, 0.4)' }}>24/7</div>
                     <div className="text-white/90 text-sm font-medium">Claims Support</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#D9BC82', textShadow: '0 0 8px rgba(204, 159, 84, 0.4)' }}>48</div>
+                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#B8893D', textShadow: '0 0 8px rgba(184, 137, 61, 0.4)' }}>48</div>
                     <div className="text-white/90 text-sm font-medium">States</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#D9BC82', textShadow: '0 0 8px rgba(204, 159, 84, 0.4)' }}>100%</div>
+                    <div className="text-2xl md:text-3xl font-bold" style={{ color: '#B8893D', textShadow: '0 0 8px rgba(184, 137, 61, 0.4)' }}>100%</div>
                     <div className="text-white/90 text-sm font-medium">Compliant</div>
                   </div>
                 </div>
@@ -410,7 +410,7 @@ Source: Homepage Hero Form`
                           type="text" 
                           value={formData.firstName}
                           onChange={(e) => handleInputChange('firstName', e.target.value)}
-                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                           placeholder="John"
                           required
                           suppressHydrationWarning
@@ -424,7 +424,7 @@ Source: Homepage Hero Form`
                           type="text" 
                           value={formData.lastName}
                           onChange={(e) => handleInputChange('lastName', e.target.value)}
-                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                           placeholder="Doe"
                           required
                           suppressHydrationWarning
@@ -440,7 +440,7 @@ Source: Homepage Hero Form`
                       <select 
                         value={formData.industry}
                         onChange={(e) => handleIndustryChange(e.target.value)}
-                        className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
+                        className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900"
                         required
                         suppressHydrationWarning
                       >
@@ -463,7 +463,7 @@ Source: Homepage Hero Form`
                           <button
                             type="button"
                             onClick={() => setIsCoverageDropdownOpen(!isCoverageDropdownOpen)}
-                            className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-left flex justify-between items-center text-gray-900"
+                            className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-left flex justify-between items-center text-gray-900"
                           >
                             <span className="text-gray-700">
                               {formData.coverageNeeded.length === 0 
@@ -494,7 +494,7 @@ Source: Homepage Hero Form`
                                     type="checkbox"
                                     checked={formData.coverageNeeded.includes(option.value)}
                                     onChange={() => handleCoverageToggle(option.value)}
-                                    className="mr-3 w-4 h-4 text-[#CC9F54] border-gray-300 rounded focus:ring-[#CC9F54]"
+                                    className="mr-3 w-4 h-4 text-[#B8893D] border-gray-300 rounded focus:ring-[#B8893D]"
                                   />
                                   <span className="text-gray-900 text-sm font-medium">{option.label}</span>
                                 </label>
@@ -515,7 +515,7 @@ Source: Homepage Hero Form`
                           type="text" 
                           value={formData.dotNumber || ''}
                           onChange={(e) => handleInputChange('dotNumber', e.target.value)}
-                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                           placeholder="Enter your USDOT number"
                           required
                           suppressHydrationWarning
@@ -534,7 +534,7 @@ Source: Homepage Hero Form`
                           type="tel" 
                           value={formData.phone}
                           onChange={(e) => handleInputChange('phone', e.target.value)}
-                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                           placeholder="(555) 123-4567"
                           required
                           suppressHydrationWarning
@@ -548,7 +548,7 @@ Source: Homepage Hero Form`
                           type="email" 
                           value={formData.email}
                           onChange={(e) => handleInputChange('email', e.target.value)}
-                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                          className="w-full p-3 rounded-lg bg-white border border-gray-300 focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                           placeholder="your@email.com"
                           required
                           suppressHydrationWarning
@@ -560,7 +560,7 @@ Source: Homepage Hero Form`
                     <button 
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#CC9F54] hover:bg-[#B8893D] disabled:bg-gray-400 disabled:cursor-not-allowed text-white py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
+                      className="w-full bg-[#B8893D] hover:bg-[#A87A32] disabled:bg-gray-400 disabled:cursor-not-allowed text-white py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
                       suppressHydrationWarning
                     >
                       {isSubmitting ? (

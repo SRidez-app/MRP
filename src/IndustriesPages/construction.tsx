@@ -220,7 +220,7 @@ const ConstructionPage = () => {
                   <div>
                     <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                       Construction
-                      <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                      <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                         Insurance
                       </span>
                     </h1>
@@ -239,7 +239,7 @@ const ConstructionPage = () => {
                       'Expert Support'
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                        <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                         <span className="text-lg font-medium text-gray-800">{feature}</span>
                       </div>
                     ))}
@@ -248,7 +248,7 @@ const ConstructionPage = () => {
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/quote-form">
-  <button className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group w-full">
+  <button className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group w-full">
     Get Your Quote
   </button>
 </Link>
@@ -264,7 +264,7 @@ const ConstructionPage = () => {
         </section>
         
         <div className="flex items-center justify-center py-20">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#CC9F54]"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#B8893D]"></div>
         </div>
       </div>
     );
@@ -296,7 +296,7 @@ const ConstructionPage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Construction
-                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                       Insurance
                     </span>
                   </h1>
@@ -315,7 +315,7 @@ const ConstructionPage = () => {
                     'Expert Support'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -325,7 +325,7 @@ const ConstructionPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
            <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -365,8 +365,8 @@ const ConstructionPage = () => {
                   onClick={() => handleTypeSelection(coverage.typeCode)}
                   className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedType === coverage.typeCode
-                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
+                      ? 'border-[#B8893D] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#B8893D]'
                   }`}
                   suppressHydrationWarning={true}
                 >
@@ -374,12 +374,12 @@ const ConstructionPage = () => {
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
                       <IconComponent 
                         className={`w-12 h-12 transition-all duration-300 ${
-                          selectedType === coverage.typeCode ? 'text-[#CC9F54]' : 'text-gray-600'
+                          selectedType === coverage.typeCode ? 'text-[#B8893D]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedType === coverage.typeCode ? 'text-[#CC9F54]' : 'text-gray-800'
+                      selectedType === coverage.typeCode ? 'text-[#B8893D]' : 'text-gray-800'
                     }`}>
                       {coverage.type}
                     </h3>
@@ -387,7 +387,7 @@ const ConstructionPage = () => {
                   
                   {/* Selected Indicator */}
                   {selectedType === coverage.typeCode && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#B8893D] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -405,7 +405,7 @@ const ConstructionPage = () => {
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                   {selectedCoverage.title}
                 </h3>
-                <div className="inline-block bg-[#CC9F54] text-white px-4 py-2 rounded-full font-bold text-sm">
+                <div className="inline-block bg-[#B8893D] text-white px-4 py-2 rounded-full font-bold text-sm">
                   Coverage: {selectedCoverage.coverageAmount}
                 </div>
               </div>
@@ -427,7 +427,7 @@ const ConstructionPage = () => {
                 <div className="space-y-2">
                   {selectedCoverage.commonProjects.map((project, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#B8893D] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{project}</span>
                     </div>
                   ))}
@@ -442,7 +442,7 @@ const ConstructionPage = () => {
                 <div className="space-y-2">
                   {selectedCoverage.risksCovered.map((risk, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#B8893D] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{risk}</span>
                     </div>
                   ))}
@@ -457,7 +457,7 @@ const ConstructionPage = () => {
                 <div className="space-y-2">
                   {selectedCoverage.whoNeedsIt.map((who, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#B8893D] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{who}</span>
                     </div>
                   ))}
@@ -472,7 +472,7 @@ const ConstructionPage = () => {
                 <div className="space-y-2">
                   {selectedCoverage.specialFeatures.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
-                      <Star className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0 fill-current" />
+                      <Star className="w-4 h-4 text-[#B8893D] mt-0.5 flex-shrink-0 fill-current" />
                       <span className="text-gray-800 text-sm font-medium">{feature}</span>
                     </div>
                   ))}
@@ -505,7 +505,7 @@ const ConstructionPage = () => {
                 <ul className="space-y-2">
                   {category.trades.map((trade) => (
                     <li key={trade} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#B8893D] flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{trade}</span>
                     </li>
                   ))}
@@ -567,7 +567,7 @@ const ConstructionPage = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                     Construction Business?
                   </span>
                 </h2>

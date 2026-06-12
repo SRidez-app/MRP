@@ -242,7 +242,7 @@ const ServiceAreas: React.FC = () => {
                     }
                   }}
                   onKeyPress={handleKeyPress}
-                  className="w-full px-4 py-4 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-lg text-gray-900 placeholder-gray-500"
+                  className="w-full px-4 py-4 sm:py-3 border-2 border-gray-300 rounded-lg focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-lg text-gray-900 placeholder-gray-500"
                   maxLength={5}
                   suppressHydrationWarning
                 />
@@ -250,7 +250,7 @@ const ServiceAreas: React.FC = () => {
               <button
                 onClick={handleZipSearch}
                 disabled={isLoading || zipCode.length !== 5}
-                className="w-full sm:w-auto px-6 py-4 sm:py-3 bg-[#CC9F54] hover:bg-[#B8893D] disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors text-lg"
+                className="w-full sm:w-auto px-6 py-4 sm:py-3 bg-[#B8893D] hover:bg-[#B8893D] disabled:bg-gray-400 text-white font-bold rounded-lg transition-colors text-lg"
                 suppressHydrationWarning
               >
                 {isLoading ? (
@@ -264,7 +264,7 @@ const ServiceAreas: React.FC = () => {
             {/* Mobile-optimized Results */}
       {/* Mobile-optimized Results */}
 {searchPerformed && (
-  <div className="mt-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-[#CC9F54]">
+  <div className="mt-6 p-4 sm:p-6 bg-white rounded-xl shadow-lg border-l-4 border-[#B8893D]">
     {foundState ? (
       <div className="text-center">
         <div className="text-green-600 text-2xl mb-2">✓</div>
@@ -275,10 +275,10 @@ const ServiceAreas: React.FC = () => {
           Full commercial insurance coverage available in the {foundState.region} region
         </p>
         <div className="flex flex-col gap-3 justify-center">
-          <Link href="/quote-form" className="bg-[#CC9F54] hover:bg-[#B8893D] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+          <Link href="/quote-form" className="bg-[#B8893D] hover:bg-[#B8893D] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
             Get Quote Now
           </Link>
-          <a href="tel:+15155817187" className="border-2 border-[#CC9F54] text-[#B8893D] hover:bg-[#FBF5EB] px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+          <a href="tel:+15155817187" className="border-2 border-[#B8893D] text-[#B8893D] hover:bg-[#FBF5EB] px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
             Contact Local Rep
           </a>
         </div>
@@ -287,7 +287,7 @@ const ServiceAreas: React.FC = () => {
       <div className="text-center">
         <div className="text-amber-600 text-2xl mb-2">⚠</div>
         <p className="text-sm sm:text-base text-gray-700 mb-4">{error}</p>
-        <a href="tel:+15155817187" className="bg-[#CC9F54] hover:bg-[#B8893D] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
+        <a href="tel:+15155817187" className="bg-[#B8893D] hover:bg-[#B8893D] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm sm:text-base">
           Contact Us Anyway
         </a>
       </div>
@@ -299,7 +299,7 @@ const ServiceAreas: React.FC = () => {
 
         {/* States Grid Section - Mobile optimized */}
         <div className={`${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-200`}>
-          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border-t-4 border-[#CC9F54]">
+          <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-8 border-t-4 border-[#B8893D]">
             <div className="text-center mb-6 sm:mb-8">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Commercial Insurance Available Nationwide
@@ -315,7 +315,7 @@ const ServiceAreas: React.FC = () => {
                   <select
                     value={selectedRegion}
                     onChange={(e) => setSelectedRegion(e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#B8893D] focus:ring-2 focus:ring-[#B8893D]/20 outline-none transition-all text-gray-900 bg-white"
                     suppressHydrationWarning
                   >
                     <option value="all">All States ({SUPPORTED_STATES.length})</option>
@@ -333,7 +333,7 @@ const ServiceAreas: React.FC = () => {
                     onClick={() => setSelectedRegion('all')}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                       selectedRegion === 'all'
-                        ? 'bg-[#CC9F54] text-white'
+                        ? 'bg-[#B8893D] text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                     suppressHydrationWarning
@@ -346,7 +346,7 @@ const ServiceAreas: React.FC = () => {
                       onClick={() => setSelectedRegion(region)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                         selectedRegion === region
-                          ? 'bg-[#CC9F54] text-white'
+                          ? 'bg-[#B8893D] text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                       suppressHydrationWarning
@@ -370,7 +370,7 @@ const ServiceAreas: React.FC = () => {
                   <div className="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-[#B8893D] transition-colors">
                     {state.code}
                   </div>
-                  <div className="text-xs text-gray-600 group-hover:text-[#CC9F54] transition-colors mt-1 leading-tight">
+                  <div className="text-xs text-gray-600 group-hover:text-[#B8893D] transition-colors mt-1 leading-tight">
                     {state.name}
                   </div>
                   <div className="text-xs text-gray-400 group-hover:text-[#D4B06B] transition-colors hidden sm:block">
@@ -384,7 +384,7 @@ const ServiceAreas: React.FC = () => {
 
        {/* Mobile-optimized CTA Section */}
         <div className={`text-center mt-12 sm:mt-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'} delay-400`}>
-          <div className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] rounded-2xl p-6 sm:p-8 text-white">
+          <div className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] rounded-2xl p-6 sm:p-8 text-white">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
               Don't see your state? Let's talk anyway.
             </h3>
@@ -434,7 +434,7 @@ const ServiceAreas: React.FC = () => {
                 />
                 {/* State Badge Overlay */}
                 <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                  <div className="bg-[#CC9F54] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg">
+                  <div className="bg-[#B8893D] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg">
                     <span className="font-bold text-sm sm:text-lg">{selectedState.code}</span>
                   </div>
                 </div>
@@ -504,7 +504,7 @@ const ServiceAreas: React.FC = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/quote-form" className="flex-1 bg-[#CC9F54] hover:bg-[#B8893D] text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
+              <Link href="/quote-form" className="flex-1 bg-[#B8893D] hover:bg-[#B8893D] text-white py-3 px-4 sm:px-6 rounded-lg font-bold transition-colors flex items-center justify-center shadow-lg hover:shadow-xl text-sm sm:text-base">
   <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>

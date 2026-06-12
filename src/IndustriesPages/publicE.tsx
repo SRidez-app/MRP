@@ -39,7 +39,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
 
   useEffect(() => {
     if (isOpen && showConfetti) {
-      const colors = ['#CC9F54', '#B8893D', '#D4B06B', '#D9BC82', '#E5CFA5'];
+      const colors = ['#B8893D', '#B8893D', '#D4B06B', '#B8893D', '#E5CFA5'];
       const pieces = Array.from({ length: 50 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
@@ -115,15 +115,15 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
               <h4 className="font-semibold text-gray-900 mb-3">What happens next?</h4>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-start">
-                  <span className="font-bold text-[#CC9F54] mr-2">1.</span>
+                  <span className="font-bold text-[#B8893D] mr-2">1.</span>
                   <span>We'll review your entity's specific needs</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-bold text-[#CC9F54] mr-2">2.</span>
+                  <span className="font-bold text-[#B8893D] mr-2">2.</span>
                   <span>Our expert will contact you to discuss coverage options</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-bold text-[#CC9F54] mr-2">3.</span>
+                  <span className="font-bold text-[#B8893D] mr-2">3.</span>
                   <span>You'll receive a comprehensive quote tailored to your organization</span>
                 </li>
               </ul>
@@ -131,14 +131,14 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ isOpen, onClose, showConfet
 
             <button
               onClick={onClose}
-              className="w-full bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105"
+              className="w-full bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105"
             >
               Got It, Thanks!
             </button>
 
             <p className="text-xs text-gray-500 mt-4">
               Need immediate assistance? Call us at{' '}
-              <a href="tel:+15155817187" className="text-[#CC9F54] hover:text-[#B8893D] font-semibold">
+              <a href="tel:+15155817187" className="text-[#B8893D] hover:text-[#B8893D] font-semibold">
                 (515) 581-7187
               </a>
             </p>
@@ -352,7 +352,7 @@ const PublicEntityPage = () => {
                   <div>
                     <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                       Public Entity Insurance &
-                      <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                      <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                         Risk Management
                       </span>
                     </h1>
@@ -370,14 +370,14 @@ const PublicEntityPage = () => {
                       'Public Sector Expertise'
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                        <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                         <span className="text-lg font-medium text-gray-800">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group">
+                    <button className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group">
                       Get Your Quote
                      
                     </button>
@@ -393,7 +393,7 @@ const PublicEntityPage = () => {
         </section>
         
         <div className="flex items-center justify-center py-20">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#CC9F54]"></div>
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#B8893D]"></div>
         </div>
       </div>
     );
@@ -423,7 +423,7 @@ const PublicEntityPage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Public Entity Insurance &
-                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                       Risk Management
                     </span>
                   </h1>
@@ -441,7 +441,7 @@ const PublicEntityPage = () => {
                     'Public Sector Expertise'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -450,7 +450,7 @@ const PublicEntityPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                  <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -487,27 +487,27 @@ const PublicEntityPage = () => {
                   onClick={() => handleTypeSelection(service.typeCode)}
                   className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedType === service.typeCode
-                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
+                      ? 'border-[#B8893D] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#B8893D]'
                   }`}
                 >
                   <div className="text-center">
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
                       <IconComponent 
                         className={`w-12 h-12 transition-all duration-300 ${
-                          selectedType === service.typeCode ? 'text-[#CC9F54]' : 'text-gray-600'
+                          selectedType === service.typeCode ? 'text-[#B8893D]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedType === service.typeCode ? 'text-[#CC9F54]' : 'text-gray-800'
+                      selectedType === service.typeCode ? 'text-[#B8893D]' : 'text-gray-800'
                     }`}>
                       {service.type}
                     </h3>
                   </div>
                   
                   {selectedType === service.typeCode && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#B8893D] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -533,7 +533,7 @@ const PublicEntityPage = () => {
             <div className="grid md:grid-cols-3 gap-6">
               {selectedService.features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3 p-4 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
-                  <Star className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0 fill-current" />
+                  <Star className="w-5 h-5 text-[#B8893D] mt-0.5 flex-shrink-0 fill-current" />
                   <span className="text-gray-800 font-medium">{feature}</span>
                 </div>
               ))}
@@ -560,7 +560,7 @@ const PublicEntityPage = () => {
               const IconComponent = benefit.icon;
               return (
                 <div key={benefit.title} className="text-center p-8 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-xl flex items-center justify-center mx-auto mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -598,7 +598,7 @@ const PublicEntityPage = () => {
                 <ul className="space-y-2">
                   {sector.entities.map((entity) => (
                     <li key={entity} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#B8893D] flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{entity}</span>
                     </li>
                   ))}
@@ -658,7 +658,7 @@ const PublicEntityPage = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                     Public Entity?
                   </span>
                 </h2>

@@ -596,7 +596,7 @@ useEffect(() => {
                 <div>
                   <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 leading-tight mb-6">
                    Insurance
-                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                       Coverage Solutions
                     </span>
                   </h1>
@@ -614,7 +614,7 @@ useEffect(() => {
                     '24/7 Expert Support'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#B8893D] flex-shrink-0" />
                       <span className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -623,7 +623,7 @@ useEffect(() => {
                 <div className="flex flex-col sm:flex-row gap-4">
                                            <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
    suppressHydrationWarning
 >
   Get Your Quote
@@ -645,7 +645,7 @@ useEffect(() => {
           
           <div className="mb-16">
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-gray-900 mb-4 leading-tight">
-              Our Insurance <span className="text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">Coverage Options</span>
+              Our Insurance <span className="text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">Coverage Options</span>
             </h2>
             <p className="text-[clamp(1rem,1.5vw,1.25rem)] text-gray-600 max-w-3xl">
               Comprehensive protection across all industries. Click "Learn More" on any coverage to see details.
@@ -657,7 +657,7 @@ useEffect(() => {
             {coverageTypes.map((coverage) => (
               <div 
                 key={coverage.id}
-                className="bg-white rounded-xl border border-gray-200 hover:border-[#CC9F54] hover:shadow-lg transition-all duration-300 p-6 flex flex-col"
+                className="bg-white rounded-xl border border-gray-200 hover:border-[#B8893D] hover:shadow-lg transition-all duration-300 p-6 flex flex-col"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {coverage.title}
@@ -669,7 +669,7 @@ useEffect(() => {
                 {/* Learn More Button */}
                 <button
                   onClick={() => openCoverageModal(coverage)}
-                  className="mt-auto flex items-center text-[#CC9F54] hover:text-[#B8893D] font-semibold text-sm transition-colors group"
+                  className="mt-auto flex items-center text-[#B8893D] hover:text-[#B8893D] font-semibold text-sm transition-colors group"
                   suppressHydrationWarning
                 >
                   Learn More
@@ -726,7 +726,7 @@ useEffect(() => {
               {/* Coverage Amount */}
               <div>
                 <h3 className="text-[clamp(0.95rem,1.2vw,1.125rem)] font-bold text-gray-900 mb-3">Coverage Amount</h3>
-                <p className="text-[#CC9F54] font-bold text-xl">
+                <p className="text-[#B8893D] font-bold text-xl">
                   {selectedCoverage.coverageAmount}
                 </p>
               </div>
@@ -772,7 +772,7 @@ useEffect(() => {
                 </a>
                 <button 
                   onClick={scrollToForm}
-                  className="flex-1 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-4 px-6 rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 flex items-center justify-center group shadow-lg"
+                  className="flex-1 bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-4 px-6 rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 flex items-center justify-center group shadow-lg"
                 >
                   Get a Quote
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
@@ -787,7 +787,7 @@ useEffect(() => {
       <section className="py-[clamp(3rem,8vw,5rem)] bg-gradient-to-br from-gray-50 to-white">
         <div className="responsive-container max-w-[min(64rem,95vw)] mx-auto px-[clamp(1rem,3vw,2rem)]">
           <div className="text-center animate-fade-in-up delay-400">
-            <div className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] rounded-2xl p-[clamp(1.5rem,4vw,2rem)] text-white shadow-2xl">
+            <div className="bg-gradient-to-r from-[#B8893D] to-[#B8893D] rounded-2xl p-[clamp(1.5rem,4vw,2rem)] text-white shadow-2xl">
               <h3 className="text-[clamp(1.25rem,2.5vw,2rem)] font-bold mb-[clamp(0.75rem,2vw,1rem)]">
                 Need Help Finding the Right Coverage?
               </h3>
@@ -797,13 +797,13 @@ useEffect(() => {
               <div className="flex flex-col gap-[clamp(0.75rem,2vw,1rem)] sm:flex-row justify-center">
                 <a 
                   href="tel:+15155817187"
-                  className="bg-white text-[#CC9F54] hover:bg-gray-100 px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.75rem,2vw,0.875rem)] rounded-lg font-bold transition-colors text-[clamp(0.875rem,1.2vw,1rem)] shadow-md hover:shadow-lg"
+                  className="bg-white text-[#B8893D] hover:bg-gray-100 px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.75rem,2vw,0.875rem)] rounded-lg font-bold transition-colors text-[clamp(0.875rem,1.2vw,1rem)] shadow-md hover:shadow-lg"
                 >
                   Call (515) 581-7187
                 </a>
                 <button 
                   onClick={scrollToForm}
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#CC9F54] px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.75rem,2vw,0.875rem)] rounded-lg font-bold transition-colors text-[clamp(0.875rem,1.2vw,1rem)]"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#B8893D] px-[clamp(1.5rem,4vw,2rem)] py-[clamp(0.75rem,2vw,0.875rem)] rounded-lg font-bold transition-colors text-[clamp(0.875rem,1.2vw,1rem)]"
                   suppressHydrationWarning
                 >
                   Get Free Quote
@@ -820,7 +820,7 @@ useEffect(() => {
           <div className="text-center mb-16">
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-gray-900 mb-4">
               Why Choose
-              <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+              <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                 Moxie Risk Partners?
               </span>
             </h2>
@@ -828,7 +828,7 @@ useEffect(() => {
 
           <div className="grid md:grid-cols-3 gap-[clamp(1.5rem,3vw,2rem)]">
             <div className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-gray-900 mb-4">Expert Guidance</h3>
@@ -838,7 +838,7 @@ useEffect(() => {
             </div>
 
             <div className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-gray-900 mb-4">Competitive Rates</h3>
@@ -848,7 +848,7 @@ useEffect(() => {
             </div>
 
             <div className="text-center p-8 bg-gray-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Phone className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-gray-900 mb-4">24/7 Support</h3>
@@ -872,7 +872,7 @@ useEffect(() => {
               <div>
                 <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 mb-6 leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#B8893D] to-[#B8893D] bg-clip-text">
                     Business?
                   </span>
                 </h2>
@@ -916,7 +916,7 @@ useEffect(() => {
 <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-2xl shadow-xl border border-gray-200 p-8">
   
   <div className="text-center mb-6">
-    <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-4">
+    <div className="w-16 h-16 bg-gradient-to-br from-[#B8893D] to-[#B8893D] rounded-full flex items-center justify-center mx-auto mb-4">
       <Shield className="w-8 h-8 text-white" />
     </div>
     <h3 className="text-[clamp(1.25rem,2vw,1.5rem)] font-bold text-gray-900 mb-2">Get Your Free Quote</h3>
@@ -932,7 +932,7 @@ useEffect(() => {
       <input
         type="text"
         required
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
         placeholder="Your Company Name"
         value={formData.companyName}
         onChange={(e) => setFormData({...formData, companyName: e.target.value})}
@@ -947,7 +947,7 @@ useEffect(() => {
       <input
         type="text"
         required
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
         placeholder="Your Full Name"
         value={formData.contactName}
         onChange={(e) => setFormData({...formData, contactName: e.target.value})}
@@ -964,7 +964,7 @@ useEffect(() => {
         <input
           type="email"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
           placeholder="email@company.com"
           value={formData.email}
           onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -979,7 +979,7 @@ useEffect(() => {
         <input
           type="tel"
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-gray-900 placeholder-gray-500 bg-white"
           placeholder="(555) 123-4567"
           value={formData.phone}
           onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -995,7 +995,7 @@ useEffect(() => {
       </label>
       <select
         required
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-gray-900 bg-white"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-gray-900 bg-white"
         value={formData.industry}
         onChange={(e) => setFormData({...formData, industry: e.target.value})}
         suppressHydrationWarning
@@ -1018,7 +1018,7 @@ useEffect(() => {
         <button
           type="button"
           onClick={() => setIsCoverageDropdownOpen(!isCoverageDropdownOpen)}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CC9F54] focus:border-transparent outline-none transition-all text-left flex justify-between items-center text-gray-900 bg-white min-h-[3rem]"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B8893D] focus:border-transparent outline-none transition-all text-left flex justify-between items-center text-gray-900 bg-white min-h-[3rem]"
         >
           <span className="text-gray-700 truncate">
             {formData.coverageType.length === 0 
@@ -1049,7 +1049,7 @@ useEffect(() => {
                   type="checkbox"
                   checked={formData.coverageType.includes(option.value)}
                   onChange={() => handleCoverageToggle(option.value)}
-                  className="mr-3 w-4 h-4 text-[#CC9F54] border-gray-300 rounded focus:ring-[#CC9F54] flex-shrink-0"
+                  className="mr-3 w-4 h-4 text-[#B8893D] border-gray-300 rounded focus:ring-[#B8893D] flex-shrink-0"
                 />
                 <span className="text-gray-900 text-sm font-medium">{option.label}</span>
               </label>
@@ -1062,7 +1062,7 @@ useEffect(() => {
     <button
       onClick={handleFormSubmit}
       disabled={isSubmitting}
-      className="w-full bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-4 rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mt-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+      className="w-full bg-gradient-to-r from-[#B8893D] to-[#B8893D] hover:from-[#A87A32] hover:to-[#9A7030] text-white py-4 rounded-lg font-bold text-[clamp(0.95rem,1.2vw,1.125rem)] min-h-[3rem] transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group mt-6 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       suppressHydrationWarning
     >
       {isSubmitting ? (

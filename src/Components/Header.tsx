@@ -123,7 +123,7 @@ const Header = () => {
               >
                 <button
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
-                  className="flex items-center text-gray-700 hover:text-[#CC9F54] px-2 py-2 text-lg font-medium transition-colors duration-200"
+                  className="flex items-center text-gray-700 hover:text-[#B8893D] px-2 py-2 text-lg font-medium transition-colors duration-200"
                   aria-expanded={isIndustriesOpen}
                   suppressHydrationWarning={true}
                 >
@@ -156,7 +156,7 @@ const Header = () => {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-gray-700 hover:text-[#CC9F54] px-3 py-2 text-lg font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-[#B8893D] px-3 py-2 text-lg font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -167,7 +167,7 @@ const Header = () => {
                 href={portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-[#CC9F54] px-3 py-2 text-lg font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-[#B8893D] px-3 py-2 text-lg font-medium transition-colors duration-200"
               >
                 Client Portal
               </a>
@@ -178,7 +178,7 @@ const Header = () => {
           <div className="hidden md:flex">
             <Link 
               href="/quote-form"
-              className="bg-[#CC9F54] hover:bg-[#B8893D] text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm whitespace-nowrap"
+              className="bg-[#B8893D] hover:bg-[#B8893D] text-white px-6 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm whitespace-nowrap"
             >
               Get a Quote
             </Link>
@@ -207,7 +207,7 @@ const Header = () => {
               <div>
                 <button
                   onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
-                  className="flex items-center justify-between w-full text-left text-gray-700 hover:text-[#CC9F54] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
+                  className="flex items-center justify-between w-full text-left text-gray-700 hover:text-[#B8893D] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                   suppressHydrationWarning={true}
                 >
                   Industries
@@ -242,7 +242,7 @@ const Header = () => {
                 <Link
                   key={index}
                   href={item.href}
-                  className="block text-gray-700 hover:text-[#CC9F54] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
+                  className="block text-gray-700 hover:text-[#B8893D] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -254,7 +254,7 @@ const Header = () => {
                 href={portalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-gray-700 hover:text-[#CC9F54] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
+                className="block text-gray-700 hover:text-[#B8893D] hover:bg-gray-50 px-3 py-2 text-lg font-semibold rounded-md transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Client Portal
@@ -264,7 +264,7 @@ const Header = () => {
               <div className="pt-4 border-t border-gray-200 mt-4">
                 <Link 
                   href="/quote-form"
-                  className="block w-full bg-[#CC9F54] hover:bg-[#B8893D] text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm text-center"
+                  className="block w-full bg-[#B8893D] hover:bg-[#B8893D] text-white px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 shadow-sm text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get a Quote

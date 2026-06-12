@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
               />
               <div>
                 <h3 className="text-xl font-bold text-white">Moxie Risk Partners</h3>
-                <p className="text-[#D9BC82] text-sm font-medium">Insurance that moves as fast as you do.</p>
+                <p className="text-[#B8893D] text-sm font-medium">Insurance that moves as fast as you do.</p>
               </div>
             </div>
 
@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
                 <div key={section.id} className="space-y-4 text-left md:text-left">
                   
                   {/* Desktop Section Title */}
-                  <h4 className="hidden md:block text-lg font-semibold text-white border-b border-[#CC9F54] pb-2">
+                  <h4 className="hidden md:block text-lg font-semibold text-white border-b border-[#B8893D] pb-2">
                     {section.title}
                   </h4>
 
