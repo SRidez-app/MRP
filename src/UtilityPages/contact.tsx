@@ -230,15 +230,15 @@ const renderThankYou = () => (
           <h3 className="text-2xl font-bold text-gray-900 mb-6">What happens next?</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-[#CC9F54]" />
               </div>
               <h4 className="text-lg font-bold text-gray-900 mb-2">Review</h4>
               <p className="text-gray-600">Our team reviews your inquiry and prepares information</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-[#CC9F54]" />
               </div>
               <h4 className="text-lg font-bold text-gray-900 mb-2">Personalization</h4>
               <p className="text-gray-600">We customize solutions based on your specific needs</p>
