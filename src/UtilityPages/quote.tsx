@@ -327,7 +327,7 @@ const QuotePage: React.FC = () => {
       <div className="relative">
         <div className="h-2 bg-gray-200 rounded-full">
           <div 
-            className="h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full transition-all duration-500"
+            className="h-2 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] rounded-full transition-all duration-500"
             style={{ width: `${(currentStep / 3) * 100}%` }}
           />
         </div>
@@ -341,7 +341,7 @@ const QuotePage: React.FC = () => {
                   currentStep > step 
                     ? 'bg-green-500 text-white' 
                     : currentStep === step 
-                    ? 'bg-orange-500 text-white' 
+                    ? 'bg-[#CC9F54] text-white'
                     : 'bg-gray-300 text-gray-600'
                 }`}
               >
@@ -352,7 +352,7 @@ const QuotePage: React.FC = () => {
                 )}
               </div>
               <span className={`text-sm font-medium mt-2 ${
-                currentStep >= step ? 'text-orange-600' : 'text-gray-500'
+                currentStep >= step ? 'text-[#CC9F54]' : 'text-gray-500'
               }`}>
                 {step === 1 && 'Contact Info'}
                 {step === 2 && 'Business Details'}
@@ -384,7 +384,7 @@ const QuotePage: React.FC = () => {
             name="industry"
             value={formData.industry}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
             required
           >
             <option value="">Select your industry</option>
@@ -404,7 +404,7 @@ const QuotePage: React.FC = () => {
             name="businessName"
             value={formData.businessName}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
             placeholder="e.g., ABC Company LLC"
             required
           />
@@ -420,7 +420,7 @@ const QuotePage: React.FC = () => {
             name="contactName"
             value={formData.contactName}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
             placeholder="Your full name"
             required
           />
@@ -436,7 +436,7 @@ const QuotePage: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
             placeholder="(555) 123-4567"
             required
           />
@@ -452,7 +452,7 @@ const QuotePage: React.FC = () => {
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
             placeholder="your@email.com"
             required
           />
@@ -486,7 +486,7 @@ const QuotePage: React.FC = () => {
                   name="dotNumber"
                   value={formData.dotNumber || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
                   placeholder="Your DOT Number"
                   required
                 />
@@ -501,7 +501,7 @@ const QuotePage: React.FC = () => {
                   name="fleetSize"
                   value={formData.fleetSize || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select fleet size</option>
@@ -522,7 +522,7 @@ const QuotePage: React.FC = () => {
                   name="primaryCargo"
                   value={formData.primaryCargo || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select cargo type</option>
@@ -550,7 +550,7 @@ const QuotePage: React.FC = () => {
                   name="contractorType"
                   value={formData.contractorType || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select type</option>
@@ -572,7 +572,7 @@ const QuotePage: React.FC = () => {
                   name="yearsExperience"
                   value={formData.yearsExperience || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select years</option>
@@ -597,7 +597,7 @@ const QuotePage: React.FC = () => {
                   name="industryType"
                   value={formData.industryType || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select industry</option>
@@ -620,7 +620,7 @@ const QuotePage: React.FC = () => {
                   name="annualRevenue"
                   value={formData.annualRevenue || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select revenue</option>
@@ -646,7 +646,7 @@ const QuotePage: React.FC = () => {
                   name="organizationType"
                   value={formData.organizationType || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select type</option>
@@ -668,7 +668,7 @@ const QuotePage: React.FC = () => {
                   name="annualBudget"
                   value={formData.annualBudget || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select budget</option>
@@ -694,7 +694,7 @@ const QuotePage: React.FC = () => {
                   name="entityType"
                   value={formData.entityType || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select type</option>
@@ -715,7 +715,7 @@ const QuotePage: React.FC = () => {
                   name="annualBudget"
                   value={formData.annualBudget || ''}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
                   required
                 >
                   <option value="">Select budget</option>
@@ -739,7 +739,7 @@ const QuotePage: React.FC = () => {
               name="domiciledState"
               value={formData.domiciledState || ''}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
               required
             >
               <option value="">Select your state</option>
@@ -770,7 +770,7 @@ const QuotePage: React.FC = () => {
             name="yearsInBusiness"
             value={formData.yearsInBusiness}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
             required
           >
             <option value="">Select years</option>
@@ -791,7 +791,7 @@ const QuotePage: React.FC = () => {
             name="previousClaims"
             value={formData.previousClaims}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
             required
           >
             <option value="">Select claims history</option>
@@ -812,7 +812,7 @@ const QuotePage: React.FC = () => {
             name="currentInsurance"
             value={formData.currentInsurance}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500"
             placeholder="e.g., Progressive, State Farm, or None"
           />
         </div>
@@ -827,7 +827,7 @@ const QuotePage: React.FC = () => {
             name="desiredStartDate"
             value={formData.desiredStartDate}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900"
             min={new Date().toISOString().split('T')[0]}
           />
         </div>
@@ -841,7 +841,7 @@ const QuotePage: React.FC = () => {
             name="additionalInfo"
             value={formData.additionalInfo}
             onChange={handleInputChange}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 placeholder-gray-500 resize-none"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 placeholder-gray-500 resize-none"
             placeholder="Any special requirements, equipment details, or questions..."
             rows={4}
           />
@@ -867,15 +867,15 @@ const QuotePage: React.FC = () => {
         <h3 className="text-2xl font-bold text-gray-900 mb-6">What happens next?</h3>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="text-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-8 h-8 text-blue-600" />
+            <div className="w-16 h-16 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-4">
+              <Clock className="w-8 h-8 text-[#CC9F54]" />
             </div>
             <h4 className="text-lg font-bold text-gray-900 mb-2">Review</h4>
             <p className="text-gray-600">Our underwriters review your application</p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Star className="w-8 h-8 text-purple-600" />
+            <div className="w-16 h-16 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-4">
+              <Star className="w-8 h-8 text-[#CC9F54]" />
             </div>
             <h4 className="text-lg font-bold text-gray-900 mb-2">Quote Preparation</h4>
             <p className="text-gray-600">We prepare your customized quote options</p>
@@ -890,12 +890,12 @@ const QuotePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white">
+      <div className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] rounded-2xl p-8 text-white">
         <h3 className="text-2xl font-bold mb-4">Need immediate assistance?</h3>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="tel:+15155817187" 
-            className="bg-white text-orange-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center"
+          <a
+            href="tel:+15155817187"
+            className="bg-white text-[#CC9F54] hover:bg-gray-100 px-6 py-3 rounded-lg font-bold transition-colors flex items-center justify-center"
           >
             <Phone className="w-5 h-5 mr-2" />
             Call (515) 581-7187
@@ -907,7 +907,7 @@ const QuotePage: React.FC = () => {
 
   if (currentStep === 4) {
     return (
-      <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-orange-50 py-12 ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+      <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-[#FBF5EB] py-12 ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {renderThankYou()}
         </div>
@@ -916,7 +916,7 @@ const QuotePage: React.FC = () => {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-orange-50 ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+    <div className={`min-h-screen bg-gradient-to-br from-gray-50 to-[#FBF5EB] ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       
       {/* Hero Section */}
       <section className="py-12 lg:py-20">
@@ -940,7 +940,7 @@ const QuotePage: React.FC = () => {
               <div>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                   Get Your Insurance
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#A87A32] bg-clip-text">
                     Quote Today
                   </span>
                 </h1>
@@ -969,7 +969,7 @@ const QuotePage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="tel:+15155817187" 
-                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call (515) 581-7187
@@ -1015,7 +1015,7 @@ const QuotePage: React.FC = () => {
                   type="button" 
                   onClick={nextStep}
                   disabled={!isStepValid(currentStep)}
-                  className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl disabled:shadow-none"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] disabled:from-gray-400 disabled:to-gray-500 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl disabled:shadow-none"
                 >
                   Continue
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -1025,7 +1025,7 @@ const QuotePage: React.FC = () => {
                   type="button"
                   onClick={handleSubmit}
                   disabled={isSubmitting || !isStepValid(currentStep)}
-                  className="w-full sm:w-auto bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl disabled:shadow-none"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] disabled:from-gray-400 disabled:to-gray-500 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl disabled:shadow-none"
                 >
                   {isSubmitting ? (
                     <>
@@ -1050,7 +1050,7 @@ const QuotePage: React.FC = () => {
               <span className="font-medium">100% Secure & Confidential</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Phone className="w-5 h-5 text-blue-600" />
+              <Phone className="w-5 h-5 text-[#CC9F54]" />
               <span className="font-medium">Expert Support Available</span>
             </div>
           </div>
