@@ -71,13 +71,13 @@ const ComingSoon = () => {
           
           {/* Coming Soon Badge */}
           <div className="inline-block mb-8 px-6 py-3 rounded-full" style={{
-            background: 'rgba(255, 107, 53, 0.15)',
+            background: 'rgba(204, 159, 84, 0.15)',
             backdropFilter: 'blur(12px)',
-            border: '2px solid rgba(255, 170, 133, 0.3)'
+            border: '2px solid rgba(217, 188, 130, 0.3)'
           }}>
             <span className="text-xl md:text-2xl font-bold tracking-wider" style={{ 
-              color: '#ffaa85',
-              textShadow: '0 0 20px rgba(255, 170, 133, 0.5)'
+              color: '#D9BC82',
+              textShadow: '0 0 20px rgba(217, 188, 130, 0.5)'
             }}>
               COMING SOON
             </span>
@@ -95,7 +95,7 @@ const ComingSoon = () => {
             
             {/* Company Name */}
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold" style={{ 
-              color: '#ff6b35', 
+              color: '#CC9F54', 
               textShadow: '1px 1px 4px rgba(0, 0, 0, 0.7)' 
             }}>
               Moxie Risk Partners
@@ -106,7 +106,7 @@ const ComingSoon = () => {
               textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' 
             }}>
               Specialized commercial insurance for trucking, construction, manufacturing, nonprofit, and public entities with DOT compliance support and 24/7 claims advocacy. 
-              <strong style={{ color: '#ffaa85' }}> Fast quotes and expedited service</strong> - we protect what builds America.
+              <strong style={{ color: '#D9BC82' }}> Fast quotes and expedited service</strong> - we protect what builds America.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ const ComingSoon = () => {
             <div className="inline-block rounded-2xl p-8 shadow-2xl max-w-md mx-auto" style={{
               background: 'linear-gradient(135deg, rgba(30, 30, 35, 0.95) 0%, rgba(45, 45, 50, 0.92) 100%)',
               backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 170, 133, 0.15)',
+              border: '1px solid rgba(217, 188, 130, 0.15)',
               boxShadow: '0 25px 50px rgba(0, 0, 0, 0.6)'
             }}>
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3" style={{ 
@@ -129,13 +129,13 @@ const ComingSoon = () => {
               
               <button 
                 onClick={handleEarlyAccess}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="w-full bg-[#CC9F54] hover:bg-[#B8893D] text-white px-8 py-4 rounded-lg text-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Request Quote Now
               </button>
               
               <p className="text-white/60 text-xs mt-4">
-                Email us at <a href="mailto:quotes@moxieriskpartners.com" className="text-orange-400 hover:text-orange-300 underline">quotes@moxieriskpartners.com</a>
+                Email us at <a href="mailto:quotes@moxieriskpartners.com" className="text-[#D9BC82] hover:text-[#E5CFA5] underline">quotes@moxieriskpartners.com</a>
               </p>
             </div>
           </div>
@@ -148,22 +148,22 @@ const ComingSoon = () => {
           }}>
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold" style={{ 
-                color: '#ffaa85', 
-                textShadow: '0 0 8px rgba(255, 170, 133, 0.4)' 
+                color: '#D9BC82', 
+                textShadow: '0 0 8px rgba(217, 188, 130, 0.4)' 
               }}>24/7</div>
               <div className="text-white/90 text-sm font-medium">Claims Support</div>
             </div>
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold" style={{ 
-                color: '#ffaa85', 
-                textShadow: '0 0 8px rgba(255, 170, 133, 0.4)' 
+                color: '#D9BC82', 
+                textShadow: '0 0 8px rgba(217, 188, 130, 0.4)' 
               }}>48</div>
               <div className="text-white/90 text-sm font-medium">States</div>
             </div>
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold" style={{ 
-                color: '#ffaa85', 
-                textShadow: '0 0 8px rgba(255, 170, 133, 0.4)' 
+                color: '#D9BC82', 
+                textShadow: '0 0 8px rgba(217, 188, 130, 0.4)' 
               }}>100%</div>
               <div className="text-white/90 text-sm font-medium">Compliant</div>
             </div>

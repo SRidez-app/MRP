@@ -241,7 +241,7 @@ const CommAutoLiability = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Commercial Auto
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Liability Insurance
                     </span>
                   </h1>
@@ -259,7 +259,7 @@ const CommAutoLiability = () => {
                     'Nationwide Coverage'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -269,7 +269,7 @@ const CommAutoLiability = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
             <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -298,19 +298,19 @@ const CommAutoLiability = () => {
       </p>
     </div>
     
-    <div className="bg-white rounded-xl p-8 border-2 border-orange-200 mb-8 max-w-4xl">
+    <div className="bg-white rounded-xl p-8 border-2 border-[#E5CFA5] mb-8 max-w-4xl">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">Common Coverage Issues We Address:</h3>
       <ul className="space-y-4">
         <li className="flex items-start space-x-3">
-          <AlertCircle className="w-5 h-5 text-orange-600 mt-1 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 text-[#CC9F54] mt-1 flex-shrink-0" />
           <span className="text-gray-700">Insufficient liability limits leading to higher premiums at renewal</span>
         </li>
         <li className="flex items-start space-x-3">
-          <AlertCircle className="w-5 h-5 text-orange-600 mt-1 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 text-[#CC9F54] mt-1 flex-shrink-0" />
           <span className="text-gray-700">Coverage gaps that leave your business exposed to claims</span>
         </li>
         <li className="flex items-start space-x-3">
-          {/* <AlertCircle className="w-5 h-5 text-orange-600 mt-1 flex-shrink-0" /> */}
+          {/* <AlertCircle className="w-5 h-5 text-[#CC9F54] mt-1 flex-shrink-0" /> */}
           {/* <span className="text-gray-700">Non-compliance issues that can result in fines and operational delays</span> */}
         </li>
       </ul>
@@ -318,7 +318,7 @@ const CommAutoLiability = () => {
 
     <a 
       href="tel:+15155817187"
-      className="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+      className="inline-flex items-center bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
     >
       Schedule Your Policy Review
       <ArrowRight className="ml-2 w-5 h-5" />
@@ -342,7 +342,7 @@ const CommAutoLiability = () => {
             {businessTypes.map((businessType) => (
               <div key={businessType.name} className={`bg-white rounded-xl p-6 border-2 hover:shadow-lg transition-all duration-300 ${
                 businessType.riskLevel === 'high' ? 'border-red-200' :
-                businessType.riskLevel === 'moderate' ? 'border-orange-200' :
+                businessType.riskLevel === 'moderate' ? 'border-[#E5CFA5]' :
                 'border-gray-200'
               }`}>
                 <div className="flex items-start justify-between mb-4">
@@ -351,7 +351,7 @@ const CommAutoLiability = () => {
                   </h3>
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                     businessType.riskLevel === 'high' ? 'bg-red-100 text-red-700' :
-                    businessType.riskLevel === 'moderate' ? 'bg-orange-100 text-orange-700' :
+                    businessType.riskLevel === 'moderate' ? 'bg-[#FBF5EB] text-[#A87A32]' :
                     'bg-gray-100 text-gray-700'
                   }`}>
                     {businessType.riskLevel} risk
@@ -387,14 +387,14 @@ const CommAutoLiability = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {coverageComponents.map((coverage) => (
               <div key={coverage.title} className={`rounded-xl p-8 border-2 ${
-                coverage.isCore ? 'bg-orange-50 border-orange-200' : 'bg-white border-gray-200'
+                coverage.isCore ? 'bg-[#FBF5EB] border-[#E5CFA5]' : 'bg-white border-gray-200'
               }`}>
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-gray-900">
                     {coverage.title}
                   </h3>
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                    coverage.isCore ? 'bg-orange-600 text-white' : 'bg-gray-600 text-white'
+                    coverage.isCore ? 'bg-[#CC9F54] text-white' : 'bg-gray-600 text-white'
                   }`}>
                     {coverage.isCore ? 'Required' : 'Optional'}
                   </span>
@@ -405,7 +405,7 @@ const CommAutoLiability = () => {
                 <ul className="space-y-3">
                   {coverage.features.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -430,10 +430,10 @@ const CommAutoLiability = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-200">
+            <div className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-xl p-6 border border-[#E5CFA5]">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Interstate Commerce</h3>
               <p className="text-gray-600 text-sm mb-4">FMCSA requires minimum $750,000 liability for interstate commercial operations.</p>
-              <div className="text-2xl font-bold text-orange-600">$750,000 minimum</div>
+              <div className="text-2xl font-bold text-[#CC9F54]">$750,000 minimum</div>
             </div>
             <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-6 border border-red-200">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Hazardous Materials</h3>
@@ -506,7 +506,7 @@ const CommAutoLiability = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Get DOT Compliant
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Liability Coverage Today
                   </span>
                 </h2>
@@ -520,24 +520,24 @@ const CommAutoLiability = () => {
               <div className="grid md:grid-cols-1 gap-6">
                 
                 {/* Phone */}
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                  <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                     (515) 581-7187
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
 
                 {/* Email */}
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                     quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>

@@ -210,7 +210,7 @@ const OwnerOperator = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Owner Operator
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Insurance
                     </span>
                   </h1>
@@ -227,7 +227,7 @@ const OwnerOperator = () => {
                     '24/7 Claims Support'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -236,7 +236,7 @@ const OwnerOperator = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
               <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -275,7 +275,7 @@ const OwnerOperator = () => {
                   <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6">
                     <div className="flex items-start justify-between mb-3">
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-orange-600" />
+                        <IconComponent className="w-6 h-6 text-[#CC9F54]" />
                       </div>
                    
                     </div>
@@ -286,7 +286,7 @@ const OwnerOperator = () => {
                     <ul className="space-y-2">
                       {coverage.features.map((feature, index) => (
                         <li key={index} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-gray-700">{feature}</span>
                         </li>
                       ))}
@@ -314,7 +314,7 @@ const OwnerOperator = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {authorityTypes.map((authority) => (
-              <div key={authority.title} className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8 border border-orange-200">
+              <div key={authority.title} className="bg-gradient-to-br from-[#FBF5EB] to-[#F5EDE0] rounded-xl p-8 border border-[#E5CFA5]">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {authority.title}
                 </h3>
@@ -324,7 +324,7 @@ const OwnerOperator = () => {
                 <ul className="space-y-3">
                   {authority.coverages.map((coverage, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-800 font-medium">{coverage}</span>
                     </li>
                   ))}
@@ -353,7 +353,7 @@ const OwnerOperator = () => {
               const IconComponent = factor.icon;
               return (
                 <div key={factor.title} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-lg flex items-center justify-center mb-4">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">
@@ -418,7 +418,7 @@ const OwnerOperator = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Trucking Business?
                   </span>
                 </h2>
@@ -430,23 +430,23 @@ const OwnerOperator = () => {
 
               <div className="grid md:grid-cols-1 gap-6">
                 
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                  <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                     (515) 581-7187
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
 
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                     quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>

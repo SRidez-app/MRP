@@ -227,7 +227,7 @@ const PhysicalDamage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Commercial Auto
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Physical Damage Insurance
                     </span>
                   </h1>
@@ -244,7 +244,7 @@ const PhysicalDamage = () => {
                     'Flexible Deductible Options'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -253,7 +253,7 @@ const PhysicalDamage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
              <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -288,7 +288,7 @@ const PhysicalDamage = () => {
                 <div key={coverage.title} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-6">
                     <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-3">
-                      <IconComponent className="w-6 h-6 text-orange-600" />
+                      <IconComponent className="w-6 h-6 text-[#CC9F54]" />
                     </div>
                     <h3 className="text-xl font-bold text-white">{coverage.title}</h3>
                   </div>
@@ -297,7 +297,7 @@ const PhysicalDamage = () => {
                     <ul className="space-y-2">
                       {coverage.features.map((feature, index) => (
                         <li key={index} className="flex items-start space-x-2">
-                          <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-gray-700">{feature}</span>
                         </li>
                       ))}
@@ -328,7 +328,7 @@ const PhysicalDamage = () => {
               const IconComponent = enhancement.icon;
               return (
                 <div key={enhancement.title} className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">
@@ -360,13 +360,13 @@ const PhysicalDamage = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {vehicleCategories.map((category) => (
               <div key={category.title} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-orange-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-[#E5CFA5]">
                   {category.title}
                 </h3>
                 <ul className="space-y-2">
                   {category.types.map((type) => (
                     <li key={type} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{type}</span>
                     </li>
                   ))}
@@ -376,7 +376,7 @@ const PhysicalDamage = () => {
           </div>
 
           {/* Don't See Your Vehicle CTA */}
-          <div className="mt-12 bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200 rounded-xl p-8 text-center">
+          <div className="mt-12 bg-gradient-to-r from-[#FBF5EB] to-[#F5EDE0] border-2 border-[#E5CFA5] rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
               Don't See Your Vehicle Type?
             </h3>
@@ -386,14 +386,14 @@ const PhysicalDamage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="tel:+15155817187" 
-                className="inline-flex items-center justify-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call Us: (515) 581-7187
               </a>
               <a 
                 href="mailto:quotes@moxieriskpartners.com" 
-                className="inline-flex items-center justify-center border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-3 rounded-lg font-bold transition-all duration-300"
+                className="inline-flex items-center justify-center border-2 border-[#CC9F54] text-[#CC9F54] hover:bg-[#B8893D] hover:text-white px-8 py-3 rounded-lg font-bold transition-all duration-300"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 Email Our Team
@@ -471,7 +471,7 @@ const PhysicalDamage = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Protect Your Assets with
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Physical Damage Coverage
                   </span>
                 </h2>
@@ -483,23 +483,23 @@ const PhysicalDamage = () => {
 
               <div className="grid md:grid-cols-1 gap-6">
                 
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                  <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                     (515) 581-7187
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
 
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                     quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>

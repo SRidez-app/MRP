@@ -185,7 +185,7 @@ const CaptivesPage = () => {
                   
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Captive Insurance
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Programs
                     </span>
                   </h1>
@@ -207,7 +207,7 @@ const CaptivesPage = () => {
                     'Tax-Advantaged Structure'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -216,7 +216,7 @@ const CaptivesPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
            <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -283,7 +283,7 @@ const CaptivesPage = () => {
 
           <div className="bg-gray-900 text-white p-8 rounded-2xl">
   <div className="flex items-start space-x-4">
-    <Shield className="w-12 h-12 text-orange-500 flex-shrink-0 mt-1" />
+    <Shield className="w-12 h-12 text-[#CC9F54] flex-shrink-0 mt-1" />
     <div>
       <h3 className="text-2xl font-bold mb-3">Why Captives Are Unique</h3>
       <p className="text-gray-300 leading-relaxed mb-4">
@@ -294,7 +294,7 @@ const CaptivesPage = () => {
         Rather than giving generic examples, we prefer to have a detailed conversation about your specific 
         situation and design a captive solution that fits your unique needs.
       </p>
-      <p className="text-orange-300 font-semibold">
+      <p className="text-[#D9BC82] font-semibold">
         Ready to explore if a captive makes sense for your business? Let's talk through your options 
         and create a customized strategy together.
       </p>
@@ -325,7 +325,7 @@ const CaptivesPage = () => {
                   key={index}
                   className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -339,7 +339,7 @@ const CaptivesPage = () => {
             })}
           </div>
 
-          <div className="mt-16 bg-gradient-to-r from-orange-600 to-red-600 p-12 rounded-2xl text-white">
+          <div className="mt-16 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] p-12 rounded-2xl text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-3xl font-bold mb-6">
                 Financial Impact: Real Numbers
@@ -347,18 +347,18 @@ const CaptivesPage = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 <div>
                   <div className="text-5xl font-bold mb-2">15-30%</div>
-                  <p className="text-orange-100">Average cost reduction over 5 years</p>
+                  <p className="text-[#E5CFA5]">Average cost reduction over 5 years</p>
                 </div>
                 <div>
                   <div className="text-5xl font-bold mb-2">48%</div>
-                  <p className="text-orange-100">Fewer fatalities vs industry average</p>
+                  <p className="text-[#E5CFA5]">Fewer fatalities vs industry average</p>
                 </div>
                 <div>
                   <div className="text-5xl font-bold mb-2">22%</div>
-                  <p className="text-orange-100">Fewer workers' comp claims</p>
+                  <p className="text-[#E5CFA5]">Fewer workers' comp claims</p>
                 </div>
               </div>
-              <p className="text-orange-100 mt-6 text-sm">
+              <p className="text-[#E5CFA5] mt-6 text-sm">
                 *Based on Captive Resources study of 15 mature group captives
               </p>
             </div>
@@ -383,12 +383,12 @@ const CaptivesPage = () => {
             {captiveTypes.map((captive, index) => (
               <div 
                 key={index}
-                className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-orange-500 transition-all duration-300 shadow-lg"
+                className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-[#CC9F54] transition-all duration-300 shadow-lg"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   <div className="flex-1">
                     <div className="flex items-center mb-4">
-                      <div className="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-bold mr-4">
+                      <div className="bg-[#FBF5EB] text-[#8A652B] px-4 py-2 rounded-full text-sm font-bold mr-4">
                         {captive.type}
                       </div>
                       <div className="text-sm text-gray-600 font-semibold">
@@ -461,13 +461,13 @@ const CaptivesPage = () => {
       ].map((step, index) => (
         <div key={index} className="relative">
           <div className="bg-white p-6 rounded-xl shadow-lg h-full">
-            <div className="text-5xl font-bold text-orange-200 mb-4">{step.number}</div>
+            <div className="text-5xl font-bold text-[#E5CFA5] mb-4">{step.number}</div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
             <p className="text-gray-600 leading-relaxed">{step.description}</p>
           </div>
           {index < 3 && (
             <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
-              <ArrowRight className="w-6 h-6 text-orange-400" />
+              <ArrowRight className="w-6 h-6 text-[#D9BC82]" />
             </div>
           )}
         </div>
@@ -492,7 +492,7 @@ const CaptivesPage = () => {
             {faqItems.map((faq, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-orange-500 transition-all duration-300"
+                className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-[#CC9F54] transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(index)}
@@ -503,7 +503,7 @@ const CaptivesPage = () => {
                     {faq.question}
                   </span>
                   <span className={`transform transition-transform duration-300 flex-shrink-0 ${faq.isOpen ? 'rotate-180' : ''}`}>
-                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-[#CC9F54]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
@@ -546,24 +546,24 @@ const CaptivesPage = () => {
 
               <div className="space-y-4">
                 {/* Phone */}
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                  <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                     (515) 581-7187
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
 
                 {/* Email */}
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                     quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>

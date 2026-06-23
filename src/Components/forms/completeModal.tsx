@@ -53,7 +53,7 @@ const CompleteModal: React.FC<CompleteModalProps> = ({
           {claimNumber && (
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-4 text-center">
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Reference Number</p>
-              <p className="text-xl font-bold text-orange-600 tracking-wide">{claimNumber}</p>
+              <p className="text-xl font-bold text-[#CC9F54] tracking-wide">{claimNumber}</p>
             </div>
           )}
 
@@ -67,14 +67,14 @@ const CompleteModal: React.FC<CompleteModalProps> = ({
               href="tel:5155817187" 
               className="flex-1 flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg px-3 py-2.5 transition-colors"
             >
-              <Phone className="w-4 h-4 text-orange-500" />
+              <Phone className="w-4 h-4 text-[#CC9F54]" />
               <span className="text-sm font-medium text-gray-700">(515) 581-7187</span>
             </a>
             <a 
               href="mailto:claims@moxieriskpartners.com" 
               className="flex-1 flex items-center justify-center gap-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg px-3 py-2.5 transition-colors"
             >
-              <Mail className="w-4 h-4 text-orange-500" />
+              <Mail className="w-4 h-4 text-[#CC9F54]" />
               <span className="text-sm font-medium text-gray-700">Email Us</span>
             </a>
           </div>
@@ -98,7 +98,7 @@ const CompleteModal: React.FC<CompleteModalProps> = ({
             <button
               type="button"
               onClick={onStartNew}
-              className="flex-1 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all"
+              className="flex-1 py-2.5 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] text-white rounded-lg font-medium hover:from-[#B8893D] hover:to-[#A87A32] transition-all"
             >
               New Claim
             </button>

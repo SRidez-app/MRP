@@ -259,10 +259,10 @@ const InsuranceCardUpload: React.FC<InsuranceCardUploadProps> = ({
       <div
         className={`border-2 border-dashed rounded-xl p-6 text-center transition-all ${
           isUploading
-            ? 'border-orange-400 bg-orange-50'
+            ? 'border-[#D9BC82] bg-[#FBF5EB]'
             : error
             ? 'border-red-300 bg-red-50'
-            : 'border-gray-300 hover:border-orange-400 hover:bg-orange-50/50 cursor-pointer'
+            : 'border-gray-300 hover:border-[#D9BC82] hover:bg-[#FBF5EB]/50 cursor-pointer'
         }`}
       >
         <input
@@ -278,11 +278,11 @@ const InsuranceCardUpload: React.FC<InsuranceCardUploadProps> = ({
           htmlFor="insurance-card-upload"
           className={isUploading ? 'cursor-wait' : 'cursor-pointer'}
         >
-          <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <div className="w-14 h-14 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-3">
             {isUploading ? (
-              <Loader2 className="w-7 h-7 text-orange-500 animate-spin" />
+              <Loader2 className="w-7 h-7 text-[#CC9F54] animate-spin" />
             ) : (
-              <CreditCard className="w-7 h-7 text-orange-500" />
+              <CreditCard className="w-7 h-7 text-[#CC9F54]" />
             )}
           </div>
           <p className="text-gray-700 font-medium">
@@ -290,7 +290,7 @@ const InsuranceCardUpload: React.FC<InsuranceCardUploadProps> = ({
               'Analyzing insurance card...'
             ) : (
               <>
-                <span className="text-orange-600">Upload your insurance card</span> to auto-fill
+                <span className="text-[#CC9F54]">Upload your insurance card</span> to auto-fill
               </>
             )}
           </p>

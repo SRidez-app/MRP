@@ -52,13 +52,63 @@ const CallToAction: React.FC = () => {
             {/* Benefits List */}
             <div className="space-y-4 mb-8">
               {[
-                { icon: '🏆', text: 'Industry-leading coverage options', desc: 'Comprehensive protection tailored to your business' },
-                { icon: '📍', text: 'Local expertise in your market', desc: 'Regional specialists who know your area' },
-                { icon: '⚡', text: 'Fast quote turnaround time', desc: 'Quick responses when you need them most' }
+                {
+                  svg: (
+                    <svg className="w-7 h-7" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Shield body */}
+                      <path d="M6 4.5L14 2L22 4.5V12C22 17.5 18.5 22 14 24C9.5 22 6 17.5 6 12V4.5Z" fill="#CC9F54" fillOpacity="0.15" stroke="#CC9F54" strokeWidth="1.5" strokeLinejoin="round"/>
+                      {/* Sword blade */}
+                      <path d="M14 7V17" stroke="#CC9F54" strokeWidth="1.8" strokeLinecap="round"/>
+                      {/* Sword crossguard */}
+                      <path d="M10.5 12.5H17.5" stroke="#CC9F54" strokeWidth="1.8" strokeLinecap="round"/>
+                      {/* Sword pommel */}
+                      <circle cx="14" cy="19" r="1" fill="#CC9F54"/>
+                    </svg>
+                  ),
+                  text: 'Industry-leading coverage options',
+                  desc: 'Comprehensive protection tailored to your business'
+                },
+                {
+                  svg: (
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#CC9F54" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                      <path d="M2 12h20" />
+                      <path d="M12 2c2.5 3.5 4 7.5 4 10s-1.5 6.5-4 10" />
+                      <circle cx="12" cy="12" r="3" fill="#CC9F54" opacity="0.2" />
+                      <circle cx="12" cy="12" r="1.5" fill="#CC9F54" />
+                    </svg>
+                  ),
+                  text: 'Local expertise in your market',
+                  desc: 'Regional specialists who know your area'
+                },
+                {
+                  svg: (
+                    <svg className="w-7 h-7" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      {/* Clock face */}
+                      <circle cx="14" cy="14" r="11.5" stroke="#CC9F54" strokeWidth="1.5"/>
+                      {/* Inner ring */}
+                      <circle cx="14" cy="14" r="9" stroke="#CC9F54" strokeWidth="0.5" strokeOpacity="0.3"/>
+                      {/* Hour hand */}
+                      <path d="M14 14V8" stroke="#CC9F54" strokeWidth="2" strokeLinecap="round"/>
+                      {/* Minute hand */}
+                      <path d="M14 14L19 11" stroke="#CC9F54" strokeWidth="1.5" strokeLinecap="round"/>
+                      {/* Center dot */}
+                      <circle cx="14" cy="14" r="1.5" fill="#CC9F54"/>
+                      {/* Hour markers */}
+                      <circle cx="14" cy="4.5" r="0.8" fill="#CC9F54"/>
+                      <circle cx="14" cy="23.5" r="0.8" fill="#CC9F54"/>
+                      <circle cx="4.5" cy="14" r="0.8" fill="#CC9F54"/>
+                      <circle cx="23.5" cy="14" r="0.8" fill="#CC9F54"/>
+                    </svg>
+                  ),
+                  text: 'Fast quote turnaround time',
+                  desc: 'Quick responses when you need them most'
+                }
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#F0E2C8] border border-[#E5CFA5] rounded-xl flex items-center justify-center mr-4">
-                    <span className="text-xl">{benefit.icon}</span>
+                  <div className="flex-shrink-0 w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center mr-4">
+                    {benefit.svg}
                   </div>
                   <div className="flex-1">
                     <span className="text-gray-900 font-semibold text-lg block">{benefit.text}</span>

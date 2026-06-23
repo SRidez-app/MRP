@@ -32,7 +32,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 }) => (
   <div className={className}>
     <label className={`block text-sm text-gray-700 mb-2 ${labelClassName}`}>
-      {label} {required && <span className="text-orange-500">*</span>}
+      {label} {required && <span className="text-[#CC9F54]">*</span>}
     </label>
     <input
       type={type}
@@ -41,7 +41,7 @@ export const TextInput: React.FC<TextInputProps> = ({
       onChange={onChange}
       required={required}
       placeholder={placeholder}
-      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
+      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
     />
   </div>
 );
@@ -74,7 +74,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 }) => (
   <div className={className}>
     <label className={`block text-sm text-gray-700 mb-2 ${labelClassName}`}>
-      {label} {required && <span className="text-orange-500">*</span>}
+      {label} {required && <span className="text-[#CC9F54]">*</span>}
     </label>
     <textarea
       name={name}
@@ -83,7 +83,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
       required={required}
       rows={rows}
       placeholder={placeholder}
-      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 resize-none"
+      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 resize-none"
     />
   </div>
 );
@@ -121,14 +121,14 @@ export const Select: React.FC<SelectProps> = ({
 }) => (
   <div className={className}>
     <label className={`block text-sm text-gray-700 mb-2 ${labelClassName}`}>
-      {label} {required && <span className="text-orange-500">*</span>}
+      {label} {required && <span className="text-[#CC9F54]">*</span>}
     </label>
     <select
       name={name}
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
+      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
     >
       <option value="">{placeholder}</option>
       {options.map((option) => (
@@ -171,7 +171,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
 }) => (
   <div className={className}>
     <p className={`block text-sm text-gray-700 mb-3 ${labelClassName}`}>
-      {label} {required && <span className="text-orange-500">*</span>}
+      {label} {required && <span className="text-[#CC9F54]">*</span>}
     </p>
     <div className="flex flex-wrap gap-3">
       {options.map((option) => (
@@ -179,7 +179,7 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
           key={option.value}
           className={`inline-flex items-center px-4 py-2.5 rounded-lg border-2 cursor-pointer transition-all select-none ${
             value === option.value
-              ? 'border-orange-500 bg-orange-50 text-orange-700'
+              ? 'border-[#CC9F54] bg-[#FBF5EB] text-[#A87A32]'
               : 'border-gray-200 bg-white hover:border-gray-300 text-gray-700'
           }`}
         >
@@ -193,11 +193,11 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
           />
           <span
             className={`w-4 h-4 rounded-full border-2 mr-3 flex items-center justify-center flex-shrink-0 transition-colors ${
-              value === option.value ? 'border-orange-500' : 'border-gray-400'
+              value === option.value ? 'border-[#CC9F54]' : 'border-gray-400'
             }`}
           >
             {value === option.value && (
-              <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+              <span className="w-2 h-2 rounded-full bg-[#CC9F54]"></span>
             )}
           </span>
           <span className="font-medium text-sm">{option.label}</span>
@@ -227,14 +227,14 @@ export const FormSection: React.FC<FormSectionProps> = ({
     {darkHeader ? (
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white px-6 py-4">
         <div className="flex items-center gap-3">
-          {icon && <div className="text-orange-400">{icon}</div>}
+          {icon && <div className="text-[#D9BC82]">{icon}</div>}
           <h2 className="text-lg sm:text-xl font-bold">{title}</h2>
         </div>
       </div>
     ) : (
-      <div className="border-b-4 border-orange-500 px-6 py-4 bg-gradient-to-r from-orange-50 to-white">
+      <div className="border-b-4 border-[#CC9F54] px-6 py-4 bg-gradient-to-r from-[#FBF5EB] to-white">
         <div className="flex items-center gap-3">
-          {icon && <div className="text-orange-500">{icon}</div>}
+          {icon && <div className="text-[#CC9F54]">{icon}</div>}
           <h2 className="text-lg sm:text-xl font-bold text-gray-900">{title}</h2>
         </div>
       </div>
@@ -260,7 +260,7 @@ export const SubSection: React.FC<SubSectionProps> = ({
   <div className={className}>
     {title && (
       <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-        <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+        <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
         {title}
       </h3>
     )}
@@ -407,7 +407,7 @@ export const OwnerFields: React.FC<OwnerFieldsProps> = ({
         value={nameValue}
         onChange={onChange}
         placeholder="Owner name"
-        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
       />
       <input
         type="text"
@@ -415,7 +415,7 @@ export const OwnerFields: React.FC<OwnerFieldsProps> = ({
         value={contactValue}
         onChange={onChange}
         placeholder="Contact information"
-        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
       />
     </div>
   </div>
@@ -439,10 +439,10 @@ export const WitnessEntry: React.FC<WitnessEntryProps> = ({
   onRemove,
   canRemove,
 }) => (
-  <div className="bg-gray-50 border-2 border-gray-100 rounded-xl p-4 sm:p-5 mb-4 hover:border-orange-200 transition-colors">
+  <div className="bg-gray-50 border-2 border-gray-100 rounded-xl p-4 sm:p-5 mb-4 hover:border-[#E5CFA5] transition-colors">
     <div className="flex justify-between items-center mb-4">
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+        <div className="w-8 h-8 bg-[#CC9F54] rounded-full flex items-center justify-center text-white font-bold text-sm">
           {index + 1}
         </div>
         <h4 className="font-semibold text-gray-900">Witness #{index + 1}</h4>
@@ -465,7 +465,7 @@ export const WitnessEntry: React.FC<WitnessEntryProps> = ({
           type="text"
           value={witness.name}
           onChange={(e) => onChange(witness.id, 'name', e.target.value)}
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
         />
       </div>
       <div>
@@ -474,7 +474,7 @@ export const WitnessEntry: React.FC<WitnessEntryProps> = ({
           type="tel"
           value={witness.phone}
           onChange={(e) => onChange(witness.id, 'phone', e.target.value)}
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
         />
       </div>
       <div className="md:col-span-2">
@@ -483,7 +483,7 @@ export const WitnessEntry: React.FC<WitnessEntryProps> = ({
           type="email"
           value={witness.email}
           onChange={(e) => onChange(witness.id, 'email', e.target.value)}
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300"
         />
       </div>
     </div>
@@ -494,7 +494,7 @@ export const WitnessEntry: React.FC<WitnessEntryProps> = ({
         onChange={(e) => onChange(witness.id, 'statement', e.target.value)}
         rows={3}
         placeholder="Witness account of what happened..."
-        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 resize-none"
+        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 resize-none"
       />
     </div>
   </div>
@@ -523,7 +523,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({ isOpen, imageUrl, fileNam
         <button
           type="button"
           onClick={onClose}
-          className="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors p-2"
+          className="absolute -top-12 right-0 text-white hover:text-[#D9BC82] transition-colors p-2"
           aria-label="Close preview"
         >
           <X className="h-8 w-8" />
@@ -655,7 +655,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         className={`border-2 border-dashed rounded-xl p-8 text-center transition-all ${
           files.length >= maxFiles
             ? 'border-gray-200 bg-gray-50'
-            : 'border-gray-300 hover:border-orange-400 hover:bg-orange-50/50 cursor-pointer'
+            : 'border-gray-300 hover:border-[#D9BC82] hover:bg-[#FBF5EB]/50 cursor-pointer'
         }`}
       >
         <input
@@ -671,11 +671,11 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           htmlFor="file-upload"
           className={files.length >= maxFiles ? 'cursor-not-allowed' : 'cursor-pointer'}
         >
-          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Upload className="h-8 w-8 text-orange-500" />
+          <div className="w-16 h-16 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-4">
+            <Upload className="h-8 w-8 text-[#CC9F54]" />
           </div>
           <p className="text-gray-700">
-            <span className="text-orange-600 font-semibold hover:text-orange-700">
+            <span className="text-[#CC9F54] font-semibold hover:text-[#A87A32]">
               Click to upload
             </span>{' '}
             or drag and drop
@@ -696,7 +696,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               .map((file) => (
                 <div
                   key={file.id}
-                  className="relative group rounded-xl overflow-hidden border-2 border-gray-200 hover:border-orange-400 transition-all bg-gray-100 aspect-square"
+                  className="relative group rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[#D9BC82] transition-all bg-gray-100 aspect-square"
                 >
                   {/* Thumbnail Image */}
                   <img
@@ -747,13 +747,13 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               .map((file) => (
                 <div
                   key={file.id}
-                  className="flex items-center justify-between bg-white border-2 border-gray-100 px-4 py-3 rounded-lg hover:border-orange-200 transition-colors"
+                  className="flex items-center justify-between bg-white border-2 border-gray-100 px-4 py-3 rounded-lg hover:border-[#E5CFA5] transition-colors"
                 >
                   <div className="flex items-center space-x-3 min-w-0">
                     <div className="flex-shrink-0">
                       {file.type.startsWith('video/') ? (
-                        <div className="h-10 w-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <span className="text-xs font-bold text-purple-600">VID</span>
+                        <div className="h-10 w-10 bg-[#FBF5EB] rounded-lg flex items-center justify-center">
+                          <span className="text-xs font-bold text-[#CC9F54]">VID</span>
                         </div>
                       ) : file.type.includes('pdf') ? (
                         <div className="h-10 w-10 bg-red-100 rounded-lg flex items-center justify-center">

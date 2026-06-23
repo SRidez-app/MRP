@@ -96,13 +96,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, currentStep, completed
           <span className="text-sm font-medium text-gray-600">
             Step {activeCurrentIndex + 1} of {activeSteps.length}
           </span>
-          <span className="text-sm font-semibold text-orange-600">
+          <span className="text-sm font-semibold text-[#CC9F54]">
             {steps[currentStep]?.title}
           </span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div 
-            className="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full transition-all duration-500"
+            className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] h-2 rounded-full transition-all duration-500"
             style={{ width: `${((activeCurrentIndex + 1) / activeSteps.length) * 100}%` }}
           />
         </div>
@@ -130,7 +130,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, currentStep, completed
                   <div
                     className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
                       isCurrent
-                        ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg scale-110'
+                        ? 'bg-gradient-to-r from-[#CC9F54] to-[#B8893D] text-white shadow-lg scale-110'
                         : isCompleted || isPast
                         ? 'bg-green-500 text-white'
                         : 'bg-gray-200 text-gray-500'
@@ -140,7 +140,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, currentStep, completed
                   </div>
                   <span
                     className={`mt-2 text-xs font-medium transition-colors ${
-                      isCurrent ? 'text-orange-600' : isCompleted || isPast ? 'text-green-600' : 'text-gray-400'
+                      isCurrent ? 'text-[#CC9F54]' : isCompleted || isPast ? 'text-green-600' : 'text-gray-400'
                     }`}
                   >
                     {step.shortTitle}
@@ -604,7 +604,7 @@ case 'incident':
          {/* Insurance Card Upload - NEW */}
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             INSURANCE CARD (OPTIONAL)
           </h3>
           <p className="text-sm text-gray-600 mb-4">
@@ -620,7 +620,7 @@ case 'incident':
         {/* Policy Information */}
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             YOUR POLICY INFORMATION
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -647,7 +647,7 @@ case 'incident':
         {/* Time of Incident */}
         <div className="pt-6 border-t border-gray-100">
           <label className="block text-sm text-gray-700 mb-2 font-semibold">
-            TIME OF INCIDENT <span className="text-orange-500">*</span>
+            TIME OF INCIDENT <span className="text-[#CC9F54]">*</span>
           </label>
           <div className="flex gap-3 max-w-md">
             <select
@@ -655,7 +655,7 @@ case 'incident':
               value={formData.incidentHour}
               onChange={handleInputChange}
               required
-              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
+              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
             >
               <option value="">Hour</option>
               {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((hour) => (
@@ -669,7 +669,7 @@ case 'incident':
               value={formData.incidentMinute}
               onChange={handleInputChange}
               required
-              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
+              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer"
             >
               <option value="">Min</option>
               {['00', '15', '30', '45'].map((min) => (
@@ -683,7 +683,7 @@ case 'incident':
               value={formData.incidentPeriod}
               onChange={handleInputChange}
               required
-              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer font-medium"
+              className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 bg-white hover:border-gray-300 cursor-pointer font-medium"
             >
               <option value="">AM/PM</option>
               <option value="AM">AM</option>
@@ -764,7 +764,7 @@ case 'incident':
       <div className="space-y-8">
         <div>
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             BUSINESS CONTACT FOR CLAIMS
           </h3>
           {insuranceCardData && (insuranceCardData.policyholderFirstName || insuranceCardData.policyholderLastName) && (
@@ -801,7 +801,7 @@ case 'incident':
 
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             PERSON COMPLETING THIS FORM
           </h3>
           
@@ -809,8 +809,8 @@ case 'incident':
           <label className="flex items-center gap-3 mb-4 cursor-pointer group">
             <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
               sameAsClaimsContact 
-                ? 'bg-orange-500 border-orange-500' 
-                : 'border-gray-300 group-hover:border-orange-400'
+                ? 'bg-[#CC9F54] border-[#CC9F54]' 
+                : 'border-gray-300 group-hover:border-[#D9BC82]'
             }`}>
               {sameAsClaimsContact && (
                 <Check className="w-3 h-3 text-white" />
@@ -877,7 +877,7 @@ case 'incident':
               />
 
               {formData.policeReportFiled === 'yes' && (
-                <div className="space-y-6 pl-4 border-l-4 border-orange-200 bg-orange-50/50 p-4 rounded-r-lg">
+                <div className="space-y-6 pl-4 border-l-4 border-[#E5CFA5] bg-[#FBF5EB]/50 p-4 rounded-r-lg">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <TextInput
                       label="Police Report Number"
@@ -894,7 +894,7 @@ case 'incident':
                   </div>
                   
                   {/* Police Report Upload */}
-                  <div className="pt-4 border-t border-orange-200">
+                  <div className="pt-4 border-t border-[#E5CFA5]">
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
                       UPLOAD POLICE REPORT
                     </label>
@@ -905,7 +905,7 @@ case 'incident':
                       className={`border-2 border-dashed rounded-xl p-6 text-center transition-all ${
                         policeReportFiles.length >= 5
                           ? 'border-gray-200 bg-white'
-                          : 'border-orange-300 hover:border-orange-400 hover:bg-orange-100/50 cursor-pointer bg-white'
+                          : 'border-[#D9BC82] hover:border-[#D9BC82] hover:bg-[#FBF5EB]/50 cursor-pointer bg-white'
                       }`}
                     >
                       <input
@@ -938,11 +938,11 @@ case 'incident':
                         htmlFor="police-report-upload"
                         className={policeReportFiles.length >= 5 ? 'cursor-not-allowed' : 'cursor-pointer'}
                       >
-                        <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                          <FileText className="h-6 w-6 text-orange-500" />
+                        <div className="w-12 h-12 bg-[#FBF5EB] rounded-full flex items-center justify-center mx-auto mb-3">
+                          <FileText className="h-6 w-6 text-[#CC9F54]" />
                         </div>
                         <p className="text-gray-700 text-sm">
-                          <span className="text-orange-600 font-semibold">Click to upload</span> police report
+                          <span className="text-[#CC9F54] font-semibold">Click to upload</span> police report
                         </p>
                         <p className="text-xs text-gray-500 mt-1">PDF, images, or documents (max 5 files)</p>
                       </label>
@@ -956,8 +956,8 @@ case 'incident':
                             className="flex items-center justify-between bg-white border border-gray-200 px-3 py-2 rounded-lg"
                           >
                             <div className="flex items-center space-x-2 min-w-0">
-                              <div className="h-8 w-8 bg-orange-100 rounded flex items-center justify-center flex-shrink-0">
-                                <FileText className="h-4 w-4 text-orange-600" />
+                              <div className="h-8 w-8 bg-[#FBF5EB] rounded flex items-center justify-center flex-shrink-0">
+                                <FileText className="h-4 w-4 text-[#CC9F54]" />
                               </div>
                               <span className="text-sm text-gray-900 truncate">{file.name}</span>
                             </div>
@@ -986,7 +986,7 @@ case 'incident':
               />
 
               {formData.citationIssued === 'yes' && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4 border-l-4 border-orange-200 bg-orange-50/50 p-4 rounded-r-lg">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4 border-l-4 border-[#E5CFA5] bg-[#FBF5EB]/50 p-4 rounded-r-lg">
                   <TextInput
                     label="Citation Issued To"
                     name="citationIssuedTo"
@@ -1021,7 +1021,7 @@ case 'incident':
               {/* Weather & Road */}
               <div>
                 <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-                  <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+                  <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
                   WEATHER & ROAD CONDITIONS
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1055,7 +1055,7 @@ case 'incident':
               {/* DOT Recordable */}
               <div className="pt-6 border-t border-gray-100">
                 <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-                  <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+                  <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
                   DOT RECORDABLE
                 </h3>
                 <div className="bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-xl p-4 mb-4">
@@ -1078,7 +1078,7 @@ case 'incident':
                   required
                 />
                 {formData.dotRecordable === 'yes' && (
-                  <div className="mt-4 pl-4 border-l-4 border-orange-200 bg-orange-50/50 p-4 rounded-r-lg">
+                  <div className="mt-4 pl-4 border-l-4 border-[#E5CFA5] bg-[#FBF5EB]/50 p-4 rounded-r-lg">
                     <TextArea
                       label="Reason for DOT Recordability"
                       name="dotRecordableReason"
@@ -1094,7 +1094,7 @@ case 'incident':
               {/* Towing */}
               <div className="pt-6 border-t border-gray-100">
                 <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-                  <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+                  <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
                   TOWING INFORMATION
                 </h3>
                 <RadioGroup
@@ -1106,7 +1106,7 @@ case 'incident':
                   required
                 />
                 {formData.towingRequired === 'yes' && (
-                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 pl-4 border-l-4 border-orange-200 bg-orange-50/50 p-4 rounded-r-lg">
+                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 pl-4 border-l-4 border-[#E5CFA5] bg-[#FBF5EB]/50 p-4 rounded-r-lg">
                     <TextInput
                       label="Towing Company Name"
                       name="towingCompanyName"
@@ -1143,7 +1143,7 @@ case 'truck-driver':
         {/* Truck */}
         <div>
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             TRUCK INFORMATION
           </h3>
 
@@ -1188,8 +1188,8 @@ case 'truck-driver':
           <label className="flex items-center gap-3 mb-4 cursor-pointer group">
             <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
               truckOwnedByCompany 
-                ? 'bg-orange-500 border-orange-500' 
-                : 'border-gray-300 group-hover:border-orange-400'
+                ? 'bg-[#CC9F54] border-[#CC9F54]' 
+                : 'border-gray-300 group-hover:border-[#D9BC82]'
             }`}>
               {truckOwnedByCompany && (
                 <Check className="w-3 h-3 text-white" />
@@ -1235,7 +1235,7 @@ case 'truck-driver':
                   value={formData.truckOwnerName}
                   onChange={handleInputChange}
                   placeholder="Owner name"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
@@ -1247,7 +1247,7 @@ case 'truck-driver':
                       onChange={handleInputChange}
                       placeholder="Phone number"
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                   <div>
@@ -1258,7 +1258,7 @@ case 'truck-driver':
                       value={formData.truckOwnerEmail}
                       onChange={handleInputChange}
                       placeholder="Email address"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                 </div>
@@ -1281,7 +1281,7 @@ case 'truck-driver':
         {/* Driver */}
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             DRIVER INFORMATION
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -1344,7 +1344,7 @@ case 'truck-driver':
             required
           />
           {formData.trailerPulling === 'yes' && (
-            <p className="mt-3 text-sm text-orange-600 font-medium">
+            <p className="mt-3 text-sm text-[#CC9F54] font-medium">
               ✓ Trailer details will be collected in the next step
             </p>
           )}
@@ -1369,7 +1369,7 @@ case 'truck-driver':
 
         <div>
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             TRAILER OWNER
           </h3>
           
@@ -1377,8 +1377,8 @@ case 'truck-driver':
           <label className="flex items-center gap-3 mb-4 cursor-pointer group">
             <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
               trailerSameAsTruck 
-                ? 'bg-orange-500 border-orange-500' 
-                : 'border-gray-300 group-hover:border-orange-400'
+                ? 'bg-[#CC9F54] border-[#CC9F54]' 
+                : 'border-gray-300 group-hover:border-[#D9BC82]'
             }`}>
               {trailerSameAsTruck && (
                 <Check className="w-3 h-3 text-white" />
@@ -1415,7 +1415,7 @@ case 'truck-driver':
                   value={formData.trailerOwnerName}
                   onChange={handleInputChange}
                   placeholder="Owner name"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
@@ -1426,7 +1426,7 @@ case 'truck-driver':
                       value={formData.trailerOwnerPhone}
                       onChange={handleInputChange}
                       placeholder="Phone number"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                   <div>
@@ -1437,7 +1437,7 @@ case 'truck-driver':
                       value={formData.trailerOwnerEmail}
                       onChange={handleInputChange}
                       placeholder="Email address"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                 </div>
@@ -1476,7 +1476,7 @@ case 'truck-driver':
             required
           />
           {formData.cargoDamaged === 'yes' && (
-            <p className="mt-3 text-sm text-orange-600 font-medium">
+            <p className="mt-3 text-sm text-[#CC9F54] font-medium">
               ✓ Cargo details will be collected in the next step
             </p>
           )}
@@ -1503,7 +1503,7 @@ case 'truck-driver':
 
         <div>
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             CARGO OWNER
           </h3>
           
@@ -1511,8 +1511,8 @@ case 'truck-driver':
           <label className="flex items-center gap-3 mb-4 cursor-pointer group">
             <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
               cargoSeeBillOfLading 
-                ? 'bg-orange-500 border-orange-500' 
-                : 'border-gray-300 group-hover:border-orange-400'
+                ? 'bg-[#CC9F54] border-[#CC9F54]' 
+                : 'border-gray-300 group-hover:border-[#D9BC82]'
             }`}>
               {cargoSeeBillOfLading && (
                 <Check className="w-3 h-3 text-white" />
@@ -1620,7 +1620,7 @@ case 'truck-driver':
                   value={formData.cargoOwnerName}
                   onChange={handleInputChange}
                   placeholder="Owner name"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
@@ -1631,7 +1631,7 @@ case 'truck-driver':
                       value={formData.cargoOwnerPhone}
                       onChange={handleInputChange}
                       placeholder="Phone number"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                   <div>
@@ -1642,7 +1642,7 @@ case 'truck-driver':
                       value={formData.cargoOwnerEmail}
                       onChange={handleInputChange}
                       placeholder="Email address"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                 </div>
@@ -1671,7 +1671,7 @@ case 'truck-driver':
         {/* Other Vehicles */}
         <div>
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             OTHER VEHICLE(S)
           </h3>
           <p className="text-sm text-gray-600 italic mb-4">
@@ -1690,7 +1690,7 @@ case 'truck-driver':
                 value={formData.otherVehicleOwnerName}
                 onChange={handleInputChange}
                 placeholder="Owner name"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
               />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
@@ -1701,7 +1701,7 @@ case 'truck-driver':
                     value={formData.otherVehicleOwnerPhone}
                     onChange={handleInputChange}
                     placeholder="Phone number"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                   />
                 </div>
                 <div>
@@ -1712,7 +1712,7 @@ case 'truck-driver':
                     value={formData.otherVehicleOwnerEmail}
                     onChange={handleInputChange}
                     placeholder="Email address"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                   />
                 </div>
               </div>
@@ -1729,8 +1729,8 @@ case 'truck-driver':
             <label className="flex items-center gap-3 mb-3 cursor-pointer group">
               <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
                 otherVehicleDriverSameAsOwner 
-                  ? 'bg-orange-500 border-orange-500' 
-                  : 'border-gray-300 group-hover:border-orange-400'
+                  ? 'bg-[#CC9F54] border-[#CC9F54]' 
+                  : 'border-gray-300 group-hover:border-[#D9BC82]'
               }`}>
                 {otherVehicleDriverSameAsOwner && (
                   <Check className="w-3 h-3 text-white" />
@@ -1763,7 +1763,7 @@ case 'truck-driver':
                   value={formData.otherVehicleDriverName}
                   onChange={handleInputChange}
                   placeholder="Driver name"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
@@ -1774,7 +1774,7 @@ case 'truck-driver':
                       value={formData.otherVehicleDriverPhone}
                       onChange={handleInputChange}
                       placeholder="Phone number"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                   <div>
@@ -1785,7 +1785,7 @@ case 'truck-driver':
                       value={formData.otherVehicleDriverEmail}
                       onChange={handleInputChange}
                       placeholder="Email address"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                     />
                   </div>
                 </div>
@@ -1813,7 +1813,7 @@ case 'truck-driver':
                 value={formData.otherVehicleInsuranceName}
                 onChange={handleInputChange}
                 placeholder="Insurance company name"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
               />
               <input
                 type="text"
@@ -1821,7 +1821,7 @@ case 'truck-driver':
                 value={formData.otherVehicleInsurancePolicy}
                 onChange={handleInputChange}
                 placeholder="Policy number"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
               />
             </div>
           </div>
@@ -1841,7 +1841,7 @@ case 'truck-driver':
         {/* Property Damage */}
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             OTHER DAMAGED PROPERTY
           </h3>
           
@@ -1856,7 +1856,7 @@ case 'truck-driver':
                 value={formData.propertyOwnerName}
                 onChange={handleInputChange}
                 placeholder="Property owner name"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
               />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
@@ -1867,7 +1867,7 @@ case 'truck-driver':
                     value={formData.propertyOwnerPhone}
                     onChange={handleInputChange}
                     placeholder="Phone number"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                   />
                 </div>
                 <div>
@@ -1878,7 +1878,7 @@ case 'truck-driver':
                     value={formData.propertyOwnerEmail}
                     onChange={handleInputChange}
                     placeholder="Email address"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                   />
                 </div>
               </div>
@@ -1898,7 +1898,7 @@ case 'truck-driver':
         {/* Bodily Injury */}
         <div className="pt-6 border-t border-gray-100">
           <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-            <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+            <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
             BODILY INJURY
           </h3>
           <p className="text-sm text-gray-600 mb-4">
@@ -1912,7 +1912,7 @@ case 'truck-driver':
               value={formData.injuredPartyName}
               onChange={handleInputChange}
               placeholder="Injured party name"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
@@ -1923,7 +1923,7 @@ case 'truck-driver':
                   value={formData.injuredPartyPhone}
                   onChange={handleInputChange}
                   placeholder="Phone number"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
               </div>
               <div>
@@ -1934,7 +1934,7 @@ case 'truck-driver':
                   value={formData.injuredPartyEmail}
                   onChange={handleInputChange}
                   placeholder="Email address"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all text-gray-900 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#CC9F54] focus:ring-2 focus:ring-[#CC9F54]/20 outline-none transition-all text-gray-900 hover:border-gray-300"
                 />
               </div>
             </div>
@@ -1952,7 +1952,7 @@ case 'truck-driver':
               {/* Witnesses */}
               <div>
                 <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-                  <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+                  <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
                   WITNESS INFORMATION
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
@@ -1973,7 +1973,7 @@ case 'truck-driver':
                 <button
                   type="button"
                   onClick={addWitness}
-                  className="flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold px-4 py-2 rounded-lg hover:bg-orange-50 transition-colors"
+                  className="flex items-center gap-2 text-[#CC9F54] hover:text-[#A87A32] font-semibold px-4 py-2 rounded-lg hover:bg-[#FBF5EB] transition-colors"
                 >
                   <Plus className="h-4 w-4" />
                   Add Another Witness
@@ -1983,7 +1983,7 @@ case 'truck-driver':
               {/* File Upload */}
               <div className="pt-6 border-t border-gray-100">
                 <h3 className="text-sm font-bold text-gray-800 mb-4 flex items-center">
-                  <div className="w-1 h-4 bg-orange-500 rounded mr-2"></div>
+                  <div className="w-1 h-4 bg-[#CC9F54] rounded mr-2"></div>
                   PHOTOS & DOCUMENTATION
                 </h3>
                 <FileUpload
@@ -2042,7 +2042,7 @@ case 'truck-driver':
               </div>
 
               {/* Checklist */}
-              <div className="bg-orange-50 rounded-xl p-4">
+              <div className="bg-[#FBF5EB] rounded-xl p-4">
                 <h4 className="font-semibold text-gray-900 mb-3">Submission Checklist</h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
@@ -2114,7 +2114,7 @@ case 'truck-driver':
       <Header />
       <section 
         ref={formContainerRef}
-        className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50 py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
+        className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#FBF5EB] py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -2168,7 +2168,7 @@ case 'truck-driver':
                     type="button"
                     onClick={handleSubmit}
                     disabled={isSubmitting || submitStatus === 'success'}
-                    className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold hover:from-orange-600 hover:to-red-600 transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                    className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] text-white rounded-xl font-bold hover:from-[#B8893D] hover:to-[#A87A32] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                   >
                     {isSubmitting ? (
                       <>
@@ -2192,7 +2192,7 @@ case 'truck-driver':
                 <button
                   type="button"
                   onClick={goToNextStep}
-                  className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold hover:from-orange-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl"
+                  className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#CC9F54] to-[#B8893D] text-white rounded-xl font-bold hover:from-[#B8893D] hover:to-[#A87A32] transition-all shadow-lg hover:shadow-xl"
                 >
                   Next
                   <ChevronRight className="w-5 h-5" />

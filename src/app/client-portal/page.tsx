@@ -10,7 +10,7 @@ const ClientPortal = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-16">
+      <div className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Client Portal</h1>
@@ -25,7 +25,7 @@ const ClientPortal = () => {
         <div className="mb-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-gray-600 hover:text-orange-500 transition-colors"
+            className="inline-flex items-center text-gray-600 hover:text-[#CC9F54] transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Home
@@ -46,7 +46,7 @@ const ClientPortal = () => {
           {/* Portal Access Button */}
           <div className="text-center py-8">
             <div className="mb-6">
-              <Shield className="h-16 w-16 text-orange-500 mx-auto mb-4" />
+              <Shield className="h-16 w-16 text-[#CC9F54] mx-auto mb-4" />
               <p className="text-gray-600 mb-6">
                 Click below to securely access your client portal
               </p>
@@ -56,7 +56,7 @@ const ClientPortal = () => {
               href={portalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+              className="inline-flex items-center bg-[#CC9F54] hover:bg-[#B8893D] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               Access Client Portal
               <ExternalLink className="ml-2 h-5 w-5" />
@@ -80,21 +80,21 @@ const ClientPortal = () => {
         </div>
 
         {/* Help Section */}
-        <div className="mt-8 bg-blue-50 rounded-lg p-6">
+        <div className="mt-8 bg-[#FBF5EB] rounded-lg p-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">
             Need Help?
           </h3>
           <ul className="space-y-2 text-gray-600">
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2">•</span>
+              <span className="text-[#CC9F54] mr-2">•</span>
               <span>Forgot your password? Use the "Forgot Password" link on the login page</span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2">•</span>
+              <span className="text-[#CC9F54] mr-2">•</span>
               <span>First time user? Contact us to set up your account</span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-600 mr-2">•</span>
+              <span className="text-[#CC9F54] mr-2">•</span>
               <span>Having trouble logging in? Call us at (555) 123-4567</span>
             </li>
           </ul>
@@ -107,16 +107,16 @@ const ClientPortal = () => {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-orange-100 rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
-                <FileText className="h-6 w-6 text-orange-600" />
+              <div className="bg-[#FBF5EB] rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                <FileText className="h-6 w-6 text-[#CC9F54]" />
               </div>
               <h4 className="font-semibold text-gray-800 mb-2">View Policies</h4>
               <p className="text-gray-600 text-sm">Access all your insurance policies and coverage details in one place</p>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-orange-100 rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
-                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-[#FBF5EB] rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#CC9F54]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -125,8 +125,8 @@ const ClientPortal = () => {
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
-              <div className="bg-orange-100 rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
-                <Calendar className="h-6 w-6 text-orange-600" />
+              <div className="bg-[#FBF5EB] rounded-full p-3 w-12 h-12 mb-4 flex items-center justify-center">
+                <Calendar className="h-6 w-6 text-[#CC9F54]" />
               </div>
               <h4 className="font-semibold text-gray-800 mb-2">Manage Renewals</h4>
               <p className="text-gray-600 text-sm">Stay on top of policy renewals and important dates</p>

@@ -464,12 +464,12 @@ const ClaimsPage = () => {
               {/* Email */}
               <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#A87A32] to-[#8A652B] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Priority Email</h4>
-                    <a href="mailto:claims@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                    <a href="mailto:claims@moxieriskpartners.com" className="text-lg font-bold text-[#A87A32] hover:text-[#8A652B] transition-colors break-all">
                       claims@moxieriskpartners.com
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Email documentation support</p>

@@ -360,7 +360,7 @@ const MotorTruckCargo = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Motor Truck Cargo
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Insurance Solutions
                     </span>
                   </h1>
@@ -377,7 +377,7 @@ const MotorTruckCargo = () => {
                     '24/7 Claims Support'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -386,7 +386,7 @@ const MotorTruckCargo = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
              <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -419,7 +419,7 @@ const MotorTruckCargo = () => {
               const IconComponent = benefit.icon;
               return (
                 <div key={benefit.title} className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-xl flex items-center justify-center mb-6">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -428,7 +428,7 @@ const MotorTruckCargo = () => {
                   <p className="text-gray-600 leading-relaxed mb-4">
                     {benefit.description}
                   </p>
-                  <div className="inline-block bg-orange-50 text-orange-600 px-4 py-2 rounded-full font-bold text-sm">
+                  <div className="inline-block bg-[#FBF5EB] text-[#CC9F54] px-4 py-2 rounded-full font-bold text-sm">
                     {benefit.stat}
                   </div>
                 </div>
@@ -461,8 +461,8 @@ const MotorTruckCargo = () => {
                 onClick={() => handleTypeSelection(coverage.typeCode)}
                 className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                   selectedType === coverage.typeCode
-                    ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
-                    : 'border-gray-200 bg-white hover:border-orange-300'
+                    ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
+                    : 'border-gray-200 bg-white hover:border-[#D9BC82]'
                 }`}
               >
                 <div className="text-center">
@@ -474,7 +474,7 @@ const MotorTruckCargo = () => {
                     />
                   </div>
                   <h3 className={`text-sm font-bold transition-colors ${
-                    selectedType === coverage.typeCode ? 'text-orange-600' : 'text-gray-800'
+                    selectedType === coverage.typeCode ? 'text-[#CC9F54]' : 'text-gray-800'
                   }`}>
                     {coverage.type}
                   </h3>
@@ -482,7 +482,7 @@ const MotorTruckCargo = () => {
                 
                 {/* Selected Indicator */}
                 {selectedType === coverage.typeCode && (
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
                     <CheckCircle className="w-4 h-4 text-white" />
                   </div>
                 )}
@@ -494,12 +494,12 @@ const MotorTruckCargo = () => {
           <div className="bg-gray-50 rounded-2xl shadow-xl border border-gray-200 p-8 lg:p-12">
             
             {/* Coverage Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-orange-100">
+            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-[#E5CFA5]">
               <div className="mb-4 lg:mb-0">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                   {selectedCoverage.title}
                 </h3>
-                <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full font-bold text-sm">
+                <div className="inline-block bg-[#CC9F54] text-white px-4 py-2 rounded-full font-bold text-sm">
                   Coverage: {selectedCoverage.coverageAmount}
                 </div>
               </div>
@@ -515,13 +515,13 @@ const MotorTruckCargo = () => {
               
               {/* Common Loads */}
               <div className="space-y-4">
-                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Common Loads Covered
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.commonLoads.map((load, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{load}</span>
                     </div>
                   ))}
@@ -530,13 +530,13 @@ const MotorTruckCargo = () => {
 
               {/* Risks Covered */}
               <div className="space-y-4">
-                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Risks Covered
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.risksCovered.map((risk, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{risk}</span>
                     </div>
                   ))}
@@ -545,13 +545,13 @@ const MotorTruckCargo = () => {
 
               {/* Who Needs It */}
               <div className="space-y-4">
-                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Who Needs This Coverage
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.whoNeedsIt.map((who, index) => (
                     <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg border border-gray-100">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">{who}</span>
                     </div>
                   ))}
@@ -560,13 +560,13 @@ const MotorTruckCargo = () => {
 
               {/* Special Features */}
               <div className="space-y-4">
-                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-orange-200">
+                <h4 className="text-lg font-bold text-gray-900 pb-2 border-b-2 border-[#E5CFA5]">
                   Special Features
                 </h4>
                 <div className="space-y-2">
                   {selectedCoverage.specialFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-start space-x-2 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                      <Star className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0 fill-current" />
+                    <div key={index} className="flex items-start space-x-2 p-3 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
+                      <Star className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0 fill-current" />
                       <span className="text-gray-800 text-sm font-medium">{feature}</span>
                     </div>
                   ))}
@@ -596,7 +596,7 @@ const MotorTruckCargo = () => {
                 key={coverage.title} 
                 className={`rounded-xl p-6 border-2 ${
                   coverage.isIncluded 
-                    ? 'bg-orange-50 border-orange-200' 
+                    ? 'bg-[#FBF5EB] border-[#E5CFA5]' 
                     : 'bg-white border-gray-200'
                 }`}
               >
@@ -606,7 +606,7 @@ const MotorTruckCargo = () => {
                   </h3>
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                     coverage.isIncluded 
-                      ? 'bg-orange-600 text-white' 
+                      ? 'bg-[#CC9F54] text-white' 
                       : 'bg-gray-600 text-white'
                   }`}>
                     {coverage.isIncluded ? 'Included' : 'Optional'}
@@ -618,7 +618,7 @@ const MotorTruckCargo = () => {
                 <ul className="space-y-2">
                   {coverage.features.map((feature, index) => (
                     <li key={index} className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -648,7 +648,7 @@ const MotorTruckCargo = () => {
                 key={cargoType.name} 
                 className={`bg-white rounded-xl p-6 border-2 hover:shadow-lg transition-all duration-300 ${
                   cargoType.riskLevel === 'high-risk' ? 'border-red-200' :
-                  cargoType.riskLevel === 'specialized' ? 'border-orange-200' :
+                  cargoType.riskLevel === 'specialized' ? 'border-[#E5CFA5]' :
                   'border-gray-200'
                 }`}
               >
@@ -660,7 +660,7 @@ const MotorTruckCargo = () => {
                 </p>
                 <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
                   cargoType.riskLevel === 'high-risk' ? 'bg-red-100 text-red-700' :
-                  cargoType.riskLevel === 'specialized' ? 'bg-orange-100 text-orange-700' :
+                  cargoType.riskLevel === 'specialized' ? 'bg-[#FBF5EB] text-[#A87A32]' :
                   'bg-gray-100 text-gray-700'
                 }`}>
                   {cargoType.riskLevel.replace('-', ' ')}
@@ -693,7 +693,7 @@ const MotorTruckCargo = () => {
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
                   {detail.description}
                 </p>
-                <div className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full font-bold text-sm">
+                <div className="inline-block bg-[#CC9F54] text-white px-4 py-2 rounded-full font-bold text-sm">
                   {detail.limit}
                 </div>
               </div>
@@ -752,7 +752,7 @@ const MotorTruckCargo = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Protect Your Freight with
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Cargo Insurance
                   </span>
                 </h2>
@@ -764,23 +764,23 @@ const MotorTruckCargo = () => {
 
               <div className="grid md:grid-cols-1 gap-6">
                 
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                  <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                  <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                     (515) 581-7187
                   </a>
                   <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                 </div>
 
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                  <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                  <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                     quotes@moxieriskpartners.com
                   </a>
                   <p className="text-xs text-gray-500 mt-1">Quick Response</p>

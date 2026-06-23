@@ -323,27 +323,27 @@ if (showThankYou) {
                 <div className="space-y-4">
                   <a
                     href="mailto:info@moxieriskpartners.com"
-                    className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg border border-purple-200 hover:bg-purple-100 transition-colors duration-200 group"
+                    className="flex items-center space-x-3 p-4 bg-gray-100 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200 group"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-900">Email Us</p>
-                      <p className="text-lg font-bold text-purple-600 group-hover:text-purple-700">info@moxieriskpartners.com</p>
+                      <p className="text-lg font-bold text-gray-900 group-hover:text-[#CC9F54]">info@moxieriskpartners.com</p>
                     </div>
                   </a>
 
                   <a
                     href="tel:+15155817187"
-                    className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group"
+                    className="flex items-center space-x-3 p-4 bg-gray-100 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors duration-200 group"
                   >
- <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-gray-900">Call Us</p>
-                      <p className="text-lg font-bold text-green-600 group-hover:text-green-700">(515) 581-7187</p>
+                      <p className="text-lg font-bold text-gray-900 group-hover:text-[#CC9F54]">(515) 581-7187</p>
                     </div>
                   </a>
                 </div>

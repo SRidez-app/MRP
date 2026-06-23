@@ -240,7 +240,7 @@ const WorkersCompPage = () => {
                 <div>
                   <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                     Workers' Compensation
-                    <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                    <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                       Insurance
                     </span>
                   </h1>
@@ -259,7 +259,7 @@ const WorkersCompPage = () => {
                     'Return-to-Work Programs'
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-6 h-6 text-orange-600 flex-shrink-0" />
+                      <CheckCircle className="w-6 h-6 text-[#CC9F54] flex-shrink-0" />
                       <span className="text-lg font-medium text-gray-800">{feature}</span>
                     </div>
                   ))}
@@ -269,7 +269,7 @@ const WorkersCompPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
               <Link 
   href="/quote-form"
-  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
+  className="bg-gradient-to-r from-[#CC9F54] to-[#B8893D] hover:from-[#B8893D] hover:to-[#A87A32] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center group"
 >
   Get Your Quote
 </Link>
@@ -310,20 +310,20 @@ const WorkersCompPage = () => {
                   onClick={() => handleTypeSelection(industry.typeCode)}
                   className={`group relative p-6 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
                     selectedType === industry.typeCode
-                      ? 'border-orange-600 bg-orange-50 shadow-lg scale-105'
-                      : 'border-gray-200 bg-white hover:border-orange-300'
+                      ? 'border-[#CC9F54] bg-[#FBF5EB] shadow-lg scale-105'
+                      : 'border-gray-200 bg-white hover:border-[#D9BC82]'
                   }`}
                 >
                   <div className="text-center">
                     <div className="mb-4 mx-auto w-16 h-16 flex items-center justify-center">
                       <IconComponent 
                         className={`w-12 h-12 transition-all duration-300 ${
-                          selectedType === industry.typeCode ? 'text-orange-600' : 'text-gray-600'
+                          selectedType === industry.typeCode ? 'text-[#CC9F54]' : 'text-gray-600'
                         } group-hover:scale-110`}
                       />
                     </div>
                     <h3 className={`text-sm font-bold transition-colors ${
-                      selectedType === industry.typeCode ? 'text-orange-600' : 'text-gray-800'
+                      selectedType === industry.typeCode ? 'text-[#CC9F54]' : 'text-gray-800'
                     }`}>
                       {industry.type}
                     </h3>
@@ -331,7 +331,7 @@ const WorkersCompPage = () => {
                   
                   {/* Selected Indicator */}
                   {selectedType === industry.typeCode && (
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-[#CC9F54] rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
                   )}
@@ -357,7 +357,7 @@ const WorkersCompPage = () => {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 lg:p-12">
             
             {/* Industry Header */}
-            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-orange-100">
+            <div className="flex flex-col lg:flex-row justify-between items-start mb-8 pb-6 border-b-2 border-[#E5CFA5]">
               <div className="mb-4 lg:mb-0">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                   {selectedIndustry.title} Workers' Compensation
@@ -382,8 +382,8 @@ const WorkersCompPage = () => {
             {/* Features Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {selectedIndustry.features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-orange-50 rounded-lg border border-orange-200">
-                  <CheckCircle className="w-5 h-5 text-orange-600 mt-0.5 flex-shrink-0" />
+                <div key={index} className="flex items-start space-x-3 p-4 bg-[#FBF5EB] rounded-lg border border-[#E5CFA5]">
+                  <CheckCircle className="w-5 h-5 text-[#CC9F54] mt-0.5 flex-shrink-0" />
                   <span className="text-gray-800 font-medium">{feature}</span>
                 </div>
               ))}
@@ -409,8 +409,8 @@ const WorkersCompPage = () => {
             {coverageDetails.map((detail) => {
               const IconComponent = detail.icon;
               return (
-                <div key={detail.title} className="p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-orange-300 aspect-square flex flex-col justify-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div key={detail.title} className="p-6 bg-gray-50 rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-[#D9BC82] aspect-square flex flex-col justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">
@@ -449,7 +449,7 @@ const WorkersCompPage = () => {
               <div className="space-y-6">
                 {claimsSteps.map((step, index) => (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-gradient-to-br from-[#CC9F54] to-[#B8893D] rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold">{step.number}</span>
                     </div>
                     <div>
@@ -484,12 +484,12 @@ const WorkersCompPage = () => {
               {/* Email */}
               <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#A87A32] to-[#8A652B] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">Email Claims Team</h4>
-                    <a href="mailto:claims@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                    <a href="mailto:claims@moxieriskpartners.com" className="text-lg font-bold text-[#A87A32] hover:text-[#8A652B] transition-colors break-all">
                       claims@moxieriskpartners.com
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Email documentation support</p>
@@ -569,7 +569,7 @@ const WorkersCompPage = () => {
               <div>
                 <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Ready to Protect Your
-                  <span className="block text-transparent bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text">
+                  <span className="block text-transparent bg-gradient-to-r from-[#CC9F54] to-[#B8893D] bg-clip-text">
                     Employees and Business?
                   </span>
                 </h2>
@@ -586,24 +586,24 @@ const WorkersCompPage = () => {
                             <div className="grid md:grid-cols-1 gap-6">
                           
                               {/* Phone */}
-                              <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200">
-                                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                              <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-3">
                                   <Phone className="w-6 h-6 text-white" />
                                 </div>
                                 <h4 className="text-sm font-semibold text-gray-900 mb-1">Call Us Now</h4>
-                                <a href="tel:+15155817187" className="text-lg font-bold text-green-600 hover:text-green-700 transition-colors">
+                                <a href="tel:+15155817187" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors">
                                   (515) 581-7187
                                 </a>
                                 <p className="text-xs text-gray-500 mt-1">24/7 Available</p>
                               </div>
-              
+
                               {/* Email */}
-                              <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200">
-                                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                              <div className="text-center p-6 bg-gray-100 rounded-xl border border-gray-200">
+                                <div className="w-12 h-12 bg-[#CC9F54] rounded-lg flex items-center justify-center mx-auto mb-3">
                                   <Mail className="w-6 h-6 text-white" />
                                 </div>
                                 <h4 className="text-sm font-semibold text-gray-900 mb-1">Email Us</h4>
-                                <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-purple-600 hover:text-purple-700 transition-colors break-all">
+                                <a href="mailto:quotes@moxieriskpartners.com" className="text-lg font-bold text-gray-900 hover:text-[#CC9F54] transition-colors break-all">
                                   quotes@moxieriskpartners.com
                                 </a>
                                 <p className="text-xs text-gray-500 mt-1">Quick Response</p>
