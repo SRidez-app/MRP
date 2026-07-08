@@ -412,6 +412,46 @@ const handleSubmit = async () => {
   setSubmitError(null);
 
   try {
+    // Compress image files before upload (resize + JPEG quality reduction)
+    const compressImage = (file: File, maxWidth = 1600, quality = 0.7): Promise<File> => {
+      return new Promise((resolve) => {
+        if (!file.type.startsWith('image/') || file.type === 'image/gif') {
+          resolve(file);
+          return;
+        }
+        const img = new Image();
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d')!;
+        img.onload = () => {
+          let { width, height } = img;
+          if (width > maxWidth) {
+            height = (height * maxWidth) / width;
+            width = maxWidth;
+          }
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+          canvas.toBlob(
+            (blob) => {
+              if (blob && blob.size < file.size) {
+                resolve(new File([blob], file.name, { type: 'image/jpeg' }));
+              } else {
+                resolve(file);
+              }
+            },
+            'image/jpeg',
+            quality
+          );
+          URL.revokeObjectURL(img.src);
+        };
+        img.onerror = () => {
+          URL.revokeObjectURL(img.src);
+          resolve(file);
+        };
+        img.src = URL.createObjectURL(file);
+      });
+    };
+
     const fileToBase64 = (file: File): Promise<string> => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -423,6 +463,20 @@ const handleSubmit = async () => {
         };
         reader.onerror = reject;
       });
+    };
+
+    // Helper: safely parse a fetch response (handles non-JSON errors like 413)
+    const safeParseResponse = async (response: Response) => {
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch {
+        throw new Error(
+          response.status === 413
+            ? 'The uploaded files are too large. Please reduce file sizes or upload fewer files.'
+            : text || `Server error (${response.status})`
+        );
+      }
     };
 
     const getInitials = () => {
@@ -437,119 +491,173 @@ const handleSubmit = async () => {
 
     const initials = getInitials();
 
-    // Convert police report files to base64
-    const policeReportFilesData = await Promise.all(
-      policeReportFiles.map(async (f, index) => {
-        if (!f.file) return null;
-        const base64 = await fileToBase64(f.file);
-        const ext = f.name.split('.').pop() || 'png';
-        const suffix = policeReportFiles.length > 1 ? `${index + 1}` : '';
-        return {
-          name: `police_report${suffix}_${initials}.${ext}`,
-          originalName: f.name,
-          type: f.type,
-          size: f.size,
-          data: base64,
-          section: 'police_report',
-        };
-      })
-    );
+    // Helper: compress + convert a file to base64 attachment object
+    const processFile = async (f: UploadedFile, index: number, section: string, prefix: string, totalCount: number) => {
+      if (!f.file) return null;
+      const compressed = await compressImage(f.file);
+      const base64 = await fileToBase64(compressed);
+      const ext = f.name.split('.').pop() || 'png';
+      const suffix = totalCount > 1 ? `${index + 1}` : '';
+      return {
+        name: `${prefix}${suffix}_${initials}.${ext}`,
+        originalName: f.name,
+        type: compressed.type,
+        size: compressed.size,
+        data: base64,
+        section,
+      };
+    };
 
-    // Convert citation files to base64
-    const citationFilesData = await Promise.all(
-      citationFiles.map(async (f, index) => {
-        if (!f.file) return null;
-        const base64 = await fileToBase64(f.file);
-        const ext = f.name.split('.').pop() || 'png';
-        const suffix = citationFiles.length > 1 ? `${index + 1}` : '';
-        return {
-          name: `citation${suffix}_${initials}.${ext}`,
-          originalName: f.name,
-          type: f.type,
-          size: f.size,
-          data: base64,
-          section: 'citation',
-        };
-      })
-    );
+    // Process all file categories with compression
+    const policeReportFilesData = (await Promise.all(
+      policeReportFiles.map((f, i) => processFile(f, i, 'police_report', 'police_report', policeReportFiles.length))
+    )).filter(Boolean);
 
-    // Convert bill of lading files to base64
-    const billOfLadingFilesData = await Promise.all(
-      billOfLadingFiles.map(async (f, index) => {
-        if (!f.file) return null;
-        const base64 = await fileToBase64(f.file);
-        const ext = f.name.split('.').pop() || 'png';
-        const suffix = billOfLadingFiles.length > 1 ? `${index + 1}` : '';
-        return {
-          name: `bill_of_lading${suffix}_${initials}.${ext}`,
-          originalName: f.name,
-          type: f.type,
-          size: f.size,
-          data: base64,
-          section: 'bill_of_lading',
-        };
-      })
-    );
+    const citationFilesData = (await Promise.all(
+      citationFiles.map((f, i) => processFile(f, i, 'citation', 'citation', citationFiles.length))
+    )).filter(Boolean);
 
-    // Convert general uploaded files to base64
-    const uploadedFilesData = await Promise.all(
-      uploadedFiles.map(async (f, index) => {
-        if (!f.file) return null;
-        const base64 = await fileToBase64(f.file);
-        const ext = f.name.split('.').pop() || 'png';
-        const suffix = uploadedFiles.length > 1 ? `${index + 1}` : '';
-        return {
-          name: `incident_photo${suffix}_${initials}.${ext}`,
-          originalName: f.name,
-          type: f.type,
-          size: f.size,
-          data: base64,
-          section: 'incident_photos',
-        };
-      })
-    );
+    const billOfLadingFilesData = (await Promise.all(
+      billOfLadingFiles.map((f, i) => processFile(f, i, 'bill_of_lading', 'bill_of_lading', billOfLadingFiles.length))
+    )).filter(Boolean);
+
+    const uploadedFilesData = (await Promise.all(
+      uploadedFiles.map((f, i) => processFile(f, i, 'incident_photos', 'incident_photo', uploadedFiles.length))
+    )).filter(Boolean);
 
     let insuranceCardFileData = null;
     if (insuranceCardFile) {
-      const base64 = await fileToBase64(insuranceCardFile);
+      const compressed = await compressImage(insuranceCardFile);
+      const base64 = await fileToBase64(compressed);
       const ext = insuranceCardFile.name.split('.').pop() || 'png';
       insuranceCardFileData = {
         name: `insurance_card_${initials}.${ext}`,
         originalName: insuranceCardFile.name,
-        type: insuranceCardFile.type,
-        size: insuranceCardFile.size,
+        type: compressed.type,
+        size: compressed.size,
         data: base64,
         section: 'insurance_card',
       };
     }
 
-    const submitData = {
-      formData,
-      witnesses: witnesses.filter((w) => w.name),
-      files: uploadedFilesData.filter(Boolean),
-      policeReportFiles: policeReportFilesData.filter(Boolean),
-      citationFiles: citationFilesData.filter(Boolean),
-      billOfLadingFiles: billOfLadingFilesData.filter(Boolean),
-      insuranceCardFile: insuranceCardFileData, 
-    };
+    // Gather all file objects for size calculation
+    const allFiles = [
+      ...policeReportFilesData,
+      ...citationFilesData,
+      ...billOfLadingFilesData,
+      ...uploadedFilesData,
+      ...(insuranceCardFileData ? [insuranceCardFileData] : []),
+    ];
 
-    const response = await fetch('/api/submit-claim', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(submitData),
-    });
+    // Calculate total base64 data size (bytes)
+    const totalBase64Size = allFiles.reduce((sum, f) => sum + (f?.data?.length || 0), 0);
+    const MAX_CHUNK_SIZE = 3 * 1024 * 1024; // 3MB of base64 data per request (safe under 4.5MB Vercel limit)
 
-    const result = await response.json();
+    if (totalBase64Size <= MAX_CHUNK_SIZE) {
+      // All files fit in one request — send everything together
+      const submitData = {
+        formData,
+        witnesses: witnesses.filter((w) => w.name),
+        files: uploadedFilesData,
+        policeReportFiles: policeReportFilesData,
+        citationFiles: citationFilesData,
+        billOfLadingFiles: billOfLadingFilesData,
+        insuranceCardFile: insuranceCardFileData,
+      };
 
-    if (!response.ok || !result.success) {
-      throw new Error(result.error || 'Failed to submit claim');
+      const response = await fetch('/api/submit-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(submitData),
+      });
+
+      const result = await safeParseResponse(response);
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit claim');
+      }
+
+      setClaimNumber(result.claimNumber);
+      setSubmitStatus('success');
+      setShowSuccessModal(true);
+    } else {
+      // Files are too large for one request — use chunked upload
+      // Step 1: Split files into chunks that fit within the size limit
+      const fileChunks: (typeof allFiles)[] = [];
+      let currentChunk: typeof allFiles = [];
+      let currentChunkSize = 0;
+
+      for (const file of allFiles) {
+        if (!file) continue;
+        const fileSize = file.data.length;
+        if (currentChunkSize + fileSize > MAX_CHUNK_SIZE && currentChunk.length > 0) {
+          fileChunks.push(currentChunk);
+          currentChunk = [];
+          currentChunkSize = 0;
+        }
+        currentChunk.push(file);
+        currentChunkSize += fileSize;
+      }
+      if (currentChunk.length > 0) {
+        fileChunks.push(currentChunk);
+      }
+
+      // Step 2: Send form data with first chunk of files
+      const firstChunk = fileChunks[0] || [];
+      const firstChunkBySection = {
+        files: firstChunk.filter(f => f?.section === 'incident_photos'),
+        policeReportFiles: firstChunk.filter(f => f?.section === 'police_report'),
+        citationFiles: firstChunk.filter(f => f?.section === 'citation'),
+        billOfLadingFiles: firstChunk.filter(f => f?.section === 'bill_of_lading'),
+        insuranceCardFile: firstChunk.find(f => f?.section === 'insurance_card') || null,
+      };
+
+      const submitData = {
+        formData,
+        witnesses: witnesses.filter((w) => w.name),
+        ...firstChunkBySection,
+        totalFileChunks: fileChunks.length,
+      };
+
+      const response = await fetch('/api/submit-claim', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(submitData),
+      });
+
+      const result = await safeParseResponse(response);
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit claim');
+      }
+
+      const returnedClaimNumber = result.claimNumber;
+
+      // Step 3: Send remaining file chunks as supplementary uploads
+      for (let i = 1; i < fileChunks.length; i++) {
+        const chunk = fileChunks[i];
+        const chunkResponse = await fetch('/api/submit-claim-files', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            claimNumber: returnedClaimNumber,
+            claimsContactEmail: formData.claimsContactEmail,
+            companyName: formData.companyName,
+            files: chunk,
+            chunkIndex: i + 1,
+            totalChunks: fileChunks.length,
+          }),
+        });
+
+        const chunkResult = await safeParseResponse(chunkResponse);
+        if (!chunkResponse.ok || !chunkResult.success) {
+          console.error(`Failed to upload file chunk ${i + 1}:`, chunkResult.error);
+          // Continue with submission even if supplementary files fail
+        }
+      }
+
+      setClaimNumber(returnedClaimNumber);
+      setSubmitStatus('success');
+      setShowSuccessModal(true);
     }
-
-    setClaimNumber(result.claimNumber);
-    setSubmitStatus('success');
-    setShowSuccessModal(true);
   } catch (error) {
     console.error('Submit error:', error);
     setSubmitStatus('error');
@@ -911,7 +1019,7 @@ case 'incident':
                       <input
                         type="file"
                         multiple
-                        accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                        accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.zip,.heic"
                         onChange={(e) => {
                           const selectedFiles = e.target.files;
                           if (!selectedFiles) return;
@@ -1544,7 +1652,7 @@ case 'truck-driver':
                 <input
                   type="file"
                   multiple
-                  accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                  accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.zip,.heic"
                   onChange={(e) => {
                     const selectedFiles = e.target.files;
                     if (!selectedFiles) return;
@@ -1989,7 +2097,7 @@ case 'truck-driver':
                 <FileUpload
                   files={uploadedFiles}
                   onFilesChange={setUploadedFiles}
-                  maxFiles={10}
+                  maxFiles={30}
                 />
               </div>
             </div>

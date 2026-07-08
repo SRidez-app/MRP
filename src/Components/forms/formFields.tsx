@@ -562,7 +562,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   files,
   onFilesChange,
   maxFiles = 10,
-  acceptedTypes = '.png,.jpg,.jpeg,image/png,image/jpeg,image/jpg,.pdf,.doc,.docx,video/*',
+  acceptedTypes = '.png,.jpg,.jpeg,image/png,image/jpeg,image/jpg,.pdf,.doc,.docx,.zip,.heic,video/*',
 }) => {
   const [filesWithPreviews, setFilesWithPreviews] = useState<UploadedFileWithPreview[]>([]);
   const [lightboxImage, setLightboxImage] = useState<{ url: string; name: string } | null>(null);
@@ -681,7 +681,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             or drag and drop
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            PNG, JPG, JPEG, PDF, and documents up to 25MB each
+            PNG, JPG, JPEG, PDF, ZIP, and documents up to 25MB each
           </p>
         </label>
       </div>

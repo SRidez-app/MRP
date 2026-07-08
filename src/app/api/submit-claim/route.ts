@@ -5,6 +5,8 @@ import ClaimPDF from '@/lib/pdf/claimPDF';
 import { ReactElement } from 'react';
 import { DocumentProps } from '@react-pdf/renderer';
 
+export const maxDuration = 60;
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const INSURANCE_COMPANY_EMAIL = 'claims@moxieriskpartners.com';
